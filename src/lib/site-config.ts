@@ -128,10 +128,11 @@ export function buildEmailHref(
  * Useful when generating Schema.org sameAs arrays.
  */
 export function getVerifiedSocialProfiles(): string[] {
-  return Object.values(SITE_CONFIG.social).filter(
+  return (Object.values(SITE_CONFIG.social) as (string | null)[]).filter(
     (url): url is string => typeof url === "string" && url.length > 0,
   );
 }
+
 
 /**
  * Builds a consistent per-page head() object: title, description,
