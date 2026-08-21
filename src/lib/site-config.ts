@@ -129,6 +129,46 @@ export function buildEmailHref(
  */
 export function getVerifiedSocialProfiles(): string[] {
   return Object.values(SITE_CONFIG.social).filter(
-    (url): url is string => Boolean(url),
+    (url): url is string => typeof url === "string" && url.length > 0,
   );
 }
+
+/**
+ * Builds a consistent per-page head() object: title, description,
+ * Open Graph, Twitter and a self-referencing canonical.
+ *
+ * Global identity (Organization / WebSite schema, site name, icons)
+ * stays in __root.tsx — pages only add what is specific to them.
+ */
+export function buildPageMeta(options: {
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  type?: string;
+  robots?: string;
+}) {
+  const canonicalUrl = getSiteUrl(options.path);
+  const ogType = options.type ?? "website";
+
+  return {
+    meta: [
+      { title: options.title },
+      { name: "description", content: options.description },
+      { name: "robots", content: options.robots ?? "index,follow,max-image-preview:large" },
+      { property: "og:site_name", content: SITE_CONFIG.name },
+      { property: "og:locale", content: "en_US" },
+      { property: "og:title", content: options.title },
+      { property: "og:description", content: options.description },
+      { property: "og:type", content: ogType },
+      { property: "og:url", content: canonicalUrl },
+      ...(options.image ? [{ property: "og:image", content: options.image }] : []),
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: options.title },
+      { name: "twitter:description", content: options.description },
+      ...(options.image ? [{ name: "twitter:image", content: options.image }] : []),
+    ],
+    links: [{ rel: "canonical", href: canonicalUrl }],
+  };
+}
+
