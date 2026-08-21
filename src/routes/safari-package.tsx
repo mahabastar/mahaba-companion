@@ -10,7 +10,7 @@ export const Route = createFileRoute("/safari-package")({
       title: "Uganda Safari Packages | Trek Wild Uganda",
       description:
         "Compare Uganda safari packages — gorilla trekking, chimp tracking, wildlife and cultural tours — planned and guided locally by Trek Wild Uganda.",
-      path: "/safari-packages",
+      path: "/safari-package",
     }),
   component: SafariPackages,
 });
