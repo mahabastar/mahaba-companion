@@ -119,67 +119,27 @@ export const Route = createFileRoute("/")({
 
       scripts: [
         {
+          // Page-specific schema only. The global TravelAgency (Organization)
+          // and WebSite identity live in __root.tsx and are referenced by @id.
           type: "application/ld+json",
           children: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "TravelAgency",
-            "@id": `${SITE_CONFIG.url}/#organization`,
-            name: SITE_CONFIG.name,
-            url: SITE_CONFIG.url,
-            logo: getSiteUrl("/favicon.png"),
-            image: socialImage,
-            description:
-              "Ugandan-owned, locally guided safari company offering gorilla trekking, chimpanzee tracking, wildlife safaris, birding, hiking and cultural journeys across Uganda.",
-            telephone: SITE_CONFIG.phoneWhatsApp,
-            email: SITE_CONFIG.email,
-            areaServed: {
-              "@type": "Country",
-              name: "Uganda",
-            },
-            sameAs: getVerifiedSocialProfiles(),
+            "@type": "WebPage",
+            "@id": `${canonicalUrl}#webpage`,
+            url: canonicalUrl,
+            name: title,
+            description,
+            inLanguage: "en",
+            isPartOf: { "@id": `${SITE_CONFIG.url}/#website` },
+            about: { "@id": `${SITE_CONFIG.url}/#organization` },
+            provider: { "@id": `${SITE_CONFIG.url}/#organization` },
+            primaryImageOfPage: socialImage,
           }),
         },
       ],
     };
   },
-      {
-        name: "description",
-        content:
-          "Explore Uganda safari packages with local guides, gorilla trekking in Bwindi, chimpanzee trekking in Kibale, wildlife safaris and customized Uganda trips.",
-      },
-      { property: "og:title", content: "Uganda Safaris & Gorilla Trekking | Trek Wild Uganda" },
-      {
-        property: "og:description",
-        content:
-          "Private, locally guided Uganda safaris — mountain gorillas in Bwindi, chimpanzees in Kibale, tree-climbing lions, the source of the Nile and the Rwenzori peaks. Planned in Kampala by [...]
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "twitter:description",
-        content:
-          "Private, locally guided Uganda safaris — mountain gorillas in Bwindi, chimpanzees in Kibale, tree-climbing lions, the source of the Nile and the Rwenzori peaks. Planned in Kampala by [...]
-      },
-      { property: "og:url", content: `${SITE_CONFIG.url}/` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/` }],
 
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "TravelAgency",
-          name: SITE_CONFIG.name,
-          url: SITE_CONFIG.url,
-          telephone: `+${SITE_CONFIG.whatsappNumber}`,
-          email: SITE_CONFIG.email,
-          areaServed: "Uganda",
-          sameAs: [SITE_CONFIG.social.instagram, SITE_CONFIG.social.tiktok],
-        }),
-      },
-    ],
-  }),
   component: Home,
 });
 
