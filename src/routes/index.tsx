@@ -199,7 +199,7 @@ function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               to="/uganda-explorer"
-              className="group inline-flex items-center gap-3 rounded-full bg-forest px-7 py-4 text-sm font-medium tracking-wide text-ivory shadow-md transition-all duration-500 hover:scale-105 h[...]
+              className="group inline-flex items-center gap-3 rounded-full bg-forest px-7 py-4 text-sm font-medium tracking-wide text-ivory shadow-md transition-all duration-500 hover:scale-105 hover:bg-forest/90"
             >
               Explore Uganda
               <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -209,7 +209,7 @@ function Hero() {
 
             <Link
               to="/build-my-safari"
-              className="inline-flex items-center gap-3 rounded-full border border-forest/70 px-7 py-4 text-sm font-medium tracking-wide text-ivory backdrop-blur-md transition-colors hover:border[...]
+              className="inline-flex items-center gap-3 rounded-full border border-forest/70 px-7 py-4 text-sm font-medium tracking-wide text-ivory backdrop-blur-md transition-colors hover:border-gold hover:text-gold"
             >
               Plan my Uganda safari
             </Link>
@@ -345,12 +345,12 @@ function SectionHeader({
 
 /* ---------------- Why Uganda ---------------- */
 const whyCards = [
-  { title: "Mountain Gorillas", desc: "Bwindi is one of only two places on earth where mountain gorillas survive. One hour, a few metres apart, and a habituation programme that has helped their n[...]
-  { title: "Source of the Nile", desc: "Stand at Jinja where the world's longest river leaves Lake Victoria — the point European explorers spent decades searching for.", img: g_source_of_the_ni[...]
-  { title: "Tree-Climbing Lions", desc: "In the Ishasha sector of Queen Elizabeth, lions rest in fig trees — behaviour recorded in only a handful of places in Africa.", img: g_tree_lion, to: "/[...]
-  { title: "1,000+ Bird Species", desc: "More than half of Africa's birds in one country, from the prehistoric shoebill to the grey crowned crane on the national flag.", img: g_shoebill_1, to: "/[...]
-  { title: "Primate Diversity", desc: "Thirteen primate species in Kibale alone, and Africa's densest chimpanzee population living within earshot of the trail.", img: g_chimp_trekking_1, to: "/de[...]
-  { title: "The Pearl of Africa", desc: "Churchill's phrase, written in 1908. A century on, travellers still reach for it after their first week here.", img: g_pearl_of_africa, to: "/uganda-explo[...]
+  { title: "Mountain Gorillas", desc: "Bwindi is one of only two places on earth where mountain gorillas survive. One hour, a few metres apart, and a habituation programme that has helped their numbers climb.", img: g_gorilla_silverback, to: "/destinations/gorilla-trekking" },
+  { title: "Source of the Nile", desc: "Stand at Jinja where the world’s longest river leaves Lake Victoria — the point European explorers spent decades searching for.", img: g_source_of_the_nile_1, to: "/destinations/jinja-source-of-the-nile" },
+  { title: "Tree-Climbing Lions", desc: "In the Ishasha sector of Queen Elizabeth, lions rest in fig trees — behaviour recorded in only a handful of places in Africa.", img: g_tree_lion, to: "/destinations/tree-climbing-lions" },
+  { title: "1,000+ Bird Species", desc: "More than half of Africa’s birds in one country, from the prehistoric shoebill to the grey crowned crane on the national flag.", img: g_shoebill_1, to: "/bird-guide" },
+  { title: "Primate Diversity", desc: "Thirteen primate species in Kibale alone, and Africa’s densest chimpanzee population living within earshot of the trail.", img: g_chimp_trekking_1, to: "/destinations/chimpanzee-trekking" },
+  { title: "The Pearl of Africa", desc: "Churchill’s phrase, written in 1908. A century on, travellers still reach for it after their first week here.", img: g_pearl_of_africa, to: "/uganda-explorer" },
 ];
 
 function WhyUganda() {
@@ -635,7 +635,7 @@ function Journeys() {
           invert
           eyebrow="Signature journeys"
           title={<>Not itineraries. <em className="italic text-gold">Stories</em> waiting to be lived.</>}
-          copy="Six routes we run often enough to know intimately — from a three-day gorilla escape to a twenty-one-day circuit of the whole country. Each one is a starting point, adjusted to y[...]
+          copy="Six routes we run often enough to know intimately — from a three-day gorilla escape to a twenty-one-day circuit of the whole country. Each one is a starting point, adjusted to your pace and interests."
         />
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {JOURNEYS.map((j) => (
@@ -959,7 +959,7 @@ function FinalCTA() {
                   className="inline-flex items-center gap-2 rounded-full border border-forest/70 px-7 py-4 text-sm font-medium text-ivory backdrop-blur-md hover:border-gold hover:text-gold"
                 >
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
-                    <path d="M20 3.5A11.6 11.6 0 0 0 3.5 20L2 22l2.1-1.5A11.6 11.6 0 1 0 20 3.5Zm-8 18.2a9.6 9.6 0 0 1-4.9-1.3l-.3-.2-2.4.6.6-2.4-.2-.3A9.6 9.6 0 1 1 12 21.7Zm5.3-6.9c-.3-.2-1.7-.[...]
+                    <path d="M20 3.5A11.6 11.6 0 0 0 3.5 20L2 22l2.1-1.5A11.6 11.6 0 1 0 20 3.5Zm-8 18.2a9.6 9.6 0 0 1-4.9-1.3l-.3-.2-2.4.6.6-2.4-.2-.3A9.6 9.6 0 1 1 12 21.7Z" />
                   </svg>
                   Chat on WhatsApp
                 </a>
