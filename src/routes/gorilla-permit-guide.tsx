@@ -10,7 +10,7 @@ export const Route = createFileRoute("/gorilla-permit-guide")({
       description: "Everything the USD 800 Uganda gorilla permit includes, how booking works, the Habituation Experience alternative, and how it compares to Rwanda.",
       path: "/gorilla-permit-guide",
     }),
-  })),
+  }),
   component: () => (
     <GuidePage
       eyebrow="The Permit, Explained"

@@ -10,7 +10,7 @@ export const Route = createFileRoute("/food-guide")({
       description: "What to eat in Uganda — matoke, Rolex street food, Luwombo, Lake Victoria tilapia, and how Uganda's food reflects its cultural mix.",
       path: "/food-guide",
     }),
-  })),
+  }),
   component: () => (
     <GuidePage
       eyebrow="Eating Your Way Through Uganda"

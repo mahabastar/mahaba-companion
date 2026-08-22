@@ -19,7 +19,7 @@ export const Route = createFileRoute("/build-my-safari")({
       description: "Answer a few questions and get personalised Uganda safari suggestions — destinations, trip length and travel style, tailored to you.",
       path: "/build-my-safari",
     }),
-  })),
+  }),
   component: BuildMySafari,
 });
 

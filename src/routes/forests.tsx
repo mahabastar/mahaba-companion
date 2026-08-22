@@ -11,7 +11,7 @@ export const Route = createFileRoute("/forests")({
       description: "Bwindi, Kibale, Mabira and Budongo — Uganda's key forests for gorilla and chimpanzee trekking, canopy tours, and birding.",
       path: "/forests",
     }),
-  })),
+  }),
   component: () => (
     <CategoryHub
       eyebrow="Ancient Canopy"

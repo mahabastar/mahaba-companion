@@ -11,7 +11,7 @@ export const Route = createFileRoute("/lakes")({
       description: "Lake Bunyonyi, Lake Victoria, Lake Albert and the Kazinga Channel — Uganda's most striking lakes and waterways, in one place.",
       path: "/lakes",
     }),
-  })),
+  }),
   component: () => (
     <CategoryHub
       eyebrow="Uganda's Waterways"

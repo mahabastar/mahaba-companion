@@ -10,7 +10,7 @@ export const Route = createFileRoute("/coffee-tea-guide")({
       description: "Uganda is where Robusta coffee originates — farm visits on Mount Elgon and around Fort Portal, plus the tea estates of the western highlands.",
       path: "/coffee-tea-guide",
     }),
-  })),
+  }),
   component: () => (
     <GuidePage
       eyebrow="Coffee & Tea Country"

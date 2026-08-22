@@ -10,7 +10,7 @@ export const Route = createFileRoute("/cultural-heritage")({
       description: "Uganda's four traditional kingdoms, the Batwa forest people, Karamojong pastoralists, village life, music, craft and food — and how to visit communities respectfully.",
       path: "/cultural-heritage",
     }),
-  })),
+  }),
   component: () => (
     <GuidePage
       eyebrow="Beyond the Wildlife"

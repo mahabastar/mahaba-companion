@@ -13,7 +13,7 @@ export const Route = createFileRoute("/safari-budget-calculator")({
       description: "Estimate your Uganda safari budget based on trip duration, accommodation, activities and travel preferences, then request a customized itinerary from Trek Wild Uganda.",
       path: "/safari-budget-calculator",
     }),
-  })),
+  }),
   component: SafariBudgetCalculator,
 });
 

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/seasonal-safari-calendar")({
       description: "What's best each month in Uganda — weather, wildlife highlights, and which destinations to prioritise, from dry-season gorilla trekking to green-season birding.",
       path: "/seasonal-safari-calendar",
     }),
-  })),
+  }),
   component: SeasonalSafariCalendar,
 });
 

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/untold-secrets")({
       description: "Kidepo Valley, Semuliki, Mount Elgon, the crater lakes and more — the Uganda destinations most itineraries skip entirely, and how to reach them.",
       path: "/untold-secrets",
     }),
-  })),
+  }),
   component: () => (
     <CategoryHub
       eyebrow="Untold Secrets"

@@ -10,7 +10,7 @@ export const Route = createFileRoute("/weather")({
       description: "Uganda's climate explained by region — from the Rwenzori's glaciers to Kidepo's dry savanna heat — and how to dress for the swings between them.",
       path: "/weather",
     }),
-  })),
+  }),
   component: () => (
     <GuidePage
       eyebrow="Climate & Conditions"

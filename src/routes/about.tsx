@@ -17,7 +17,7 @@ export const Route = createFileRoute("/about")({
       description: "Meet the Ugandan guides behind Trek Wild Uganda: 24 years of combined field experience, private vehicles on every itinerary, and a working commitment to conservation and the communities beside the parks.",
       path: "/about",
     }),
-  })),
+  }),
   component: About,
 });
 

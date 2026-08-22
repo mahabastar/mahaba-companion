@@ -38,7 +38,7 @@ export const Route = createFileRoute("/national-parks")({
         }),
       },
     ],
-  })),
+  }),
   component: NationalParksHub,
 });
 

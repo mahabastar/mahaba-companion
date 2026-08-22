@@ -13,7 +13,7 @@ export const Route = createFileRoute("/quote-request")({
       description: "Get a fast, no-obligation quote for your Uganda safari — trip length, travel style and must-sees in one short form.",
       path: "/quote-request",
     }),
-  })),
+  }),
   component: QuoteRequest,
 });
 

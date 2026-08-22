@@ -13,7 +13,7 @@ export const Route = createFileRoute("/contact")({
       description: "Speak directly with the Ugandan guides who will plan and lead your safari. WhatsApp, phone or email — a founder replies personally, usually within a day.",
       path: "/contact",
     }),
-  })),
+  }),
   component: Contact,
 });
 

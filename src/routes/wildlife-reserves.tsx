@@ -11,7 +11,7 @@ export const Route = createFileRoute("/wildlife-reserves")({
       description: "Beyond the national parks — Ziwa Rhino Sanctuary, Pian Upe, Toro-Semliki and Kabwoya, Uganda's key wildlife reserves in one place.",
       path: "/wildlife-reserves",
     }),
-  })),
+  }),
   component: () => (
     <CategoryHub
       eyebrow="Beyond the National Parks"

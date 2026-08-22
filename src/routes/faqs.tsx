@@ -10,7 +10,7 @@ export const Route = createFileRoute("/faqs")({
       description: "Answers to the questions travellers ask most before a Uganda safari — visas, safety, money, gorilla trekking, best time to visit, and more.",
       path: "/faqs",
     }),
-  })),
+  }),
   component: () => (
     <GuidePage
       eyebrow="Before You Go"

@@ -10,7 +10,7 @@ export const Route = createFileRoute("/bird-guide")({
       description: "Uganda's top birding sites and signature species, from the shoebill stork to Albertine Rift endemics — Africa's single best birding destination.",
       path: "/bird-guide",
     }),
-  })),
+  }),
   component: () => (
     <GuidePage
       eyebrow="For the Bird List"

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/experiences/")({
       description: "Uganda safaris built around how you actually want to travel — family, honeymoon, adventure, and how to choose between gorilla and chimp trekking.",
       path: "/experiences",
     }),
-  })),
+  }),
   component: ExperiencesIndex,
 });
 

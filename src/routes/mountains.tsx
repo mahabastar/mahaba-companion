@@ -11,7 +11,7 @@ export const Route = createFileRoute("/mountains")({
       description: "From equatorial glaciers on the Rwenzori to volcano summits in the Virunga range — Uganda's key mountains and multi-day treks.",
       path: "/mountains",
     }),
-  })),
+  }),
   component: () => (
     <CategoryHub
       eyebrow="High Ground"

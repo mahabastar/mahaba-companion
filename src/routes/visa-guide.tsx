@@ -10,7 +10,7 @@ export const Route = createFileRoute("/visa-guide")({
       description: "How to get a Uganda visa — single-entry vs the East Africa Tourist Visa, cost, processing time, and the yellow fever certificate requirement.",
       path: "/visa-guide",
     }),
-  })),
+  }),
   component: () => (
     <GuidePage
       eyebrow="Entry Requirements"

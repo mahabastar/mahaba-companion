@@ -13,7 +13,7 @@ export const Route = createFileRoute("/travel-journal/")({
       description: "Destination stories, culture, conservation and travel advice from across Uganda — the Pearl of Africa in longer form.",
       path: "/travel-journal",
     }),
-  })),
+  }),
   component: TravelJournal,
 });
 

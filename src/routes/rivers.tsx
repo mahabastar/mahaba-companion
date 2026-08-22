@@ -11,7 +11,7 @@ export const Route = createFileRoute("/rivers")({
       description: "The Nile at its source and at Murchison Falls, the Kazinga Channel, and the Semliki River — Uganda's defining waterways.",
       path: "/rivers",
     }),
-  })),
+  }),
   component: () => (
     <CategoryHub
       eyebrow="The Nile & Beyond"

@@ -19,7 +19,7 @@ export const Route = createFileRoute("/wildlife-encyclopedia")({
       description: "A searchable guide to Uganda's mammals, primates, birds and reptiles — what to look for, where to see it, and when.",
       path: "/wildlife-encyclopedia",
     }),
-  })),
+  }),
   component: WildlifeEncyclopedia,
 });
 

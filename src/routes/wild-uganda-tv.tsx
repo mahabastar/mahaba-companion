@@ -21,7 +21,7 @@ export const Route = createFileRoute("/wild-uganda-tv")({
       description: "Destination films, wildlife clips, culture and traveller stories from across Uganda — Trek Wild Uganda' video hub.",
       path: "/wild-uganda-tv",
     }),
-  })),
+  }),
   component: WildUgandaTV,
 });
 

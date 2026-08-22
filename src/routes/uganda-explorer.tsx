@@ -22,7 +22,7 @@ export const Route = createFileRoute("/uganda-explorer")({
       description: "An interactive map of Uganda's national parks and destinations — gorilla trekking, tree-climbing lions, waterfalls and crater lakes, all in one place.",
       path: "/uganda-explorer",
     }),
-  })),
+  }),
   component: UgandaExplorer,
 });
 

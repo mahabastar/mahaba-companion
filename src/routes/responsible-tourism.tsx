@@ -16,7 +16,7 @@ export const Route = createFileRoute("/responsible-tourism")({
       description: "How Uganda's revenue-sharing model turned gorilla tourism into conservation that works — and exactly how Trek Wild Uganda supports rangers, schools and the communities bordering the parks.",
       path: "/responsible-tourism",
     }),
-  })),
+  }),
   component: ResponsibleTourism,
 });
 
