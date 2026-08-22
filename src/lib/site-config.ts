@@ -22,6 +22,14 @@ export const SITE_CONFIG = {
   url: "https://www.trekwilduganda.com",
 
   /**
+   * Default social sharing image used whenever a page has no
+   * meaningful hero of its own. Absolute URL — required by crawlers.
+   */
+  socialImage:
+    "https://storage.googleapis.com/gpt-engineer-file-uploads/GFmBvthTZXOQLte29ny3bTtPx8W2/social-images/social-1786073343154-social-image.webp",
+
+
+  /**
    * Primary business email.
    */
   email: "trekwilduganda@gmail.com",
