@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import expCoffee from "@/assets/exp-coffee.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/coffee-tea-guide")({
   head: () => ({
-    meta: [
-      { title: "Uganda Coffee & Tea Guide — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Uganda is where Robusta coffee originates — farm visits on Mount Elgon and around Fort Portal, plus the tea estates of the western highlands.",
-      },
-      { property: "og:title", content: "Uganda Coffee & Tea Guide — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/coffee-tea-guide` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/coffee-tea-guide` }],
+    ...buildPageMeta({
+      title: "Uganda Coffee & Tea Guide — Trek Wild Uganda",
+      description: "Uganda is where Robusta coffee originates — farm visits on Mount Elgon and around Fort Portal, plus the tea estates of the western highlands.",
+      path: "/coffee-tea-guide",
+    }),
   }),
   component: () => (
     <GuidePage

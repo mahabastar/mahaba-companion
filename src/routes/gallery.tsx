@@ -10,29 +10,16 @@ import {
   GALLERY_SECTION_CTAS,
   type GalleryCategory,
 } from "@/lib/gallery";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 import { trackEvent } from "@/lib/analytics";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
-    meta: [
-      { title: "Photo Gallery — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Photographs from across Uganda — gorillas, chimpanzees, big game, mountains, lakes, lodges and culture. Every image shot in the field by our own guides.",
-      },
-      { property: "og:title", content: "Photo Gallery — Trek Wild Uganda" },
-      {
-        property: "og:description",
-        content:
-          "Gorillas, chimpanzees, big game, mountains, lakes, lodges and culture — Uganda as our guides see it.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/gallery` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/gallery` }],
+    ...buildPageMeta({
+      title: "Photo Gallery — Trek Wild Uganda",
+      description: "Photographs from across Uganda — gorillas, chimpanzees, big game, mountains, lakes, lodges and culture. Every image shot in the field by our own guides.",
+      path: "/gallery",
+    }),
   }),
   component: Gallery,
 });

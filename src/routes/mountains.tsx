@@ -2,21 +2,15 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CategoryHub } from "@/components/CategoryHub";
 import { MOUNTAINS } from "@/lib/mountains";
 import sceneRwenzori from "@/assets/scene-rwenzori.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/mountains")({
   head: () => ({
-    meta: [
-      { title: "Uganda's Mountains — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "From equatorial glaciers on the Rwenzori to volcano summits in the Virunga range — Uganda's key mountains and multi-day treks.",
-      },
-      { property: "og:title", content: "Uganda's Mountains — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/mountains` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/mountains` }],
+    ...buildPageMeta({
+      title: "Uganda's Mountains — Trek Wild Uganda",
+      description: "From equatorial glaciers on the Rwenzori to volcano summits in the Virunga range — Uganda's key mountains and multi-day treks.",
+      path: "/mountains",
+    }),
   }),
   component: () => (
     <CategoryHub

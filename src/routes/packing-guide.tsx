@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import rwenzoriHikers from "@/assets/nile-bridge-aerial.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/packing-guide")({
   head: () => ({
-    meta: [
-      { title: "Uganda Packing Guide — What to Bring | Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "What to pack for a Uganda safari — clothing, gorilla trekking gear, health essentials, and one clothing rule that surprises most first-time visitors.",
-      },
-      { property: "og:title", content: "Uganda Packing Guide — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/packing-guide` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/packing-guide` }],
+    ...buildPageMeta({
+      title: "Uganda Packing Guide — What to Bring | Trek Wild Uganda",
+      description: "What to pack for a Uganda safari — clothing, gorilla trekking gear, health essentials, and one clothing rule that surprises most first-time visitors.",
+      path: "/packing-guide",
+    }),
   }),
   component: () => (
     <GuidePage

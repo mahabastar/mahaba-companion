@@ -13,21 +13,15 @@ import expChimp from "@/assets/exp-chimp.jpg";
 import nileBridgeAerial from "@/assets/nile-bridge-aerial.jpg";
 import sceneElephants from "@/assets/scene-elephants.jpg";
 import sceneRwenzori from "@/assets/scene-rwenzori.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/uganda-explorer")({
   head: () => ({
-    meta: [
-      { title: "Uganda Explorer — Interactive Map | Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "An interactive map of Uganda's national parks and destinations — gorilla trekking, tree-climbing lions, waterfalls and crater lakes, all in one place.",
-      },
-      { property: "og:title", content: "Uganda Explorer — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/uganda-explorer` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/uganda-explorer` }],
+    ...buildPageMeta({
+      title: "Uganda Explorer — Interactive Map | Trek Wild Uganda",
+      description: "An interactive map of Uganda's national parks and destinations — gorilla trekking, tree-climbing lions, waterfalls and crater lakes, all in one place.",
+      path: "/uganda-explorer",
+    }),
   }),
   component: UgandaExplorer,
 });

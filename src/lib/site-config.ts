@@ -22,6 +22,14 @@ export const SITE_CONFIG = {
   url: "https://www.trekwilduganda.com",
 
   /**
+   * Default social sharing image used whenever a page has no
+   * meaningful hero of its own. Absolute URL — required by crawlers.
+   */
+  socialImage:
+    "https://storage.googleapis.com/gpt-engineer-file-uploads/GFmBvthTZXOQLte29ny3bTtPx8W2/social-images/social-1786073343154-social-image.webp",
+
+
+  /**
    * Primary business email.
    */
   email: "trekwilduganda@gmail.com",
@@ -151,6 +159,10 @@ export function buildPageMeta(options: {
 }) {
   const canonicalUrl = getSiteUrl(options.path);
   const ogType = options.type ?? "website";
+  const rawImage = options.image ?? SITE_CONFIG.socialImage;
+  const image = rawImage.startsWith("http")
+    ? rawImage
+    : getSiteUrl(rawImage);
 
   return {
     meta: [
@@ -163,13 +175,14 @@ export function buildPageMeta(options: {
       { property: "og:description", content: options.description },
       { property: "og:type", content: ogType },
       { property: "og:url", content: canonicalUrl },
-      ...(options.image ? [{ property: "og:image", content: options.image }] : []),
+      { property: "og:image", content: image },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: options.title },
       { name: "twitter:description", content: options.description },
-      ...(options.image ? [{ name: "twitter:image", content: options.image }] : []),
+      { name: "twitter:image", content: image },
     ],
     links: [{ rel: "canonical", href: canonicalUrl }],
   };
 }
+
 

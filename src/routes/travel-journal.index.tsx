@@ -4,21 +4,15 @@ import { useMemo, useState } from "react";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CATEGORIES, JOURNAL_POSTS, type Category } from "@/lib/journal-posts";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/travel-journal/")({
   head: () => ({
-    meta: [
-      { title: "Uganda Travel Journal — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Destination stories, culture, conservation and travel advice from across Uganda — the Pearl of Africa in longer form.",
-      },
-      { property: "og:title", content: "Uganda Travel Journal — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/travel-journal` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/travel-journal` }],
+    ...buildPageMeta({
+      title: "Uganda Travel Journal — Trek Wild Uganda",
+      description: "Destination stories, culture, conservation and travel advice from across Uganda — the Pearl of Africa in longer form.",
+      path: "/travel-journal",
+    }),
   }),
   component: TravelJournal,
 });

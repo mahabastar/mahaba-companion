@@ -7,29 +7,15 @@ import sceneCulture from "@/assets/scene-culture.jpg";
 import heroGorilla from "@/assets/hero-gorilla.jpg";
 import expLodge from "@/assets/exp-lodge.jpg";
 import expCoffee from "@/assets/exp-coffee.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/responsible-tourism")({
   head: () => ({
-    meta: [
-      { title: "Responsible Tourism in Uganda — Conservation & Community" },
-      {
-        name: "description",
-        content:
-          "How Uganda's revenue-sharing model turned gorilla tourism into conservation that works — and exactly how Trek Wild Uganda supports rangers, schools and the communities bordering the parks.",
-      },
-      { property: "og:title", content: "Responsible Tourism in Uganda — Conservation & Community" },
-      {
-        property: "og:description",
-        content:
-          "Permit fees, revenue-sharing, local employment and community-owned cultural visits — the practical detail behind responsible travel in Uganda.",
-      },
-      { property: "og:type", content: "article" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/responsible-tourism` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/responsible-tourism` }],
-
+    ...buildPageMeta({
+      title: "Responsible Tourism in Uganda — Conservation & Community",
+      description: "How Uganda's revenue-sharing model turned gorilla tourism into conservation that works — and exactly how Trek Wild Uganda supports rangers, schools and the communities bordering the parks.",
+      path: "/responsible-tourism",
+    }),
   }),
   component: ResponsibleTourism,
 });

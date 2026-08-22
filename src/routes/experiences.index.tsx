@@ -3,21 +3,15 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { EXPERIENCES } from "@/lib/experiences";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/experiences/")({
   head: () => ({
-    meta: [
-      { title: "Uganda Safari Experiences — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Uganda safaris built around how you actually want to travel — family, honeymoon, adventure, and how to choose between gorilla and chimp trekking.",
-      },
-      { property: "og:title", content: "Uganda Safari Experiences — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/experiences` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/experiences` }],
+    ...buildPageMeta({
+      title: "Uganda Safari Experiences — Trek Wild Uganda",
+      description: "Uganda safaris built around how you actually want to travel — family, honeymoon, adventure, and how to choose between gorilla and chimp trekking.",
+      path: "/experiences",
+    }),
   }),
   component: ExperiencesIndex,
 });

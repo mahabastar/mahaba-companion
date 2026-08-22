@@ -22,12 +22,12 @@ const COUNTRY = "Uganda";
 export function buildDestinationHead(o: BuildDestinationHeadOptions) {
   const path = `/destinations/${o.slug}`;
   const absoluteUrl = `${SITE_CONFIG.url}${path}`;
-  const absoluteOgImage = o.ogImage
-    ? o.ogImage.startsWith("http")
-      ? o.ogImage
-      : `${SITE_CONFIG.url}${o.ogImage}`
-    : undefined;
+  const rawOgImage = o.ogImage ?? SITE_CONFIG.socialImage;
+  const absoluteOgImage = rawOgImage.startsWith("http")
+    ? rawOgImage
+    : `${SITE_CONFIG.url}${rawOgImage}`;
   const ogType = "article";
+  void 0;
 
   const meta: Array<Record<string, string>> = [
     { title: o.title },
@@ -42,12 +42,12 @@ export function buildDestinationHead(o: BuildDestinationHeadOptions) {
     { property: "og:description", content: o.description },
     { property: "og:type", content: ogType },
     { property: "og:url", content: absoluteUrl },
-    ...(absoluteOgImage ? [{ property: "og:image", content: absoluteOgImage }] : []),
+    { property: "og:image", content: absoluteOgImage },
 
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:title", content: o.title },
     { name: "twitter:description", content: o.description },
-    ...(absoluteOgImage ? [{ name: "twitter:image", content: absoluteOgImage }] : []),
+    { name: "twitter:image", content: absoluteOgImage },
   ];
 
   const touristAttraction = {
@@ -55,7 +55,7 @@ export function buildDestinationHead(o: BuildDestinationHeadOptions) {
     "@type": "TouristAttraction",
     name: o.name,
     description: o.description,
-    ...(absoluteOgImage ? { image: absoluteOgImage } : {}),
+    image: absoluteOgImage,
     url: absoluteUrl,
     address: {
       "@type": "PostalAddress",

@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import gorillaSilverback from "@/assets/gorilla-silverback-insects.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/gorilla-permit-guide")({
   head: () => ({
-    meta: [
-      { title: "Uganda Gorilla Permit Guide — Cost & Booking | Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Everything the USD 800 Uganda gorilla permit includes, how booking works, the Habituation Experience alternative, and how it compares to Rwanda.",
-      },
-      { property: "og:title", content: "Uganda Gorilla Permit Guide — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/gorilla-permit-guide` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/gorilla-permit-guide` }],
+    ...buildPageMeta({
+      title: "Uganda Gorilla Permit Guide — Cost & Booking | Trek Wild Uganda",
+      description: "Everything the USD 800 Uganda gorilla permit includes, how booking works, the Habituation Experience alternative, and how it compares to Rwanda.",
+      path: "/gorilla-permit-guide",
+    }),
   }),
   component: () => (
     <GuidePage

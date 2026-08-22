@@ -1,21 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import sceneCulture from "@/assets/scene-culture.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/faqs")({
   head: () => ({
-    meta: [
-      { title: "Uganda Safari FAQs — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Answers to the questions travellers ask most before a Uganda safari — visas, safety, money, gorilla trekking, best time to visit, and more.",
-      },
-      { property: "og:title", content: "Uganda Safari FAQs — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/faqs` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/faqs` }],
+    ...buildPageMeta({
+      title: "Uganda Safari FAQs — Trek Wild Uganda",
+      description: "Answers to the questions travellers ask most before a Uganda safari — visas, safety, money, gorilla trekking, best time to visit, and more.",
+      path: "/faqs",
+    }),
   }),
   component: () => (
     <GuidePage

@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { NATIONAL_PARKS, PARK_REGIONS, type NationalPark } from "@/lib/national-parks";
-import { SITE_CONFIG, buildWhatsAppHref } from "@/lib/site-config";
+import { SITE_CONFIG, buildWhatsAppHref, buildPageMeta } from "@/lib/site-config";
 
 import heroGorilla from "@/assets/hero-gorilla.jpg";
 
@@ -17,17 +17,11 @@ const REGION_NOTE: Record<string, string> = {
 
 export const Route = createFileRoute("/national-parks")({
   head: () => ({
-    meta: [
-      { title: "Uganda's 10 National Parks — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "All ten of Uganda's national parks in one place, grouped by region — gorillas in Bwindi, tree-climbing lions in Queen Elizabeth, the Nile at Murchison Falls, and more.",
-      },
-      { property: "og:title", content: "Uganda's 10 National Parks — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/national-parks` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/national-parks` }],
+    ...buildPageMeta({
+      title: "Uganda's 10 National Parks — Trek Wild Uganda",
+      description: "All ten of Uganda's national parks in one place, grouped by region — gorillas in Bwindi, tree-climbing lions in Queen Elizabeth, the Nile at Murchison Falls, and more.",
+      path: "/national-parks",
+    }),
     scripts: [
       {
         type: "application/ld+json",
