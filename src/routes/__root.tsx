@@ -194,9 +194,6 @@ const DEFAULT_TITLE =
 const DEFAULT_DESCRIPTION =
   "Private, locally guided Uganda safaris — mountain gorillas in Bwindi, chimpanzees in Kibale, tree-climbing lions, the source of the Nile and the Rwenzori peaks. Planned in Uganda by Ugandan guides.";
 
-const DEFAULT_SOCIAL_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/GFmBvthTZXOQLte29ny3bTtPx8W2/social-images/social-1786073343154-social-image.webp";
-
 export const Route =
   createRootRouteWithContext<{ queryClient: QueryClient }>()({
     head: () => ({
@@ -257,14 +254,6 @@ export const Route =
           property: "og:type",
           content: "website",
         },
-        {
-          property: "og:url",
-          content: SITE_CONFIG.url,
-        },
-        {
-          property: "og:image",
-          content: DEFAULT_SOCIAL_IMAGE,
-        },
 
         {
           name: "twitter:card",
@@ -277,14 +266,6 @@ export const Route =
         {
           name: "twitter:description",
           content: DEFAULT_DESCRIPTION,
-        },
-        {
-          name: "twitter:url",
-          content: SITE_CONFIG.url,
-        },
-        {
-          name: "twitter:image",
-          content: DEFAULT_SOCIAL_IMAGE,
         },
       ],
 
