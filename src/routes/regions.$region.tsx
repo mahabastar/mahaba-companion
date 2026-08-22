@@ -144,18 +144,13 @@ export const Route = createFileRoute("/regions/$region")({
     }
     const title = `${region.name} — Safari Destinations & Highlights | Trek Wild Uganda`;
     const description = `${region.tagline} ${region.intro}`.slice(0, 155);
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: `${region.name} — Trek Wild Uganda` },
-        { property: "og:description", content: description },
-        { property: "og:type", content: "website" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { property: "og:url", content: `${SITE_CONFIG.url}/regions/${params.region}` },
-      ],
-      links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/regions/${params.region}` }],
-    };
+    return buildPageMeta({
+      title,
+      description,
+      path: `/regions/${params.region}`,
+      image: region.hero,
+    });
+
   },
   notFoundComponent: RegionNotFound,
   component: RegionPage,
