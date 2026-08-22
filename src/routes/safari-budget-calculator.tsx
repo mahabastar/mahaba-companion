@@ -3,39 +3,17 @@ import { useMemo, useState } from "react";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import { buildWhatsAppHref, SITE_CONFIG } from "@/lib/site-config";
+import { buildWhatsAppHref, buildPageMeta } from "@/lib/site-config";
 import { trackEvent } from "@/lib/analytics";
 
 export const Route = createFileRoute("/safari-budget-calculator")({
   head: () => ({
-    meta: [
-      { title: "Safari Budget Calculator — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Estimate your Uganda safari budget based on trip duration, accommodation, activities and travel preferences, then request a customized itinerary from Trek Wild Uganda.",
-      },
-      {
-        property: "og:title",
-        content: "Safari Budget Calculator — Trek Wild Uganda",
-      },
-      {
-        property: "og:description",
-        content:
-          "Estimate your Uganda safari budget based on trip duration, accommodation, activities and travel preferences, then request a customized itinerary from Trek Wild Uganda.",
-      },
-      {
-        property: "og:url",
-        content: `${SITE_CONFIG.url}/safari-budget-calculator`,
-      },
-    ],
-    links: [
-      {
-        rel: "canonical",
-        href: `${SITE_CONFIG.url}/safari-budget-calculator`,
-      },
-    ],
-  }),
+    ...buildPageMeta({
+      title: "Safari Budget Calculator — Trek Wild Uganda",
+      description: "Estimate your Uganda safari budget based on trip duration, accommodation, activities and travel preferences, then request a customized itinerary from Trek Wild Uganda.",
+      path: "/safari-budget-calculator",
+    }),
+  })),
   component: SafariBudgetCalculator,
 });
 

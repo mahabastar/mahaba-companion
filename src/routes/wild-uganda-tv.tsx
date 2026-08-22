@@ -12,22 +12,16 @@ import sceneCulture from "@/assets/scene-culture.jpg";
 import expSipi from "@/assets/exp-sipi.jpg";
 import expLodge from "@/assets/exp-lodge.jpg";
 import gorillaBacklit from "@/assets/gorilla-lookup.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/wild-uganda-tv")({
   head: () => ({
-    meta: [
-      { title: "Wild Uganda TV — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Destination films, wildlife clips, culture and traveller stories from across Uganda — Trek Wild Uganda' video hub.",
-      },
-      { property: "og:title", content: "Wild Uganda TV — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/wild-uganda-tv` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/wild-uganda-tv` }],
-  }),
+    ...buildPageMeta({
+      title: "Wild Uganda TV — Trek Wild Uganda",
+      description: "Destination films, wildlife clips, culture and traveller stories from across Uganda — Trek Wild Uganda' video hub.",
+      path: "/wild-uganda-tv",
+    }),
+  })),
   component: WildUgandaTV,
 });
 

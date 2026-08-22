@@ -1,22 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import expShoebill from "@/assets/exp-shoebill.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/bird-guide")({
   head: () => ({
-    meta: [
-      { title: "Uganda Bird Guide — 1,000+ Species | Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Uganda's top birding sites and signature species, from the shoebill stork to Albertine Rift endemics — Africa's single best birding destination.",
-      },
-      { property: "og:title", content: "Uganda Bird Guide — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/bird-guide` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/bird-guide` }],
-  }),
+    ...buildPageMeta({
+      title: "Uganda Bird Guide — 1,000+ Species | Trek Wild Uganda",
+      description: "Uganda's top birding sites and signature species, from the shoebill stork to Albertine Rift endemics — Africa's single best birding destination.",
+      path: "/bird-guide",
+    }),
+  })),
   component: () => (
     <GuidePage
       eyebrow="For the Bird List"

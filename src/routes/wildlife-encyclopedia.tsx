@@ -10,22 +10,16 @@ import sceneElephants from "@/assets/scene-elephants.jpg";
 import sceneLion from "@/assets/scene-lion.jpg";
 import sceneCrane from "@/assets/scene-crane.jpg";
 import expShoebill from "@/assets/exp-shoebill.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/wildlife-encyclopedia")({
   head: () => ({
-    meta: [
-      { title: "Wildlife Encyclopedia — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "A searchable guide to Uganda's mammals, primates, birds and reptiles — what to look for, where to see it, and when.",
-      },
-      { property: "og:title", content: "Wildlife Encyclopedia — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/wildlife-encyclopedia` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/wildlife-encyclopedia` }],
-  }),
+    ...buildPageMeta({
+      title: "Wildlife Encyclopedia — Trek Wild Uganda",
+      description: "A searchable guide to Uganda's mammals, primates, birds and reptiles — what to look for, where to see it, and when.",
+      path: "/wildlife-encyclopedia",
+    }),
+  })),
   component: WildlifeEncyclopedia,
 });
 

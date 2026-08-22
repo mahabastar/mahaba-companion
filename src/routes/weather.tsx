@@ -1,22 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import expBalloon from "@/assets/exp-balloon.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/weather")({
   head: () => ({
-    meta: [
-      { title: "Uganda Weather Guide — Climate by Region | Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Uganda's climate explained by region — from the Rwenzori's glaciers to Kidepo's dry savanna heat — and how to dress for the swings between them.",
-      },
-      { property: "og:title", content: "Uganda Weather Guide — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/weather` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/weather` }],
-  }),
+    ...buildPageMeta({
+      title: "Uganda Weather Guide — Climate by Region | Trek Wild Uganda",
+      description: "Uganda's climate explained by region — from the Rwenzori's glaciers to Kidepo's dry savanna heat — and how to dress for the swings between them.",
+      path: "/weather",
+    }),
+  })),
   component: () => (
     <GuidePage
       eyebrow="Climate & Conditions"

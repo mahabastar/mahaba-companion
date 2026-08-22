@@ -2,22 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CategoryHub } from "@/components/CategoryHub";
 import { LAKES } from "@/lib/lakes";
 import sceneBunyonyi from "@/assets/scene-bunyonyi.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/lakes")({
   head: () => ({
-    meta: [
-      { title: "Uganda's Great Lakes — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Lake Bunyonyi, Lake Victoria, Lake Albert and the Kazinga Channel — Uganda's most striking lakes and waterways, in one place.",
-      },
-      { property: "og:title", content: "Uganda's Great Lakes — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/lakes` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/lakes` }],
-  }),
+    ...buildPageMeta({
+      title: "Uganda's Great Lakes — Trek Wild Uganda",
+      description: "Lake Bunyonyi, Lake Victoria, Lake Albert and the Kazinga Channel — Uganda's most striking lakes and waterways, in one place.",
+      path: "/lakes",
+    }),
+  })),
   component: () => (
     <CategoryHub
       eyebrow="Uganda's Waterways"

@@ -3,29 +3,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CategoryHub } from "@/components/CategoryHub";
 import sceneRwenzori from "@/assets/scene-rwenzori.jpg";
 import { UNTOLD_SECRETS } from "@/lib/untold-secrets";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/untold-secrets")({
   head: () => ({
-    meta: [
-      { title: "Uganda's Untold Secrets — Off-the-Beaten-Path Places" },
-      {
-        name: "description",
-        content:
-          "Kidepo Valley, Semuliki, Mount Elgon, the crater lakes and more — the Uganda destinations most itineraries skip entirely, and how to reach them.",
-      },
-      { property: "og:title", content: "Uganda's Untold Secrets — Off-the-Beaten-Path Places" },
-      {
-        property: "og:description",
-        content:
-          "The remote parks, volcanic lakes and quiet forests that most Uganda itineraries leave out.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/untold-secrets` },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/untold-secrets` }],
-  }),
+    ...buildPageMeta({
+      title: "Uganda's Untold Secrets — Off-the-Beaten-Path Places",
+      description: "Kidepo Valley, Semuliki, Mount Elgon, the crater lakes and more — the Uganda destinations most itineraries skip entirely, and how to reach them.",
+      path: "/untold-secrets",
+    }),
+  })),
   component: () => (
     <CategoryHub
       eyebrow="Untold Secrets"

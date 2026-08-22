@@ -1,30 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { GuidePage } from "@/components/GuidePage";
 import batwaDance from "@/assets/batwa-dance.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/cultural-heritage")({
   head: () => ({
-    meta: [
-      { title: "Uganda Cultural Heritage — Kingdoms, Batwa & Karamojong" },
-      {
-        name: "description",
-        content:
-          "Uganda's four traditional kingdoms, the Batwa forest people, Karamojong pastoralists, village life, music, craft and food — and how to visit communities respectfully.",
-      },
-      { property: "og:title", content: "Uganda Cultural Heritage — Kingdoms, Batwa & Karamojong" },
-      {
-        property: "og:description",
-        content:
-          "Fifty ethnic groups, four kingdoms and communities from forest hunter-gatherers to cattle herders — how to meet Uganda's people on their own terms.",
-      },
-      { property: "og:type", content: "article" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/cultural-heritage` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/cultural-heritage` }],
-
-  }),
+    ...buildPageMeta({
+      title: "Uganda Cultural Heritage — Kingdoms, Batwa & Karamojong",
+      description: "Uganda's four traditional kingdoms, the Batwa forest people, Karamojong pastoralists, village life, music, craft and food — and how to visit communities respectfully.",
+      path: "/cultural-heritage",
+    }),
+  })),
   component: () => (
     <GuidePage
       eyebrow="Beyond the Wildlife"

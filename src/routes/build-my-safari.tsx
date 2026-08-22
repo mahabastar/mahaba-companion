@@ -3,7 +3,7 @@ import { useMemo, useState, type ReactNode } from "react";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import {buildWhatsAppHref, buildEmailHref, SITE_CONFIG } from "@/lib/site-config";
+import { buildWhatsAppHref, buildEmailHref, buildPageMeta } from "@/lib/site-config";
 import { trackEvent } from "@/lib/analytics";
 
 import heroGorilla from "@/assets/hero-gorilla.jpg";
@@ -14,18 +14,12 @@ import sceneBunyonyi from "@/assets/scene-bunyonyi.jpg";
 
 export const Route = createFileRoute("/build-my-safari")({
   head: () => ({
-    meta: [
-      { title: "Build My Safari — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Answer a few questions and get personalised Uganda safari suggestions — destinations, trip length and travel style, tailored to you.",
-      },
-      { property: "og:title", content: "Build My Safari — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/build-my-safari` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/build-my-safari` }],
-  }),
+    ...buildPageMeta({
+      title: "Build My Safari — Trek Wild Uganda",
+      description: "Answer a few questions and get personalised Uganda safari suggestions — destinations, trip length and travel style, tailored to you.",
+      path: "/build-my-safari",
+    }),
+  })),
   component: BuildMySafari,
 });
 

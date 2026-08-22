@@ -2,22 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CategoryHub } from "@/components/CategoryHub";
 import { WILDLIFE_RESERVES } from "@/lib/wildlife-reserves";
 import elephantSavanna from "@/assets/elephant-savanna.jpg";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/wildlife-reserves")({
   head: () => ({
-    meta: [
-      { title: "Uganda's Wildlife Reserves — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Beyond the national parks — Ziwa Rhino Sanctuary, Pian Upe, Toro-Semliki and Kabwoya, Uganda's key wildlife reserves in one place.",
-      },
-      { property: "og:title", content: "Uganda's Wildlife Reserves — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/wildlife-reserves` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/wildlife-reserves` }],
-  }),
+    ...buildPageMeta({
+      title: "Uganda's Wildlife Reserves — Trek Wild Uganda",
+      description: "Beyond the national parks — Ziwa Rhino Sanctuary, Pian Upe, Toro-Semliki and Kabwoya, Uganda's key wildlife reserves in one place.",
+      path: "/wildlife-reserves",
+    }),
+  })),
   component: () => (
     <CategoryHub
       eyebrow="Beyond the National Parks"

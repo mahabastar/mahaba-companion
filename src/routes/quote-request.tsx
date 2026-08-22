@@ -3,23 +3,17 @@ import { useState } from "react";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import {buildWhatsAppHref, buildEmailHref, SITE_CONFIG } from "@/lib/site-config";
+import { buildWhatsAppHref, buildEmailHref, buildPageMeta } from "@/lib/site-config";
 import { trackEvent } from "@/lib/analytics";
 
 export const Route = createFileRoute("/quote-request")({
   head: () => ({
-    meta: [
-      { title: "Request a Quote — Trek Wild Uganda" },
-      {
-        name: "description",
-        content:
-          "Get a fast, no-obligation quote for your Uganda safari — trip length, travel style and must-sees in one short form.",
-      },
-      { property: "og:title", content: "Request a Quote — Trek Wild Uganda" },
-      { property: "og:url", content: `${SITE_CONFIG.url}/quote-request` },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_CONFIG.url}/quote-request` }],
-  }),
+    ...buildPageMeta({
+      title: "Request a Quote — Trek Wild Uganda",
+      description: "Get a fast, no-obligation quote for your Uganda safari — trip length, travel style and must-sees in one short form.",
+      path: "/quote-request",
+    }),
+  })),
   component: QuoteRequest,
 });
 
