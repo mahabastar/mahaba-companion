@@ -186,3 +186,9 @@ export function buildPageMeta(options: {
 }
 
 
+
+/**
+ * Locally served brand logo. Kept in /public so it can never 404
+ * the way an externally hosted asset can.
+ */
+export const LOGO_URL = "/logo.png";

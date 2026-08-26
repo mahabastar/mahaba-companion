@@ -5,7 +5,7 @@ import {
   buildWhatsAppHref,
   getSiteUrl,
 } from "@/lib/site-config";
-import logoAsset from "@/assets/trek-wild-uganda-logo.png.asset.json";
+import { LOGO_URL } from "@/lib/site-config";
 
 type FooterItem = {
   label: string;
@@ -270,7 +270,7 @@ export function SiteFooter() {
           <div className="md:col-span-4">
             <div className="flex items-center gap-3">
               <img
-                src={logoAsset.url}
+                src={LOGO_URL}
                 alt="Trek Wild Uganda logo"
                 className="h-12 w-12 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50"
               />

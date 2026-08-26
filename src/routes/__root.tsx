@@ -14,8 +14,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { trackPageview, GA_MEASUREMENT_ID } from "@/lib/analytics";
-import logoAsset from "@/assets/trek-wild-uganda-logo.png.asset.json";
-import { SITE_CONFIG } from "@/lib/site-config";
+import { SITE_CONFIG, LOGO_URL } from "@/lib/site-config";
 
 function NotFoundComponent() {
   return (
@@ -26,7 +25,7 @@ function NotFoundComponent() {
           className="mx-auto flex w-fit items-center gap-3 text-ivory"
         >
           <img
-            src={logoAsset.url}
+            src={LOGO_URL}
             alt="Trek Wild Uganda logo"
             className="h-12 w-12 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50"
           />
@@ -89,7 +88,7 @@ function ErrorComponent({
       <div className="max-w-lg">
         <div className="mx-auto flex w-fit items-center gap-3 text-ivory">
           <img
-            src={logoAsset.url}
+            src={LOGO_URL}
             alt="Trek Wild Uganda logo"
             className="h-12 w-12 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50"
           />
