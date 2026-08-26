@@ -7,11 +7,11 @@ import expLodge from "@/assets/exp-lodge.jpg";
 import expShoebill from "@/assets/exp-shoebill.jpg";
 import elephantSavanna from "@/assets/elephant-savanna.jpg";
 import sceneCulture from "@/assets/scene-culture.jpg";
-import familySafariAsset from "@/assets/experiences/familysafari.jpg.asset.json";
-import honeymoonSafariAsset from "@/assets/experiences/honeymoonsafari.jpg.asset.json";
-import flyInSafariAsset from "@/assets/experiences/flyinsafaro.jpg.asset.json";
-import walkingSafariAsset from "@/assets/experiences/walkingsafari.jpg.asset.json";
-import selfDriveAsset from "@/assets/experiences/selfdrivesafari.jpg.asset.json";
+import familySafariImg from "@/assets/gallery/family-safari.jpg";
+import honeymoonSafariImg from "@/assets/gallery/honeymoon-safari.jpg";
+import flyInSafariImg from "@/assets/gallery/fly-in-safari.jpg";
+import walkingSafariImg from "@/assets/gallery/walking-safari.jpg";
+import selfDriveImg from "@/assets/gallery/self-drive-safari.jpg";
 
 export type Experience = {
   slug: string;
@@ -91,7 +91,7 @@ export const EXPERIENCES: Experience[] = [
     title: "Family Safaris",
     tagline: "Uganda works for families — just not in exactly the way you'd plan a gorilla-only trip.",
     excerpt: "Age limits, kid-friendly activities, and how to build a Uganda safari that works for the whole family.",
-    heroImg: familySafariAsset.url,
+    heroImg: familySafariImg,
     intro:
       "The honest starting point: mountain gorilla trekking has a strict minimum age of 15, with no exceptions in Rwanda and only a rare case-by-case exception in Uganda for a mature 14-year-old. That rules gorillas out for most families with younger children — but it doesn't rule out Uganda. There's a genuinely excellent family safari here once you build around that constraint instead of against it.",
     sections: [
@@ -134,7 +134,7 @@ export const EXPERIENCES: Experience[] = [
     title: "Honeymoon Safaris",
     tagline: "A shared wilderness, at a pace set entirely by the two of you.",
     excerpt: "Private guides, romantic lodges, and a gorilla encounter you'll both remember for the rest of your lives — Uganda for honeymooners.",
-    heroImg: honeymoonSafariAsset.url,
+    heroImg: honeymoonSafariImg,
     intro:
       "A honeymoon safari isn't a scaled-down version of a normal trip — it runs on its own logic. Private vehicles instead of shared group transport. Lodges chosen for their privacy as much as their views. And, for many couples, a single shared moment — standing together a few metres from a wild mountain gorilla family — that becomes the story you tell for the next fifty years.",
     sections: [
@@ -388,7 +388,7 @@ export const EXPERIENCES: Experience[] = [
     title: "Fly-in Safaris",
     tagline: "Uganda's parks, connected by scheduled light aircraft instead of long road transfers.",
     excerpt: "Cut multi-hour drives to under an hour, and see Uganda's landscapes from the air along the way.",
-    heroImg: flyInSafariAsset.url,
+    heroImg: flyInSafariImg,
     intro:
       "Road transfers between Uganda's parks can run anywhere from five to eleven hours. A network of scheduled light-aircraft routes connects Entebbe to airstrips near almost every major park, cutting that to under an hour — with the Rift Valley, the Nile and the Rwenzori's peaks as the view along the way.",
     sections: [
@@ -429,7 +429,7 @@ export const EXPERIENCES: Experience[] = [
     title: "Walking Safaris",
     tagline: "Uganda, at the pace your own feet set.",
     excerpt: "From Lake Mburo's free-roaming plains game to guided forest treks and multi-day mountain hikes.",
-    heroImg: walkingSafariAsset.url,
+    heroImg: walkingSafariImg,
     intro:
       "Most of Uganda's parks restrict walking because of elephant and lion populations — but where it's allowed, it's an entirely different way to experience the country, from an easy morning walk among zebra to a multi-day trek across a volcanic caldera.",
     sections: [
@@ -470,7 +470,7 @@ export const EXPERIENCES: Experience[] = [
     title: "Self-Drive Tours",
     tagline: "Your own 4x4, your own pace, across Uganda's main circuit.",
     excerpt: "Independent travel with a rented 4x4 — practical on Uganda's main routes, with the right preparation.",
-    heroImg: selfDriveAsset.url,
+    heroImg: selfDriveImg,
     intro:
       "Uganda's main tourist circuit — Kampala, Lake Mburo, Bwindi, Queen Elizabeth, Kibale — runs on reasonably maintained roads that make self-driving genuinely practical, for travellers who want full independence and don't mind doing their own navigating and park logistics.",
     sections: [
