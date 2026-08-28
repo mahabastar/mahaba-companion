@@ -187,6 +187,12 @@ function Contact() {
                     <div className="mt-1 text-ivory">Kampala, Uganda (EAT, UTC+3)</div>
                   </div>
                 </div>
+
+                <p className="mt-2 border-t border-ivory/10 pt-4 text-xs leading-relaxed text-ivory/45">
+                  Trek Wild Uganda is a registered trading name of Bikuya
+                  Uganda Ltd. All payments, bookings, and financial
+                  transactions are securely processed by Bikuya Uganda Ltd.
+                </p>
               </div>
 
               <div className="rounded-3xl border border-charcoal/10 bg-mist p-8">
