@@ -385,9 +385,10 @@ export function SiteFooter() {
 
         <div className="mt-16 border-t border-ivory/10 pt-6">
           <p className="text-xs leading-relaxed text-ivory/50">
-            Trek Wild Uganda is a registered trading name of Bikuya Uganda
-            Ltd. All payments, bookings, and financial transactions are
-            securely processed by Bikuya Uganda Ltd.
+            Trek Wild Uganda is a registered trading name of Bikuuya Africa
+            Company Limited. All payments, bookings, and financial
+            transactions are securely processed by Bikuuya Africa Company
+            Limited.
           </p>
 
           <div className="mt-4 flex flex-col items-start justify-between gap-4 text-xs text-ivory/50 md:flex-row md:items-center">
