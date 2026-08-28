@@ -122,6 +122,12 @@ function About() {
               what you want — our work is to make it run beautifully.
             </p>
 
+            <p className="mt-8 border-l-2 border-gold/40 pl-4 text-sm italic text-charcoal/60">
+              Trek Wild Uganda is a registered trading name of Bikuya Uganda
+              Ltd. All payments, bookings, and financial transactions are
+              securely processed by Bikuya Uganda Ltd.
+            </p>
+
           </div>
         </div>
       </section>
