@@ -189,10 +189,10 @@ function Contact() {
                 </div>
 
                 <p className="mt-2 border-t border-ivory/10 pt-4 text-xs leading-relaxed text-ivory/45">
-                  Trek Wild Uganda is a registered trading name of Bikuuya
-                  Africa Company Limited. All payments, bookings, and
-                  financial transactions are securely processed by Bikuuya
-                  Africa Company Limited.
+                  Trek Wild Uganda is a registered trading name of Biikuya
+                  Afric Company Limited. All payments, bookings, and
+                  financial transactions are securely processed by Biikuya
+                  Afric Company Limited.
                 </p>
               </div>
 
