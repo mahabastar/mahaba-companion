@@ -4,6 +4,7 @@ import expCoffee from "@/assets/exp-coffee.jpg";
 import expShoebill from "@/assets/exp-shoebill.jpg";
 import sceneCulture from "@/assets/scene-culture.jpg";
 import sceneRwenzori from "@/assets/scene-rwenzori.jpg";
+import pearlOfAfrica from "@/assets/gallery/pearl-of-africa.jpg";
 
 export type Category = "Destinations" | "Culture" | "Conservation" | "Travel Advice";
 
@@ -115,6 +116,30 @@ export const JOURNAL_POSTS: JournalPost[] = [
       "The model that's evolved in response is built on a fairly direct principle: if a family living beside a national park earns more from the wildlife inside it staying alive than they would from poaching it, conservation and community interest start pointing the same direction. A share of park entrance and permit revenue — including a meaningful percentage of every gorilla permit sold — is legally required to flow back into the communities bordering the parks, funding schools, clinics, and roads.",
       "That revenue-sharing sits alongside direct employment: many rangers, trackers and guides working in and around Bwindi, Murchison and Queen Elizabeth today grew up in villages on the park boundary, and know the terrain — and the wildlife's habits — from a lifetime spent nearby, not from a training manual alone.",
       "It isn't a finished project. Human-wildlife conflict, particularly crop-raiding by elephants and baboons near park edges, remains a genuine source of tension, and revenue-sharing agreements only work when they're honoured consistently. But the shift over the past three decades — from conservation done to communities, toward conservation done with them — is a large part of why mountain gorilla numbers have actually grown even as human population pressure around the parks has intensified. It's imperfect, but it's working.",
+    ],
+  },
+  {
+    slug: "why-uganda-should-be-your-next-african-adventure",
+    title: "Why Uganda Should Be Your Next African Adventure",
+    category: "Travel Advice",
+    excerpt:
+      "Discover why Uganda is one of Africa's most rewarding travel destinations, from gorilla trekking and safaris to mountains, forests, culture and hidden gems.",
+    img: pearlOfAfrica,
+    readMins: 7,
+    destination: { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking" },
+    pullQuote: "A good Uganda trip is not necessarily the one with the most destinations. It is the one that gives you enough time to actually experience them.",
+    body: [
+      "There are places you visit for a holiday, and there are places that stay with you long after you leave. Uganda is one of them.",
+      "Known as the Pearl of Africa, Uganda brings together extraordinary wildlife, dramatic landscapes, rich cultures and some of the most memorable adventure experiences in East Africa. From standing in the misty forests of Bwindi to watching elephants cross the savannah, travelling through Uganda is not simply about seeing attractions. It is about experiencing a country that feels alive at every turn.",
+      "At Trek Wild Uganda, we believe the best way to understand Uganda is to travel through it.",
+      "Uganda's geography is one of its greatest strengths. In the west, the landscape changes from crater lakes and rolling hills to tropical forests, mountains and vast national parks. The Rwenzori Mountains rise dramatically along the border with the Democratic Republic of Congo, while the forests of southwestern Uganda provide habitat for mountain gorillas and chimpanzees.",
+      "Further north, Uganda's landscapes become broader and wilder, with destinations such as Murchison Falls National Park offering opportunities to experience elephants, giraffes, hippos, lions and other African wildlife. Then there is the savannah of Queen Elizabeth National Park, the forests of Kibale, the remote wilderness of Kidepo Valley and the adventure opportunities around the Nile. One country can offer remarkably different experiences within the same journey.",
+      "For many international travellers, gorilla trekking in Uganda is a once-in-a-lifetime experience. Deep in the forests of Bwindi Impenetrable National Park, visitors have the opportunity to trek through ancient forest habitat in search of mountain gorillas. The experience is more than simply observing wildlife. You are entering an ecosystem where conservation, local communities and tourism are closely connected. The trek itself can be physically demanding, unpredictable and incredibly rewarding. It is precisely these experiences that make Uganda different from an ordinary sightseeing destination.",
+      "Uganda is also an exceptional destination for travellers interested in primates. Kibale National Park is particularly well known for chimpanzee trekking and its remarkable diversity of primates. Walking through the forest while listening for movement in the canopy can be just as memorable as seeing the animals themselves. For travellers interested in wildlife photography, conservation and nature, Uganda offers an opportunity to experience these environments much more closely.",
+      "One mistake visitors can make is thinking Uganda is only about safaris and gorillas. It isn't. Uganda is also about people, food, music, agriculture, history and everyday life. Travelling between destinations can reveal another side of the country: roadside markets, local restaurants, farms, fishing communities, craft makers, musicians and people whose stories are rarely found in conventional travel brochures.",
+      "This is the Uganda we want to document through the Trek Wild Uganda Journal. Trek Wild Uganda is more than a tour operator. We are building a platform for discovering Uganda. Through our journal, videos and journeys, we want to show travellers what Uganda looks like beyond the standard itinerary. We will share destinations, travel advice, wildlife experiences, local stories, practical information and the realities of travelling across Uganda. Some stories will be polished. Others will simply be our experience on the road. Because discovering Uganda is a journey, and we want you to come along with us.",
+      "Whether you are interested in gorilla trekking, chimpanzee trekking, Uganda safaris, hiking, cultural experiences or exploring Western Uganda, the right itinerary depends on what you want to experience. A good Uganda trip is not necessarily the one with the most destinations. It is the one that gives you enough time to actually experience them. That might mean combining a gorilla trek with a safari, exploring the crater lakes of Western Uganda, hiking in the Rwenzori region or spending more time discovering places that most visitors never see.",
+      "At Trek Wild Uganda, our goal is to help travellers experience the country rather than simply pass through it. Uganda is waiting. The journey starts here.",
     ],
   },
 ];
