@@ -13,6 +13,8 @@ const LEGACY_HOSTS = new Set([
   "wildugandatreks.org",
   "www.wildugandatreks.org",
   "trekwilduganda.com",
+  "www.trekwilduganda.com",
+  "biikuyatrailsuganda.com",
 ]);
 
 /**
