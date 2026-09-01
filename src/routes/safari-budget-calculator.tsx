@@ -9,8 +9,8 @@ import { trackEvent } from "@/lib/analytics";
 export const Route = createFileRoute("/safari-budget-calculator")({
   head: () => ({
     ...buildPageMeta({
-      title: "Safari Budget Calculator — Trek Wild Uganda",
-      description: "Estimate your Uganda safari budget based on trip duration, accommodation, activities and travel preferences, then request a customized itinerary from Trek Wild Uganda.",
+      title: "Safari Budget Calculator — Biikuya Trails Uganda",
+      description: "Estimate your Uganda safari budget based on trip duration, accommodation, activities and travel preferences, then request a customized itinerary from Biikuya Trails Uganda.",
       path: "/safari-budget-calculator",
     }),
   }),

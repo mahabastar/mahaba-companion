@@ -18,7 +18,7 @@ const REGION_NOTE: Record<string, string> = {
 export const Route = createFileRoute("/national-parks")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda's 10 National Parks — Trek Wild Uganda",
+      title: "Uganda's 10 National Parks — Biikuya Trails Uganda",
       description: "All ten of Uganda's national parks in one place, grouped by region — gorillas in Bwindi, tree-climbing lions in Queen Elizabeth, the Nile at Murchison Falls, and more.",
       path: "/national-parks",
     }),

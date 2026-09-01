@@ -13,7 +13,7 @@ export const Route = createFileRoute("/responsible-tourism")({
   head: () => ({
     ...buildPageMeta({
       title: "Responsible Tourism in Uganda — Conservation & Community",
-      description: "How Uganda's revenue-sharing model turned gorilla tourism into conservation that works — and exactly how Trek Wild Uganda supports rangers, schools and the communities bordering the parks.",
+      description: "How Uganda's revenue-sharing model turned gorilla tourism into conservation that works — and exactly how Biikuya Trails Uganda supports rangers, schools and the communities bordering the parks.",
       path: "/responsible-tourism",
     }),
   }),

@@ -26,12 +26,12 @@ function NotFoundComponent() {
         >
           <img
             src={LOGO_URL}
-            alt="Trek Wild Uganda logo"
+            alt="Biikuya Trails Uganda logo"
             className="h-12 w-12 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50"
           />
 
           <span className="font-display text-xl leading-none">
-            Trek Wild <span className="text-gold">Uganda</span>
+            Biikuya Trails <span className="text-gold">Uganda</span>
           </span>
         </Link>
 
@@ -89,12 +89,12 @@ function ErrorComponent({
         <div className="mx-auto flex w-fit items-center gap-3 text-ivory">
           <img
             src={LOGO_URL}
-            alt="Trek Wild Uganda logo"
+            alt="Biikuya Trails Uganda logo"
             className="h-12 w-12 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50"
           />
 
           <span className="font-display text-xl leading-none">
-            Trek Wild <span className="text-gold">Uganda</span>
+            Biikuya Trails <span className="text-gold">Uganda</span>
           </span>
         </div>
 
@@ -188,7 +188,7 @@ const GOOGLE_SITE_VERIFICATION =
   (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) || "";
 
 const DEFAULT_TITLE =
-  "Uganda Safaris & Gorilla Trekking | Trek Wild Uganda";
+  "Uganda Safaris & Gorilla Trekking | Biikuya Trails Uganda";
 
 const DEFAULT_DESCRIPTION =
   "Private, locally guided Uganda safaris — mountain gorillas in Bwindi, chimpanzees in Kibale, tree-climbing lions, the source of the Nile and the Rwenzori peaks. Planned in Uganda by Ugandan guides.";
@@ -213,7 +213,7 @@ export const Route =
         },
         {
           name: "author",
-          content: "Trek Wild Uganda",
+          content: "Biikuya Trails Uganda",
         },
         {
           name: "robots",
@@ -235,7 +235,7 @@ export const Route =
 
         {
           property: "og:site_name",
-          content: "Trek Wild Uganda",
+          content: "Biikuya Trails Uganda",
         },
         {
           property: "og:locale",

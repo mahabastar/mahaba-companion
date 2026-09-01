@@ -7,7 +7,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/lakes")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda's Great Lakes — Trek Wild Uganda",
+      title: "Uganda's Great Lakes — Biikuya Trails Uganda",
       description: "Lake Bunyonyi, Lake Victoria, Lake Albert and the Kazinga Channel — Uganda's most striking lakes and waterways, in one place.",
       path: "/lakes",
     }),

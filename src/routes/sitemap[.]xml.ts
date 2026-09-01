@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const BASE_URL = "https://www.trekwilduganda.com";
+const BASE_URL = "https://www.biikuyatrailsuganda.com";
 
 const STATIC_PATHS = [
   "/",

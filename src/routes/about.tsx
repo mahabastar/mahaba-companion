@@ -13,8 +13,8 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/about")({
   head: () => ({
     ...buildPageMeta({
-      title: "About Trek Wild Uganda — Ugandan-Owned Safari Guides",
-      description: "Meet the Ugandan guides behind Trek Wild Uganda: 24 years of combined field experience, private vehicles on every itinerary, and a working commitment to conservation and the communities beside the parks.",
+      title: "About Biikuya Trails Uganda — Ugandan-Owned Safari Guides",
+      description: "Meet the Ugandan guides behind Biikuya Trails Uganda: 24 years of combined field experience, private vehicles on every itinerary, and a working commitment to conservation and the communities beside the parks.",
       path: "/about",
     }),
   }),
@@ -51,7 +51,7 @@ const FOUNDERS = [
     name: "Xavier Asaaba",
     photo: founderXavier,
     photoAlt:
-      "Xavier Asaaba, co-founder of Trek Wild Uganda, at the snowy summit of Margherita Peak in the Rwenzori Mountains",
+      "Xavier Asaaba, co-founder of Biikuya Trails Uganda, at the snowy summit of Margherita Peak in the Rwenzori Mountains",
     role: "Co-founder & Lead Guide",
     body: "Xavier has spent over a decade leading treks through Uganda's forests and savannahs, and has stood on the summit of Margherita Peak more times than he can comfortably count. He reads terrain and weather the way other people read a timetable — where a gorilla family is likely to have nested, when the light over Ishasha will be worth the early start, how to keep a group calm and curious when the trail turns to mud. Guests remember him for the quiet moments as much as the big ones.",
   },
@@ -59,9 +59,9 @@ const FOUNDERS = [
     name: "Herbert Muzoora",
     photo: founderHerbert,
     photoAlt:
-      "Herbert Muzoora, co-founder of Trek Wild Uganda, in Trek Wild Uganda branded cap and shirt in the forest",
+      "Herbert Muzoora, co-founder of Biikuya Trails Uganda, in Biikuya Trails Uganda branded cap and shirt in the forest",
     role: "Co-founder & Head of Journeys",
-    body: "Herbert brings twelve years of hands-on experience and an unusually sharp instinct for logistics across Uganda's more remote corners — Kidepo, Karamoja, the Semliki valley. Long before Trek Wild Uganda existed he had a reputation for turning transfer days into the part of the trip people talk about afterwards: a story at the right moment, a detour to a roadside market, a stop at a viewpoint that is not on any map. He plans every itinerary personally.",
+    body: "Herbert brings twelve years of hands-on experience and an unusually sharp instinct for logistics across Uganda's more remote corners — Kidepo, Karamoja, the Semliki valley. Long before Biikuya Trails Uganda existed he had a reputation for turning transfer days into the part of the trip people talk about afterwards: a story at the right moment, a detour to a roadside market, a stop at a viewpoint that is not on any map. He plans every itinerary personally.",
   },
 ];
 
@@ -91,7 +91,7 @@ function About() {
           <div className="eyebrow !text-forest">Our story</div>
           <div className="mt-5 space-y-5 text-lg leading-relaxed text-charcoal/80 text-pretty">
             <p>
-              Trek Wild Uganda was built on one simple idea: the best journeys come from
+              Biikuya Trails Uganda was built on one simple idea: the best journeys come from
               people who actually know the land. Not a call centre in another time zone, not
               a brochure written at a desk — guides who have spent their working lives in
               these forests, on these roads and at these viewpoints, and who go home to
@@ -123,7 +123,7 @@ function About() {
             </p>
 
             <p className="mt-8 border-l-2 border-gold/40 pl-4 text-sm italic text-charcoal/60">
-              Trek Wild Uganda is a registered trading name of Biikuya Afric
+              Biikuya Trails Uganda is a registered trading name of Biikuya Afric
               Company Limited. All payments, bookings, and financial
               transactions are securely processed by Biikuya Afric Company
               Limited.

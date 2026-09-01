@@ -1,5 +1,5 @@
 /**
- * Single source of truth for Trek Wild Uganda business identity,
+ * Single source of truth for Biikuya Trails Uganda business identity,
  * contact details, canonical URL, and verified social profiles.
  *
  * IMPORTANT:
@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
   /**
    * Primary brand name.
    */
-  name: "Trek Wild Uganda",
+  name: "Biikuya Trails Uganda",
 
   /**
    * Single canonical website origin.
@@ -19,7 +19,7 @@ export const SITE_CONFIG = {
    * All canonical URLs, sitemap URLs, Open Graph URLs and structured
    * data should ultimately resolve to this origin.
    */
-  url: "https://www.trekwilduganda.com",
+  url: "https://www.biikuyatrailsuganda.com",
 
   /**
    * Default social sharing image used whenever a page has no
@@ -50,7 +50,7 @@ export const SITE_CONFIG = {
   /**
    * Verified/promoted social profiles.
    *
-   * Only profiles that are confirmed to represent Trek Wild Uganda
+   * Only profiles that are confirmed to represent Biikuya Trails Uganda
    * should be exposed through Organization structured data.
    */
   social: {
@@ -63,20 +63,20 @@ export const SITE_CONFIG = {
     instagram: null,
 
     /**
-     * Official Trek Wild Uganda TikTok profile.
+     * Official Biikuya Trails Uganda TikTok profile.
      */
     tiktok: "https://www.tiktok.com/@trek_wild_uganda",
 
     /**
      * Facebook profile currently requires verification.
      *
-     * Keep null until the official Trek Wild Uganda Facebook Page
+     * Keep null until the official Biikuya Trails Uganda Facebook Page
      * URL has been confirmed.
      */
     facebook: null,
 
     /**
-     * Official Trek Wild Uganda YouTube channel.
+     * Official Biikuya Trails Uganda YouTube channel.
      */
     youtube: "https://www.youtube.com/@trekwilduganda",
   },

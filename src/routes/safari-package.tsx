@@ -7,9 +7,9 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/safari-package")({
   head: () =>
     buildPageMeta({
-      title: "Uganda Safari Packages | Trek Wild Uganda",
+      title: "Uganda Safari Packages | Biikuya Trails Uganda",
       description:
-        "Compare Uganda safari packages — gorilla trekking, chimp tracking, wildlife and cultural tours — planned and guided locally by Trek Wild Uganda.",
+        "Compare Uganda safari packages — gorilla trekking, chimp tracking, wildlife and cultural tours — planned and guided locally by Biikuya Trails Uganda.",
       path: "/safari-package",
     }),
   component: SafariPackages,
@@ -48,7 +48,7 @@ function SafariPackages() {
             Uganda safari packages, <em className="italic text-gold">built around you.</em>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-lg text-ivory/75">
-            Every Trek Wild Uganda package is planned and guided locally in
+            Every Biikuya Trails Uganda package is planned and guided locally in
             Kampala — gorillas, chimps, wildlife and culture, tailored to
             your dates and budget.
           </p>

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /dashboard
 
-Sitemap: https://www.trekwilduganda.com/sitemap.xml
+Sitemap: https://www.biikuyatrailsuganda.com/sitemap.xml

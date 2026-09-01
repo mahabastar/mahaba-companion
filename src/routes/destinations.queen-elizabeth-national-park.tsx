@@ -38,9 +38,9 @@ export const Route = createFileRoute("/destinations/queen-elizabeth-national-par
     buildDestinationHead({
       slug: "queen-elizabeth-national-park",
       name: "Queen Elizabeth National Park",
-      title: "Queen Elizabeth National Park, Uganda — Kazinga Channel & Kasenyi Plains | Trek Wild Uganda",
+      title: "Queen Elizabeth National Park, Uganda — Kazinga Channel & Kasenyi Plains | Biikuya Trails Uganda",
       description:
-        "Cruise the Kazinga Channel past thousands of hippos, track chimps in Kyambura Gorge and game-drive the Kasenyi Plains. Guided tours from Trek Wild Uganda.",
+        "Cruise the Kazinga Channel past thousands of hippos, track chimps in Kyambura Gorge and game-drive the Kasenyi Plains. Guided tours from Biikuya Trails Uganda.",
       ogImage: sceneElephants,
       region: "South-western Uganda",
       keywords: [
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/destinations/queen-elizabeth-national-par
         "Kyambura Gorge",
         "Kasenyi Plains",
         "Uganda safari",
-        "Trek Wild Uganda",
+        "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
     }),

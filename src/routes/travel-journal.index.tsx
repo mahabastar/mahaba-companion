@@ -9,7 +9,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/travel-journal/")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Travel Journal — Trek Wild Uganda",
+      title: "Uganda Travel Journal — Biikuya Trails Uganda",
       description: "Destination stories, culture, conservation and travel advice from across Uganda — the Pearl of Africa in longer form.",
       path: "/travel-journal",
     }),

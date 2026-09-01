@@ -38,7 +38,7 @@ export const Route = createFileRoute("/destinations/mount-elgon")({
     buildDestinationHead({
       slug: "mount-elgon",
       name: "Mount Elgon National Park",
-      title: "Mount Elgon National Park, Uganda — Caldera Hikes & Highland Coffee | Trek Wild Uganda",
+      title: "Mount Elgon National Park, Uganda — Caldera Hikes & Highland Coffee | Biikuya Trails Uganda",
       description:
         "An extinct volcano with one of the world's largest calderas — multi-day hikes, Sipi Falls, and coffee-growing highlands on Uganda's eastern border.",
       ogImage: expSipi,
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/destinations/mount-elgon")({
         "Wagagai Peak",
         "Sipi Falls",
         "Uganda coffee tour",
-        "Trek Wild Uganda",
+        "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
     }),

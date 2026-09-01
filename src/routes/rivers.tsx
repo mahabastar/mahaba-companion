@@ -7,7 +7,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/rivers")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda's Rivers — Trek Wild Uganda",
+      title: "Uganda's Rivers — Biikuya Trails Uganda",
       description: "The Nile at its source and at Murchison Falls, the Kazinga Channel, and the Semliki River — Uganda's defining waterways.",
       path: "/rivers",
     }),

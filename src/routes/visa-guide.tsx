@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/visa-guide")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Visa Guide — How to Apply | Trek Wild Uganda",
+      title: "Uganda Visa Guide — How to Apply | Biikuya Trails Uganda",
       description: "How to get a Uganda visa — single-entry vs the East Africa Tourist Visa, cost, processing time, and the yellow fever certificate requirement.",
       path: "/visa-guide",
     }),

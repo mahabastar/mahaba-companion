@@ -18,7 +18,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/uganda-explorer")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Explorer — Interactive Map | Trek Wild Uganda",
+      title: "Uganda Explorer — Interactive Map | Biikuya Trails Uganda",
       description: "An interactive map of Uganda's national parks and destinations — gorilla trekking, tree-climbing lions, waterfalls and crater lakes, all in one place.",
       path: "/uganda-explorer",
     }),

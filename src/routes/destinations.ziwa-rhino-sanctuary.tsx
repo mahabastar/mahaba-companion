@@ -36,7 +36,7 @@ export const Route = createFileRoute("/destinations/ziwa-rhino-sanctuary")({
     buildDestinationHead({
       slug: "ziwa-rhino-sanctuary",
       name: "Ziwa Rhino Sanctuary",
-      title: "Ziwa Rhino Sanctuary, Uganda — Rhino Tracking on Foot | Trek Wild Uganda",
+      title: "Ziwa Rhino Sanctuary, Uganda — Rhino Tracking on Foot | Biikuya Trails Uganda",
       description:
         "The only place to see rhinos in Uganda — guided walking treks to southern white rhinos at a community-run sanctuary between Kampala and Murchison Falls.",
       ogImage: rhinoZiwa,
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/destinations/ziwa-rhino-sanctuary")({
         "Uganda rhino tracking",
         "southern white rhino Uganda",
         "Nakasongola",
-        "Trek Wild Uganda",
+        "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
     }),

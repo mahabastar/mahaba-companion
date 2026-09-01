@@ -15,7 +15,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/wildlife-encyclopedia")({
   head: () => ({
     ...buildPageMeta({
-      title: "Wildlife Encyclopedia — Trek Wild Uganda",
+      title: "Wildlife Encyclopedia — Biikuya Trails Uganda",
       description: "A searchable guide to Uganda's mammals, primates, birds and reptiles — what to look for, where to see it, and when.",
       path: "/wildlife-encyclopedia",
     }),

@@ -9,7 +9,7 @@ import { trackEvent } from "@/lib/analytics";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     ...buildPageMeta({
-      title: "Contact Trek Wild Uganda — Talk to a Ugandan Guide",
+      title: "Contact Biikuya Trails Uganda — Talk to a Ugandan Guide",
       description: "Speak directly with the Ugandan guides who will plan and lead your safari. WhatsApp, phone or email — a founder replies personally, usually within a day.",
       path: "/contact",
     }),
@@ -189,7 +189,7 @@ function Contact() {
                 </div>
 
                 <p className="mt-2 border-t border-ivory/10 pt-4 text-xs leading-relaxed text-ivory/45">
-                  Trek Wild Uganda is a registered trading name of Biikuya
+                  Biikuya Trails Uganda is a registered trading name of Biikuya
                   Afric Company Limited. All payments, bookings, and
                   financial transactions are securely processed by Biikuya
                   Afric Company Limited.

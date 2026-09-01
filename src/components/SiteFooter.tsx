@@ -198,25 +198,25 @@ function getSocialProfiles(): SocialProfile[] {
     {
       key: "tiktok",
       shortLabel: "TT",
-      label: "Trek Wild Uganda on TikTok",
+      label: "Biikuya Trails Uganda on TikTok",
       href: SITE_CONFIG.social.tiktok,
     },
     {
       key: "youtube",
       shortLabel: "YT",
-      label: "Trek Wild Uganda on YouTube",
+      label: "Biikuya Trails Uganda on YouTube",
       href: SITE_CONFIG.social.youtube,
     },
     {
       key: "facebook",
       shortLabel: "FB",
-      label: "Trek Wild Uganda on Facebook",
+      label: "Biikuya Trails Uganda on Facebook",
       href: SITE_CONFIG.social.facebook,
     },
     {
       key: "instagram",
       shortLabel: "IG",
-      label: "Trek Wild Uganda on Instagram",
+      label: "Biikuya Trails Uganda on Instagram",
       href: SITE_CONFIG.social.instagram,
     },
   ];
@@ -271,12 +271,12 @@ export function SiteFooter() {
             <div className="flex items-center gap-3">
               <img
                 src={LOGO_URL}
-                alt="Trek Wild Uganda logo"
+                alt="Biikuya Trails Uganda logo"
                 className="h-12 w-12 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50"
               />
 
               <span className="font-display text-2xl">
-                Trek Wild Uganda
+                Biikuya Trails Uganda
               </span>
             </div>
 
@@ -323,9 +323,9 @@ export function SiteFooter() {
                 <a
                   href={getSiteUrl()}
                   className="hover:text-gold"
-                  aria-label="Trek Wild Uganda website"
+                  aria-label="Biikuya Trails Uganda website"
                 >
-                  www.trekwilduganda.com
+                  www.biikuyatrailsuganda.com
                 </a>
               </div>
             </div>
@@ -385,7 +385,7 @@ export function SiteFooter() {
 
         <div className="mt-16 border-t border-ivory/10 pt-6">
           <p className="text-xs leading-relaxed text-ivory/50">
-            Trek Wild Uganda is a registered trading name of Biikuya Afric
+            Biikuya Trails Uganda is a registered trading name of Biikuya Afric
             Company Limited. All payments, bookings, and financial
             transactions are securely processed by Biikuya Afric Company
             Limited.
@@ -393,7 +393,7 @@ export function SiteFooter() {
 
           <div className="mt-4 flex flex-col items-start justify-between gap-4 text-xs text-ivory/50 md:flex-row md:items-center">
             <div>
-              © {new Date().getFullYear()} Trek Wild Uganda. All rights
+              © {new Date().getFullYear()} Biikuya Trails Uganda. All rights
               reserved.
             </div>
 
