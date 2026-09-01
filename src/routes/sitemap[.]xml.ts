@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { EXPERIENCES } from "@/lib/experiences";
+import { JOURNEYS } from "@/lib/journeys";
+import { JOURNAL_POSTS } from "@/lib/journal-posts";
+
 const BASE_URL = "https://www.biikuyatrailsuganda.com";
 
 const STATIC_PATHS = [
