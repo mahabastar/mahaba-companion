@@ -61,6 +61,14 @@ const STATIC_PATHS = [
   "/wildlife-reserves",
 ];
 
+const DYNAMIC_PATHS = [
+  ...EXPERIENCES.map((e) => `/experiences/${e.slug}`),
+  ...JOURNEYS.map((j) => `/journeys/${j.slug}`),
+  ...JOURNAL_POSTS.map((p) => `/travel-journal/${p.slug}`),
+];
+
+const ALL_PATHS = Array.from(new Set([...STATIC_PATHS, ...DYNAMIC_PATHS]));
+
 function escapeXml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
