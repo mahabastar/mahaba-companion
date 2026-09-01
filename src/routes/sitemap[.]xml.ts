@@ -82,7 +82,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const urls = STATIC_PATHS.map((path) => {
+        const urls = ALL_PATHS.map((path) => {
           const loc = `${BASE_URL}${path}`;
 
           return [
