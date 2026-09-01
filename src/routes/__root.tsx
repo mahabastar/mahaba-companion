@@ -140,8 +140,8 @@ const ORGANIZATION_LD = {
   "@id": `${SITE_CONFIG.url}/#organization`,
   name: SITE_CONFIG.name,
   url: SITE_CONFIG.url,
-  logo: `${SITE_CONFIG.url}/favicon.png`,
-  image: `${SITE_CONFIG.url}/favicon.png`,
+  logo: `${SITE_CONFIG.url}/logo.png`,
+  image: `${SITE_CONFIG.url}/logo.png`,
   description:
     "Ugandan-owned, Ugandan-guided safari company crafting gorilla trekking, chimpanzee tracking, wildlife, birding, hiking and cultural journeys across Uganda.",
   email: SITE_CONFIG.email,
