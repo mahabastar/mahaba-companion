@@ -32,7 +32,7 @@ export const SITE_CONFIG = {
   /**
    * Primary business email.
    */
-  email: "trekwilduganda@gmail.com",
+  email: "biikuyaafric@gmail.com",
 
   /**
    * WhatsApp number in international digits-only format.
