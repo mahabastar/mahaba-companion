@@ -55,30 +55,14 @@ export const SITE_CONFIG = {
    */
   social: {
     /**
-     * Instagram is currently not promoted or verified.
-     *
-     * Kept as null rather than publishing an unverified URL in
-     * structured data.
+     * Social profiles are intentionally disconnected until the new
+     * Biikuya Trails Uganda accounts are confirmed. Old Trek Wild
+     * Uganda profiles must not be published in structured data.
      */
     instagram: null,
-
-    /**
-     * Official Biikuya Trails Uganda TikTok profile.
-     */
-    tiktok: "https://www.tiktok.com/@trek_wild_uganda",
-
-    /**
-     * Facebook profile currently requires verification.
-     *
-     * Keep null until the official Biikuya Trails Uganda Facebook Page
-     * URL has been confirmed.
-     */
+    tiktok: null,
     facebook: null,
-
-    /**
-     * Official Biikuya Trails Uganda YouTube channel.
-     */
-    youtube: "https://www.youtube.com/@trekwilduganda",
+    youtube: null,
   },
 } as const;
 
