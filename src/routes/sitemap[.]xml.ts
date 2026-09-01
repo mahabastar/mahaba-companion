@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { EXPERIENCES } from "@/lib/experiences";
+import { JOURNEYS } from "@/lib/journeys";
+import { JOURNAL_POSTS } from "@/lib/journal-posts";
+
 const BASE_URL = "https://www.biikuyatrailsuganda.com";
 
 const STATIC_PATHS = [
@@ -57,6 +61,14 @@ const STATIC_PATHS = [
   "/wildlife-reserves",
 ];
 
+const DYNAMIC_PATHS = [
+  ...EXPERIENCES.map((e) => `/experiences/${e.slug}`),
+  ...JOURNEYS.map((j) => `/journeys/${j.slug}`),
+  ...JOURNAL_POSTS.map((p) => `/travel-journal/${p.slug}`),
+];
+
+const ALL_PATHS = Array.from(new Set([...STATIC_PATHS, ...DYNAMIC_PATHS]));
+
 function escapeXml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -70,7 +82,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const urls = STATIC_PATHS.map((path) => {
+        const urls = ALL_PATHS.map((path) => {
           const loc = `${BASE_URL}${path}`;
 
           return [
