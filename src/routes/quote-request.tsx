@@ -9,7 +9,7 @@ import { trackEvent } from "@/lib/analytics";
 export const Route = createFileRoute("/quote-request")({
   head: () => ({
     ...buildPageMeta({
-      title: "Request a Quote — Trek Wild Uganda",
+      title: "Request a Quote — Biikuya Trails Uganda",
       description: "Get a fast, no-obligation quote for your Uganda safari — trip length, travel style and must-sees in one short form.",
       path: "/quote-request",
     }),

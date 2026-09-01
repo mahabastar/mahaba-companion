@@ -140,9 +140,9 @@ export const Route = createFileRoute("/regions/$region")({
   head: ({ params }) => {
     const region = REGIONS[params.region];
     if (!region) {
-      return { meta: [{ title: "Region not found — Trek Wild Uganda" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Region not found — Biikuya Trails Uganda" }, { name: "robots", content: "noindex" }] };
     }
-    const title = `${region.name} — Safari Destinations & Highlights | Trek Wild Uganda`;
+    const title = `${region.name} — Safari Destinations & Highlights | Biikuya Trails Uganda`;
     const description = `${region.tagline} ${region.intro}`.slice(0, 155);
     return buildPageMeta({
       title,

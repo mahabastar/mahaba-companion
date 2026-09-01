@@ -39,7 +39,7 @@ export const Route = createFileRoute("/destinations/entebbe")({
     buildDestinationHead({
       slug: "entebbe",
       name: "Entebbe",
-      title: "Entebbe, Uganda — Gateway to Your Safari | Trek Wild Uganda",
+      title: "Entebbe, Uganda — Gateway to Your Safari | Biikuya Trails Uganda",
       description:
         "Uganda's lakeside gateway city — Ngamba Island chimpanzee sanctuary, historic Botanical Gardens, and the start and end of nearly every Uganda safari.",
       ogImage: expChimp,
@@ -50,7 +50,7 @@ export const Route = createFileRoute("/destinations/entebbe")({
         "Entebbe Botanical Gardens",
         "Lake Victoria Uganda",
         "Uganda safari gateway",
-        "Trek Wild Uganda",
+        "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
     }),

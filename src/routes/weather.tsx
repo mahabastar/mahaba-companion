@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/weather")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Weather Guide — Climate by Region | Trek Wild Uganda",
+      title: "Uganda Weather Guide — Climate by Region | Biikuya Trails Uganda",
       description: "Uganda's climate explained by region — from the Rwenzori's glaciers to Kidepo's dry savanna heat — and how to dress for the swings between them.",
       path: "/weather",
     }),

@@ -7,7 +7,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/wildlife-reserves")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda's Wildlife Reserves — Trek Wild Uganda",
+      title: "Uganda's Wildlife Reserves — Biikuya Trails Uganda",
       description: "Beyond the national parks — Ziwa Rhino Sanctuary, Pian Upe, Toro-Semliki and Kabwoya, Uganda's key wildlife reserves in one place.",
       path: "/wildlife-reserves",
     }),

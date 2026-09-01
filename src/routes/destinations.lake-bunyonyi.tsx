@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "How do I get to Lake Bunyonyi?",
-    a: "Fly to Kigali (Rwanda) and drive 3 hours across the border, or drive 8 hours from Kampala via Mbarara. Trek Wild Uganda arranges all transfers.",
+    a: "Fly to Kigali (Rwanda) and drive 3 hours across the border, or drive 8 hours from Kampala via Mbarara. Biikuya Trails Uganda arranges all transfers.",
   },
 ];
 
@@ -41,9 +41,9 @@ export const Route = createFileRoute("/destinations/lake-bunyonyi")({
     buildDestinationHead({
       slug: "lake-bunyonyi",
       name: "Lake Bunyonyi",
-      title: "Lake Bunyonyi, Uganda — Island Stays & Canoe Safaris | Trek Wild Uganda",
+      title: "Lake Bunyonyi, Uganda — Island Stays & Canoe Safaris | Biikuya Trails Uganda",
       description:
-        "Africa's second-deepest lake — 29 emerald islands, terraced hills and hippo-free swimming. Plan a luxury Lake Bunyonyi escape with Trek Wild Uganda.",
+        "Africa's second-deepest lake — 29 emerald islands, terraced hills and hippo-free swimming. Plan a luxury Lake Bunyonyi escape with Biikuya Trails Uganda.",
       ogImage: sceneBunyonyi,
       region: "South-western Uganda",
       keywords: [
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/destinations/lake-bunyonyi")({
         "Bunyonyi islands",
         "Uganda safari",
         "post-gorilla trek Uganda",
-        "Trek Wild Uganda",
+        "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
     }),

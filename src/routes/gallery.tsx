@@ -16,7 +16,7 @@ import { trackEvent } from "@/lib/analytics";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     ...buildPageMeta({
-      title: "Photo Gallery — Trek Wild Uganda",
+      title: "Photo Gallery — Biikuya Trails Uganda",
       description: "Photographs from across Uganda — gorillas, chimpanzees, big game, mountains, lakes, lodges and culture. Every image shot in the field by our own guides.",
       path: "/gallery",
     }),

@@ -39,7 +39,7 @@ import g_pearl_of_africa from "@/assets/gallery/pearl-of-africa.jpg";
 export const Route = createFileRoute("/")({
     head: () => {
     const title =
-      "Uganda Safari Packages & Gorilla Trekking | Trek Wild Uganda";
+      "Uganda Safari Packages & Gorilla Trekking | Biikuya Trails Uganda";
 
     const description =
       "Explore Uganda safari packages with local guides, gorilla trekking in Bwindi, chimpanzee trekking in Kibale, wildlife safaris and customized Uganda trips.";
@@ -719,7 +719,7 @@ function Conservation() {
 const stories = [
   {
     quote:
-      "Meeting the gorillas felt sacred. Trek Wild Uganda made every moment effortless and profoundly personal.",
+      "Meeting the gorillas felt sacred. Biikuya Trails Uganda made every moment effortless and profoundly personal.",
     name: "Sofia R.",
     from: "Spain",
     trip: "7-Day Pearl of Africa",

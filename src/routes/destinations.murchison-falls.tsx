@@ -43,7 +43,7 @@ export const Route = createFileRoute("/destinations/murchison-falls")({
     buildDestinationHead({
       slug: "murchison-falls",
       name: "Murchison Falls National Park",
-      title: "Murchison Falls National Park, Uganda — Safaris & Nile Cruises | Trek Wild Uganda",
+      title: "Murchison Falls National Park, Uganda — Safaris & Nile Cruises | Biikuya Trails Uganda",
       description:
         "Luxury safaris to Murchison Falls National Park — Uganda's largest wilderness, home to the world's most powerful waterfall, big herds and the prehistoric shoebill stork.",
       ogImage: sceneFalls,
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/destinations/murchison-falls")({
         "Uganda safari",
         "Nile safari Uganda",
         "shoebill stork",
-        "Trek Wild Uganda",
+        "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
     }),

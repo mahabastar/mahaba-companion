@@ -17,8 +17,8 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/wild-uganda-tv")({
   head: () => ({
     ...buildPageMeta({
-      title: "Wild Uganda TV — Trek Wild Uganda",
-      description: "Destination films, wildlife clips, culture and traveller stories from across Uganda — Trek Wild Uganda' video hub.",
+      title: "Wild Uganda TV — Biikuya Trails Uganda",
+      description: "Destination films, wildlife clips, culture and traveller stories from across Uganda — Biikuya Trails Uganda' video hub.",
       path: "/wild-uganda-tv",
     }),
   }),

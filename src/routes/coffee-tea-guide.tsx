@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/coffee-tea-guide")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Coffee & Tea Guide — Trek Wild Uganda",
+      title: "Uganda Coffee & Tea Guide — Biikuya Trails Uganda",
       description: "Uganda is where Robusta coffee originates — farm visits on Mount Elgon and around Fort Portal, plus the tea estates of the western highlands.",
       path: "/coffee-tea-guide",
     }),

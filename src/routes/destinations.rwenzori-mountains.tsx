@@ -41,9 +41,9 @@ export const Route = createFileRoute("/destinations/rwenzori-mountains")({
     buildDestinationHead({
       slug: "rwenzori-mountains",
       name: "Rwenzori Mountains",
-      title: "Rwenzori Mountains Trekking, Uganda — Margherita Peak & Day Hikes | Trek Wild Uganda",
+      title: "Rwenzori Mountains Trekking, Uganda — Margherita Peak & Day Hikes | Biikuya Trails Uganda",
       description:
-        "Trek Africa's 'Mountains of the Moon' — from gentle foothill day hikes to the full 7–9 day expedition to Margherita Peak. Costs, routes and guided tours from Trek Wild Uganda.",
+        "Trek Africa's 'Mountains of the Moon' — from gentle foothill day hikes to the full 7–9 day expedition to Margherita Peak. Costs, routes and guided tours from Biikuya Trails Uganda.",
       ogImage: sceneRwenzori,
       region: "Western Uganda",
       keywords: [
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/destinations/rwenzori-mountains")({
         "Mountains of the Moon",
         "Uganda trekking",
         "Rwenzori National Park",
-        "Trek Wild Uganda",
+        "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
     }),

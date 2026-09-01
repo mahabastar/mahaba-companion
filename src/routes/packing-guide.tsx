@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/packing-guide")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Packing Guide — What to Bring | Trek Wild Uganda",
+      title: "Uganda Packing Guide — What to Bring | Biikuya Trails Uganda",
       description: "What to pack for a Uganda safari — clothing, gorilla trekking gear, health essentials, and one clothing rule that surprises most first-time visitors.",
       path: "/packing-guide",
     }),

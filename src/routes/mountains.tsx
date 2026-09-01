@@ -7,7 +7,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/mountains")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda's Mountains — Trek Wild Uganda",
+      title: "Uganda's Mountains — Biikuya Trails Uganda",
       description: "From equatorial glaciers on the Rwenzori to volcano summits in the Virunga range — Uganda's key mountains and multi-day treks.",
       path: "/mountains",
     }),

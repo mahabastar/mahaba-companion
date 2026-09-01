@@ -15,7 +15,7 @@ import sceneBunyonyi from "@/assets/scene-bunyonyi.jpg";
 export const Route = createFileRoute("/build-my-safari")({
   head: () => ({
     ...buildPageMeta({
-      title: "Build My Safari — Trek Wild Uganda",
+      title: "Build My Safari — Biikuya Trails Uganda",
       description: "Answer a few questions and get personalised Uganda safari suggestions — destinations, trip length and travel style, tailored to you.",
       path: "/build-my-safari",
     }),
@@ -278,7 +278,7 @@ function BuildMySafari() {
                 </h2>
                 <p className="mt-4 max-w-lg text-charcoal/70">
                   Based on what you told us, these destinations fit best. Send us your answers
-                  and a Trek Wild Uganda specialist will turn this into a full itinerary.
+                  and a Biikuya Trails Uganda specialist will turn this into a full itinerary.
                 </p>
 
                 {suggested.length > 0 ? (

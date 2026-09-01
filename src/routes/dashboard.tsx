@@ -12,7 +12,7 @@ import { lovable } from "@/integrations/lovable/index";
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Traveler Dashboard — Trek Wild Uganda" },
+      { title: "Traveler Dashboard — Biikuya Trails Uganda" },
       { name: "robots", content: "noindex" },
     ],
   }),

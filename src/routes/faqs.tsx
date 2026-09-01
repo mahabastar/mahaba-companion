@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Safari FAQs — Trek Wild Uganda",
+      title: "Uganda Safari FAQs — Biikuya Trails Uganda",
       description: "Answers to the questions travellers ask most before a Uganda safari — visas, safety, money, gorilla trekking, best time to visit, and more.",
       path: "/faqs",
     }),

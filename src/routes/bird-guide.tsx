@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/bird-guide")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Bird Guide — 1,000+ Species | Trek Wild Uganda",
+      title: "Uganda Bird Guide — 1,000+ Species | Biikuya Trails Uganda",
       description: "Uganda's top birding sites and signature species, from the shoebill stork to Albertine Rift endemics — Africa's single best birding destination.",
       path: "/bird-guide",
     }),

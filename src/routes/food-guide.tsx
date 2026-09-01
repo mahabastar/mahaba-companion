@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/food-guide")({
   head: () => ({
     ...buildPageMeta({
-      title: "Ugandan Food Guide — What to Eat | Trek Wild Uganda",
+      title: "Ugandan Food Guide — What to Eat | Biikuya Trails Uganda",
       description: "What to eat in Uganda — matoke, Rolex street food, Luwombo, Lake Victoria tilapia, and how Uganda's food reflects its cultural mix.",
       path: "/food-guide",
     }),
