@@ -1,12 +1,6 @@
+
 {
   "buildCommand": "bun run build",
   "outputDirectory": ".vercel/output",
-  "framework": null,
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://www.biikuyatrailsuganda.com/$1",
-      "permanent": true
-    }
-  ]
+  "framework": null
 }
