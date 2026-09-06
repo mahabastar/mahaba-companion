@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { BookingForm } from "@/components/BookingForm";
 import { JOURNEYS, type Journey } from "@/lib/journeys";
 
 export function JourneyPage({ journey }: { journey: Journey }) {
