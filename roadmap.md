@@ -1,16 +1,12 @@
 # Task roadmap
 
 ## In progress
-- [ ] Add booking forms on journeys + safari-package pages (submit to biikuyaafric@gmail.com / bookings table)
-  - [x] BookingForm component
-  - [x] submitBooking server function
-  - [ ] Wire into JourneyPage + safari-package
-
-## New
-- [ ] Add Google tag G-220C41KXQ1 to every page (site-wide gtag.js)
-- [ ] Replace/add founder image: Xavear Asaaba (uploaded file)
+(none)
 
 ## Done
+- [x] Booking forms wired into journeys + safari-package pages (BookingForm + submitBooking server fn)
+- [x] Google tag G-220C41KXQ1 active site-wide, exactly one gtag.js + one config per page
+- [x] Founder Xavier Asaaba image replaced with uploaded photo on /about
 - [x] Contact email → biikuyaafric@gmail.com
 - [x] Disconnect old social links
-- [x] Sitemap: dynamic server route now lists 74 URLs (experiences, journeys, journal)
+- [x] Sitemap: dynamic server route lists 74 URLs
