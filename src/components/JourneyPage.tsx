@@ -137,7 +137,7 @@ export function JourneyPage({ journey }: { journey: Journey }) {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA + Booking form */}
       <section className="bg-charcoal grain">
         <div className="mx-auto max-w-[1000px] px-6 py-24 text-center md:px-10 md:py-32">
           <div className="eyebrow !text-gold">Ready to make it yours</div>
@@ -152,6 +152,16 @@ export function JourneyPage({ journey }: { journey: Journey }) {
               Make this {journey.days}-day journey mine
             </Link>
           </div>
+        </div>
+
+        <div className="mx-auto max-w-[820px] px-6 pb-24 md:px-10 md:pb-32">
+          <BookingForm
+            tripName={`${journey.title} (${journey.days}-day)`}
+            sourcePath={`/journeys/${journey.slug}`}
+            heading="Book this journey"
+            subheading={`Send your travel details for the ${journey.title} and a founder will reply, usually within a day.`}
+            variant="dark"
+          />
         </div>
       </section>
 
