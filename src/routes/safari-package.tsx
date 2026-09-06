@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { BookingForm } from "@/components/BookingForm";
 import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/safari-package")({
@@ -84,6 +85,15 @@ function SafariPackages() {
             >
               Estimate your safari cost
             </Link>
+          </div>
+
+          <div className="mt-16">
+            <BookingForm
+              tripName="Uganda Safari Package"
+              sourcePath="/safari-package"
+              title="Request a package booking"
+              intro="Tell us which package interests you, your dates and group size. A Ugandan guide-planner will reply with availability and a costed itinerary."
+            />
           </div>
         </div>
       </section>

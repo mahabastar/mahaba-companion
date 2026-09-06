@@ -35,7 +35,8 @@ declare global {
  * environment variable has not been configured.
  */
 export const GA_MEASUREMENT_ID =
-  (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined)?.trim() || "";
+  (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined)?.trim() ||
+  "G-220C41KXQ1";
 
 /**
  * Whether analytics is configured.
