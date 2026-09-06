@@ -158,9 +158,8 @@ export function JourneyPage({ journey }: { journey: Journey }) {
           <BookingForm
             tripName={`${journey.title} (${journey.days}-day)`}
             sourcePath={`/journeys/${journey.slug}`}
-            heading="Book this journey"
-            subheading={`Send your travel details for the ${journey.title} and a founder will reply, usually within a day.`}
-            variant="dark"
+            title="Book this journey"
+            intro={`Send your travel details for the ${journey.title} and a founder will reply, usually within a day.`}
           />
         </div>
       </section>
