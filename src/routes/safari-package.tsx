@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
+import { BookingForm } from "@/components/BookingForm";
 import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/safari-package")({
