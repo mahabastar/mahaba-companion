@@ -65,6 +65,171 @@ export type Database = {
         }
         Relationships: []
       }
+      experiences: {
+        Row: {
+          comparison: Json | null
+          created_at: string
+          destinations: Json
+          excerpt: string
+          faqs: Json
+          hero_img: string
+          highlights: Json
+          id: string
+          intro: string
+          journey: Json | null
+          published: boolean
+          sections: Json
+          slug: string
+          sort_order: number
+          tagline: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          comparison?: Json | null
+          created_at?: string
+          destinations?: Json
+          excerpt?: string
+          faqs?: Json
+          hero_img?: string
+          highlights?: Json
+          id?: string
+          intro?: string
+          journey?: Json | null
+          published?: boolean
+          sections?: Json
+          slug: string
+          sort_order?: number
+          tagline?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          comparison?: Json | null
+          created_at?: string
+          destinations?: Json
+          excerpt?: string
+          faqs?: Json
+          hero_img?: string
+          highlights?: Json
+          id?: string
+          intro?: string
+          journey?: Json | null
+          published?: boolean
+          sections?: Json
+          slug?: string
+          sort_order?: number
+          tagline?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      journal_posts: {
+        Row: {
+          body: Json
+          category: string
+          created_at: string
+          destination: Json | null
+          excerpt: string
+          id: string
+          img: string
+          published: boolean
+          pull_quote: string | null
+          read_mins: number
+          slug: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          body?: Json
+          category?: string
+          created_at?: string
+          destination?: Json | null
+          excerpt?: string
+          id?: string
+          img?: string
+          published?: boolean
+          pull_quote?: string | null
+          read_mins?: number
+          slug: string
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          body?: Json
+          category?: string
+          created_at?: string
+          destination?: Json | null
+          excerpt?: string
+          id?: string
+          img?: string
+          published?: boolean
+          pull_quote?: string | null
+          read_mins?: number
+          slug?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      journeys: {
+        Row: {
+          copy_text: string
+          created_at: string
+          days: string
+          destinations: Json
+          highlights: Json
+          id: string
+          img: string
+          itinerary: Json
+          overview: string
+          published: boolean
+          slug: string
+          sort_order: number
+          tagline: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          copy_text?: string
+          created_at?: string
+          days?: string
+          destinations?: Json
+          highlights?: Json
+          id?: string
+          img?: string
+          itinerary?: Json
+          overview?: string
+          published?: boolean
+          slug: string
+          sort_order?: number
+          tagline?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          copy_text?: string
+          created_at?: string
+          days?: string
+          destinations?: Json
+          highlights?: Json
+          id?: string
+          img?: string
+          itinerary?: Json
+          overview?: string
+          published?: boolean
+          slug?: string
+          sort_order?: number
+          tagline?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
