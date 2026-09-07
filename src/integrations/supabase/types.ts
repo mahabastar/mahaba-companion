@@ -14,16 +14,260 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admin_allowlist: {
+        Row: {
+          created_at: string
+          email: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+        }
+        Relationships: []
+      }
+      bookings: {
+        Row: {
+          created_at: string
+          end_date: string | null
+          id: string
+          itinerary: Json | null
+          start_date: string | null
+          status: Database["public"]["Enums"]["booking_status"]
+          traveler_email: string
+          trip_name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          end_date?: string | null
+          id?: string
+          itinerary?: Json | null
+          start_date?: string | null
+          status?: Database["public"]["Enums"]["booking_status"]
+          traveler_email: string
+          trip_name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          end_date?: string | null
+          id?: string
+          itinerary?: Json | null
+          start_date?: string | null
+          status?: Database["public"]["Enums"]["booking_status"]
+          traveler_email?: string
+          trip_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      experiences: {
+        Row: {
+          comparison: Json | null
+          created_at: string
+          destinations: Json
+          excerpt: string
+          faqs: Json
+          hero_img: string
+          highlights: Json
+          id: string
+          intro: string
+          journey: Json | null
+          published: boolean
+          sections: Json
+          slug: string
+          sort_order: number
+          tagline: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          comparison?: Json | null
+          created_at?: string
+          destinations?: Json
+          excerpt?: string
+          faqs?: Json
+          hero_img?: string
+          highlights?: Json
+          id?: string
+          intro?: string
+          journey?: Json | null
+          published?: boolean
+          sections?: Json
+          slug: string
+          sort_order?: number
+          tagline?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          comparison?: Json | null
+          created_at?: string
+          destinations?: Json
+          excerpt?: string
+          faqs?: Json
+          hero_img?: string
+          highlights?: Json
+          id?: string
+          intro?: string
+          journey?: Json | null
+          published?: boolean
+          sections?: Json
+          slug?: string
+          sort_order?: number
+          tagline?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      journal_posts: {
+        Row: {
+          body: Json
+          category: string
+          created_at: string
+          destination: Json | null
+          excerpt: string
+          id: string
+          img: string
+          published: boolean
+          pull_quote: string | null
+          read_mins: number
+          slug: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          body?: Json
+          category?: string
+          created_at?: string
+          destination?: Json | null
+          excerpt?: string
+          id?: string
+          img?: string
+          published?: boolean
+          pull_quote?: string | null
+          read_mins?: number
+          slug: string
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          body?: Json
+          category?: string
+          created_at?: string
+          destination?: Json | null
+          excerpt?: string
+          id?: string
+          img?: string
+          published?: boolean
+          pull_quote?: string | null
+          read_mins?: number
+          slug?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      journeys: {
+        Row: {
+          copy_text: string
+          created_at: string
+          days: string
+          destinations: Json
+          highlights: Json
+          id: string
+          img: string
+          itinerary: Json
+          overview: string
+          published: boolean
+          slug: string
+          sort_order: number
+          tagline: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          copy_text?: string
+          created_at?: string
+          days?: string
+          destinations?: Json
+          highlights?: Json
+          id?: string
+          img?: string
+          itinerary?: Json
+          overview?: string
+          published?: boolean
+          slug: string
+          sort_order?: number
+          tagline?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          copy_text?: string
+          created_at?: string
+          days?: string
+          destinations?: Json
+          highlights?: Json
+          id?: string
+          img?: string
+          itinerary?: Json
+          overview?: string
+          published?: boolean
+          slug?: string
+          sort_order?: number
+          tagline?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_admin_role: { Args: never; Returns: boolean }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "staff" | "user"
+      booking_status: "inquiry" | "confirmed" | "in_progress" | "completed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +394,9 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "staff", "user"],
+      booking_status: ["inquiry", "confirmed", "in_progress", "completed"],
+    },
   },
 } as const
