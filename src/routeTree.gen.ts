@@ -69,7 +69,6 @@ import { Route as DestinationsCraterLakesRouteImport } from './routes/destinatio
 import { Route as DestinationsChimpanzeeTrekkingRouteImport } from './routes/destinations.chimpanzee-trekking'
 import { Route as DestinationsBwindiImpenetrableRouteImport } from './routes/destinations.bwindi-impenetrable'
 import { Route as AdminBookingsRouteImport } from './routes/admin.bookings'
-import { Route as ApiPublicSeedContentRouteImport } from './routes/api/public/seed-content'
 
 const WildlifeReservesRoute = WildlifeReservesRouteImport.update({
   id: '/wildlife-reserves',
@@ -384,11 +383,6 @@ const AdminBookingsRoute = AdminBookingsRouteImport.update({
   path: '/admin/bookings',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicSeedContentRoute = ApiPublicSeedContentRouteImport.update({
-  id: '/api/public/seed-content',
-  path: '/api/public/seed-content',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -451,7 +445,6 @@ export interface FileRoutesByFullPath {
   '/travel-journal/$slug': typeof TravelJournalSlugRoute
   '/experiences/': typeof ExperiencesIndexRoute
   '/travel-journal/': typeof TravelJournalIndexRoute
-  '/api/public/seed-content': typeof ApiPublicSeedContentRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -512,7 +505,6 @@ export interface FileRoutesByTo {
   '/travel-journal/$slug': typeof TravelJournalSlugRoute
   '/experiences': typeof ExperiencesIndexRoute
   '/travel-journal': typeof TravelJournalIndexRoute
-  '/api/public/seed-content': typeof ApiPublicSeedContentRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -576,7 +568,6 @@ export interface FileRoutesById {
   '/travel-journal/$slug': typeof TravelJournalSlugRoute
   '/experiences/': typeof ExperiencesIndexRoute
   '/travel-journal/': typeof TravelJournalIndexRoute
-  '/api/public/seed-content': typeof ApiPublicSeedContentRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -641,7 +632,6 @@ export interface FileRouteTypes {
     | '/travel-journal/$slug'
     | '/experiences/'
     | '/travel-journal/'
-    | '/api/public/seed-content'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -702,7 +692,6 @@ export interface FileRouteTypes {
     | '/travel-journal/$slug'
     | '/experiences'
     | '/travel-journal'
-    | '/api/public/seed-content'
   id:
     | '__root__'
     | '/'
@@ -765,7 +754,6 @@ export interface FileRouteTypes {
     | '/travel-journal/$slug'
     | '/experiences/'
     | '/travel-journal/'
-    | '/api/public/seed-content'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -825,7 +813,6 @@ export interface RootRouteChildren {
   DestinationsZiwaRhinoSanctuaryRoute: typeof DestinationsZiwaRhinoSanctuaryRoute
   JourneysSlugRoute: typeof JourneysSlugRoute
   RegionsRegionRoute: typeof RegionsRegionRoute
-  ApiPublicSeedContentRoute: typeof ApiPublicSeedContentRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1250,13 +1237,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminBookingsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/seed-content': {
-      id: '/api/public/seed-content'
-      path: '/api/public/seed-content'
-      fullPath: '/api/public/seed-content'
-      preLoaderRoute: typeof ApiPublicSeedContentRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -1346,7 +1326,6 @@ const rootRouteChildren: RootRouteChildren = {
   DestinationsZiwaRhinoSanctuaryRoute: DestinationsZiwaRhinoSanctuaryRoute,
   JourneysSlugRoute: JourneysSlugRoute,
   RegionsRegionRoute: RegionsRegionRoute,
-  ApiPublicSeedContentRoute: ApiPublicSeedContentRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
