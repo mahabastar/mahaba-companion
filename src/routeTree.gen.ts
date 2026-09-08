@@ -68,7 +68,9 @@ import { Route as DestinationsEntebbeRouteImport } from './routes/destinations.e
 import { Route as DestinationsCraterLakesRouteImport } from './routes/destinations.crater-lakes'
 import { Route as DestinationsChimpanzeeTrekkingRouteImport } from './routes/destinations.chimpanzee-trekking'
 import { Route as DestinationsBwindiImpenetrableRouteImport } from './routes/destinations.bwindi-impenetrable'
+import { Route as AdminContentRouteImport } from './routes/admin.content'
 import { Route as AdminBookingsRouteImport } from './routes/admin.bookings'
+import { Route as ApiPublicImgSplatRouteImport } from './routes/api/public/img.$'
 
 const WildlifeReservesRoute = WildlifeReservesRouteImport.update({
   id: '/wildlife-reserves',
@@ -378,9 +380,19 @@ const DestinationsBwindiImpenetrableRoute =
     path: '/destinations/bwindi-impenetrable',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdminContentRoute = AdminContentRouteImport.update({
+  id: '/admin/content',
+  path: '/admin/content',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminBookingsRoute = AdminBookingsRouteImport.update({
   id: '/admin/bookings',
   path: '/admin/bookings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicImgSplatRoute = ApiPublicImgSplatRouteImport.update({
+  id: '/api/public/img/$',
+  path: '/api/public/img/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -420,6 +432,7 @@ export interface FileRoutesByFullPath {
   '/wildlife-encyclopedia': typeof WildlifeEncyclopediaRoute
   '/wildlife-reserves': typeof WildlifeReservesRoute
   '/admin/bookings': typeof AdminBookingsRoute
+  '/admin/content': typeof AdminContentRoute
   '/destinations/bwindi-impenetrable': typeof DestinationsBwindiImpenetrableRoute
   '/destinations/chimpanzee-trekking': typeof DestinationsChimpanzeeTrekkingRoute
   '/destinations/crater-lakes': typeof DestinationsCraterLakesRoute
@@ -445,6 +458,7 @@ export interface FileRoutesByFullPath {
   '/travel-journal/$slug': typeof TravelJournalSlugRoute
   '/experiences/': typeof ExperiencesIndexRoute
   '/travel-journal/': typeof TravelJournalIndexRoute
+  '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -480,6 +494,7 @@ export interface FileRoutesByTo {
   '/wildlife-encyclopedia': typeof WildlifeEncyclopediaRoute
   '/wildlife-reserves': typeof WildlifeReservesRoute
   '/admin/bookings': typeof AdminBookingsRoute
+  '/admin/content': typeof AdminContentRoute
   '/destinations/bwindi-impenetrable': typeof DestinationsBwindiImpenetrableRoute
   '/destinations/chimpanzee-trekking': typeof DestinationsChimpanzeeTrekkingRoute
   '/destinations/crater-lakes': typeof DestinationsCraterLakesRoute
@@ -505,6 +520,7 @@ export interface FileRoutesByTo {
   '/travel-journal/$slug': typeof TravelJournalSlugRoute
   '/experiences': typeof ExperiencesIndexRoute
   '/travel-journal': typeof TravelJournalIndexRoute
+  '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -543,6 +559,7 @@ export interface FileRoutesById {
   '/wildlife-encyclopedia': typeof WildlifeEncyclopediaRoute
   '/wildlife-reserves': typeof WildlifeReservesRoute
   '/admin/bookings': typeof AdminBookingsRoute
+  '/admin/content': typeof AdminContentRoute
   '/destinations/bwindi-impenetrable': typeof DestinationsBwindiImpenetrableRoute
   '/destinations/chimpanzee-trekking': typeof DestinationsChimpanzeeTrekkingRoute
   '/destinations/crater-lakes': typeof DestinationsCraterLakesRoute
@@ -568,6 +585,7 @@ export interface FileRoutesById {
   '/travel-journal/$slug': typeof TravelJournalSlugRoute
   '/experiences/': typeof ExperiencesIndexRoute
   '/travel-journal/': typeof TravelJournalIndexRoute
+  '/api/public/img/$': typeof ApiPublicImgSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -607,6 +625,7 @@ export interface FileRouteTypes {
     | '/wildlife-encyclopedia'
     | '/wildlife-reserves'
     | '/admin/bookings'
+    | '/admin/content'
     | '/destinations/bwindi-impenetrable'
     | '/destinations/chimpanzee-trekking'
     | '/destinations/crater-lakes'
@@ -632,6 +651,7 @@ export interface FileRouteTypes {
     | '/travel-journal/$slug'
     | '/experiences/'
     | '/travel-journal/'
+    | '/api/public/img/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -667,6 +687,7 @@ export interface FileRouteTypes {
     | '/wildlife-encyclopedia'
     | '/wildlife-reserves'
     | '/admin/bookings'
+    | '/admin/content'
     | '/destinations/bwindi-impenetrable'
     | '/destinations/chimpanzee-trekking'
     | '/destinations/crater-lakes'
@@ -692,6 +713,7 @@ export interface FileRouteTypes {
     | '/travel-journal/$slug'
     | '/experiences'
     | '/travel-journal'
+    | '/api/public/img/$'
   id:
     | '__root__'
     | '/'
@@ -729,6 +751,7 @@ export interface FileRouteTypes {
     | '/wildlife-encyclopedia'
     | '/wildlife-reserves'
     | '/admin/bookings'
+    | '/admin/content'
     | '/destinations/bwindi-impenetrable'
     | '/destinations/chimpanzee-trekking'
     | '/destinations/crater-lakes'
@@ -754,6 +777,7 @@ export interface FileRouteTypes {
     | '/travel-journal/$slug'
     | '/experiences/'
     | '/travel-journal/'
+    | '/api/public/img/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -792,6 +816,7 @@ export interface RootRouteChildren {
   WildlifeEncyclopediaRoute: typeof WildlifeEncyclopediaRoute
   WildlifeReservesRoute: typeof WildlifeReservesRoute
   AdminBookingsRoute: typeof AdminBookingsRoute
+  AdminContentRoute: typeof AdminContentRoute
   DestinationsBwindiImpenetrableRoute: typeof DestinationsBwindiImpenetrableRoute
   DestinationsChimpanzeeTrekkingRoute: typeof DestinationsChimpanzeeTrekkingRoute
   DestinationsCraterLakesRoute: typeof DestinationsCraterLakesRoute
@@ -813,6 +838,7 @@ export interface RootRouteChildren {
   DestinationsZiwaRhinoSanctuaryRoute: typeof DestinationsZiwaRhinoSanctuaryRoute
   JourneysSlugRoute: typeof JourneysSlugRoute
   RegionsRegionRoute: typeof RegionsRegionRoute
+  ApiPublicImgSplatRoute: typeof ApiPublicImgSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1230,11 +1256,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DestinationsBwindiImpenetrableRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/content': {
+      id: '/admin/content'
+      path: '/admin/content'
+      fullPath: '/admin/content'
+      preLoaderRoute: typeof AdminContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/bookings': {
       id: '/admin/bookings'
       path: '/admin/bookings'
       fullPath: '/admin/bookings'
       preLoaderRoute: typeof AdminBookingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/img/$': {
+      id: '/api/public/img/$'
+      path: '/api/public/img/$'
+      fullPath: '/api/public/img/$'
+      preLoaderRoute: typeof ApiPublicImgSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -1304,6 +1344,7 @@ const rootRouteChildren: RootRouteChildren = {
   WildlifeEncyclopediaRoute: WildlifeEncyclopediaRoute,
   WildlifeReservesRoute: WildlifeReservesRoute,
   AdminBookingsRoute: AdminBookingsRoute,
+  AdminContentRoute: AdminContentRoute,
   DestinationsBwindiImpenetrableRoute: DestinationsBwindiImpenetrableRoute,
   DestinationsChimpanzeeTrekkingRoute: DestinationsChimpanzeeTrekkingRoute,
   DestinationsCraterLakesRoute: DestinationsCraterLakesRoute,
@@ -1326,6 +1367,7 @@ const rootRouteChildren: RootRouteChildren = {
   DestinationsZiwaRhinoSanctuaryRoute: DestinationsZiwaRhinoSanctuaryRoute,
   JourneysSlugRoute: JourneysSlugRoute,
   RegionsRegionRoute: RegionsRegionRoute,
+  ApiPublicImgSplatRoute: ApiPublicImgSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -25,5 +25,9 @@ export function resolveImg(value?: string | null): string {
   if (value.startsWith("asset:")) {
     return modules[`/src/assets/${value.slice("asset:".length)}`] ?? "";
   }
+  // Photos uploaded through the admin panel.
+  if (value.startsWith("storage:")) {
+    return `/api/public/img/${value.slice("storage:".length)}`;
+  }
   return value;
 }
