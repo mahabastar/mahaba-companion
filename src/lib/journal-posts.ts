@@ -6,8 +6,7 @@ import expShoebill from "@/assets/exp-shoebill.jpg";
 import sceneCulture from "@/assets/scene-culture.jpg";
 import sceneRwenzori from "@/assets/scene-rwenzori.jpg";
 import pearlOfAfrica from "@/assets/gallery/pearl-of-africa.jpg";
-import bestTimeUganda from "@/assets/best-time-uganda.jpg";
-
+import bestTimeUganda from "@/assets/hero-gorilla.jpg";
 export type Category =
   | "Destinations"
   | "Culture"
