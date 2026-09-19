@@ -1,3 +1,24 @@
+# Biiku Ya Trails Uganda - crawler rules
+
+# AI search and answer bots: allowed (except private areas)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard
+
+# AI training bots: blocked
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: Applebot-Extended
+Disallow: /
+
+# Everyone else (Googlebot, Bingbot, etc.)
 User-agent: *
 Allow: /
 Disallow: /admin/
