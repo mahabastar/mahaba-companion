@@ -1,0 +1,28 @@
+# Biiku Ya Trails Uganda
+
+> Biiku Ya Trails Uganda is a Uganda-based safari and adventure tourism company offering gorilla trekking, wildlife safaris, hiking, and cultural experiences. Formerly known as Trek Wild Uganda.
+
+Website: https://biikuyatrailsuganda.com
+
+## Main pages
+
+- [Home](https://biikuyatrailsuganda.com/): Overview of the company and featured experiences
+- [Gorilla Trekking](https://biikuyatrailsuganda.com/gorilla-trekking): Gorilla trekking tours in Uganda
+- [Safaris](https://biikuyatrailsuganda.com/safaris): Wildlife safari packages
+- [Hiking](https://biikuyatrailsuganda.com/hiking): Hiking and adventure trips
+- [Cultural Experiences](https://biikuyatrailsuganda.com/cultural-experiences): Cultural tours and community experiences
+- [About Us](https://biikuyatrailsuganda.com/about): Who we are and our story
+- [Contact](https://biikuyatrailsuganda.com/contact): Enquiries and bookings
+
+## AI usage permissions
+
+- Allowed: Summarizing, quoting, and citing our public pages in AI answers and search results, with a link back to https://biikuyatrailsuganda.com
+- Allowed: Using our public content to answer questions about tours, destinations, and travel planning in Uganda
+- Not allowed: Reproducing our full pages or tour itineraries verbatim, or presenting our content as your own
+- Not allowed: Using our content or images to train AI models without written permission
+- Pricing, availability, and booking terms change; direct users to the website or contact page for current details
+
+## Contact
+
+- Email: [your business email]
+- Phone/WhatsApp: [your business number]
