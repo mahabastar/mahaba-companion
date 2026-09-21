@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
@@ -20,10 +21,7 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-charcoal grain px-6 text-center">
       <div className="max-w-lg">
-        <Link
-          to="/"
-          className="mx-auto flex w-fit items-center gap-3 text-ivory"
-        >
+        <Link to="/" className="mx-auto flex w-fit items-center gap-3 text-ivory">
           <img
             src={LOGO_URL}
             alt="Biikuya Trails Uganda logo"
@@ -42,8 +40,7 @@ function NotFoundComponent() {
         </h1>
 
         <p className="mx-auto mt-4 max-w-sm text-ivory/70">
-          This page doesn't exist, or has moved. Even the best trackers lose
-          the trail sometimes.
+          This page doesn't exist, or has moved. Even the best trackers lose the trail sometimes.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -66,13 +63,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({
-  error,
-  reset,
-}: {
-  error: Error;
-  reset: () => void;
-}) {
+function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
 
   const router = useRouter();
@@ -98,17 +89,14 @@ function ErrorComponent({
           </span>
         </div>
 
-        <div className="mt-14 eyebrow !text-gold">
-          Something went wrong
-        </div>
+        <div className="mt-14 eyebrow !text-gold">Something went wrong</div>
 
         <h1 className="mt-4 font-display text-[clamp(2rem,6vw,3.5rem)] text-ivory text-balance">
           This page <em className="italic text-gold">didn't load.</em>
         </h1>
 
         <p className="mx-auto mt-4 max-w-sm text-ivory/70">
-          Something went wrong on our end. You can try again, or head back
-          home.
+          Something went wrong on our end. You can try again, or head back home.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -187,145 +175,143 @@ const WEBSITE_LD = {
 const GOOGLE_SITE_VERIFICATION =
   (import.meta.env.VITE_GOOGLE_SITE_VERIFICATION as string | undefined) || "";
 
-const DEFAULT_TITLE =
-  "Uganda Safaris & Gorilla Trekking | Biikuya Trails Uganda";
+const DEFAULT_TITLE = "Uganda Safaris & Gorilla Trekking | Biikuya Trails Uganda";
 
 const DEFAULT_DESCRIPTION =
   "Private, locally guided Uganda safaris — mountain gorillas in Bwindi, chimpanzees in Kibale, tree-climbing lions, the source of the Nile and the Rwenzori peaks. Planned in Uganda by Ugandan guides.";
 
-export const Route =
-  createRootRouteWithContext<{ queryClient: QueryClient }>()({
-    head: () => ({
-      meta: [
-        {
-          charSet: "utf-8",
-        },
-        {
-          name: "viewport",
-          content: "width=device-width, initial-scale=1",
-        },
-        {
-          title: DEFAULT_TITLE,
-        },
-        {
-          name: "description",
-          content: DEFAULT_DESCRIPTION,
-        },
-        {
-          name: "author",
-          content: "Biikuya Trails Uganda",
-        },
-        {
-          name: "robots",
-          content: "index,follow,max-image-preview:large",
-        },
-        {
-          name: "theme-color",
-          content: "#1B2B21",
-        },
+export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  head: () => ({
+    meta: [
+      {
+        charSet: "utf-8",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+      {
+        title: DEFAULT_TITLE,
+      },
+      {
+        name: "description",
+        content: DEFAULT_DESCRIPTION,
+      },
+      {
+        name: "author",
+        content: "Biikuya Trails Uganda",
+      },
+      {
+        name: "robots",
+        content: "index,follow,max-image-preview:large",
+      },
+      {
+        name: "theme-color",
+        content: "#1B2B21",
+      },
 
-        ...(GOOGLE_SITE_VERIFICATION
-          ? [
-              {
-                name: "google-site-verification",
-                content: GOOGLE_SITE_VERIFICATION,
-              },
-            ]
-          : []),
+      ...(GOOGLE_SITE_VERIFICATION
+        ? [
+            {
+              name: "google-site-verification",
+              content: GOOGLE_SITE_VERIFICATION,
+            },
+          ]
+        : []),
 
-        {
-          property: "og:site_name",
-          content: "Biikuya Trails Uganda",
-        },
-        {
-          property: "og:locale",
-          content: "en_US",
-        },
-        {
-          property: "og:title",
-          content: DEFAULT_TITLE,
-        },
-        {
-          property: "og:description",
-          content: DEFAULT_DESCRIPTION,
-        },
-        {
-          property: "og:type",
-          content: "website",
-        },
+      {
+        property: "og:site_name",
+        content: "Biikuya Trails Uganda",
+      },
+      {
+        property: "og:locale",
+        content: "en_US",
+      },
+      {
+        property: "og:title",
+        content: DEFAULT_TITLE,
+      },
+      {
+        property: "og:description",
+        content: DEFAULT_DESCRIPTION,
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
 
-        {
-          name: "twitter:card",
-          content: "summary_large_image",
-        },
-        {
-          name: "twitter:title",
-          content: DEFAULT_TITLE,
-        },
-        {
-          name: "twitter:description",
-          content: DEFAULT_DESCRIPTION,
-        },
-      ],
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:title",
+        content: DEFAULT_TITLE,
+      },
+      {
+        name: "twitter:description",
+        content: DEFAULT_DESCRIPTION,
+      },
+    ],
 
-      links: [
-        {
-          rel: "stylesheet",
-          href: appCss,
-        },
-        {
-          rel: "icon",
-          href: "/favicon.png",
-          type: "image/png",
-        },
-        {
-          rel: "apple-touch-icon",
-          href: "/favicon.png",
-        },
-        {
-          rel: "preconnect",
-          href: "https://fonts.googleapis.com",
-        },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossOrigin: "anonymous",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap",
-        },
-      ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
+      {
+        rel: "icon",
+        href: "/favicon.png",
+        type: "image/png",
+      },
+      {
+        rel: "apple-touch-icon",
+        href: "/favicon.png",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap",
+      },
+    ],
 
-      scripts: [
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(ORGANIZATION_LD),
-        },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify(WEBSITE_LD),
-        },
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(ORGANIZATION_LD),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(WEBSITE_LD),
+      },
 
-        ...(GA_MEASUREMENT_ID
-          ? [
-              {
-                src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
-                async: true,
-              },
-              {
-                children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}',{send_page_view:false});`,
-              },
-            ]
-          : []),
-      ],
-    }),
+      ...(GA_MEASUREMENT_ID
+        ? [
+            {
+              src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
+              async: true,
+            },
+            {
+              children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}',{send_page_view:false});`,
+            },
+          ]
+        : []),
+    ],
+  }),
 
-    shellComponent: RootShell,
-    component: RootComponent,
-    notFoundComponent: NotFoundComponent,
-    errorComponent: ErrorComponent,
-  });
+  shellComponent: RootShell,
+  component: RootComponent,
+  notFoundComponent: NotFoundComponent,
+  errorComponent: ErrorComponent,
+});
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
@@ -357,6 +343,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <Outlet />
       <WhatsAppButton />
+      <SpeedInsights />
     </QueryClientProvider>
   );
 }
