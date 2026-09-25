@@ -1,3 +1,4 @@
+ 
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
@@ -6,14 +7,14 @@ import { SiteFooter } from "@/components/SiteFooter";
 import sceneCulture from "@/assets/scene-culture.jpg";
 import heroGorilla from "@/assets/hero-gorilla.jpg";
 import expLodge from "@/assets/exp-lodge.jpg";
-import founderXavier from "@/assets/founders/xavier-asaaba.png";
+import founderXavier from "@/assets/founders/xavier-asaaba.jpg";
 import founderHerbert from "@/assets/founders/herbert-muzoora.png";
 import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     ...buildPageMeta({
-      title: "About Biikuya Trails Uganda — Ugandan-Owned Safari Guides",
+      title: "About Us: Local Ugandan Safari Guides | Biikuya Trails",
       description: "Meet the Ugandan guides behind Biikuya Trails Uganda: 24 years of combined field experience, private vehicles on every itinerary, and a working commitment to conservation and the communities beside the parks.",
       path: "/about",
     }),
@@ -74,7 +75,7 @@ function About() {
 
       {/* Hero */}
       <section className="relative min-h-[65svh] w-full overflow-hidden bg-charcoal">
-        <img src={sceneCulture} alt="Community members in south-western Uganda" className="absolute inset-0 h-full w-full object-cover opacity-60"
+        <img src={sceneCulture} width={1600} height={900} alt="Community members in south-western Uganda" className="absolute inset-0 h-full w-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/30" />
         <div className="relative mx-auto flex min-h-[65svh] max-w-[900px] flex-col justify-end px-6 pb-16 pt-40 md:px-10">
@@ -158,6 +159,8 @@ function About() {
                 <div className="relative aspect-[4/5] w-full overflow-hidden bg-charcoal">
                   <img
                     src={f.photo}
+                    width={640}
+                    height={800}
                     alt={f.photoAlt}
                     className="h-full w-full object-cover object-top"
                     loading="lazy"
@@ -240,10 +243,10 @@ function About() {
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src={heroGorilla} alt="Gorilla trekking guide in Bwindi" className="aspect-[3/4] w-full rounded-2xl object-cover"
+              <img src={heroGorilla} width={600} height={800} alt="Gorilla trekking guide in Bwindi" className="aspect-[3/4] w-full rounded-2xl object-cover"
           loading="lazy"
         />
-              <img src={expLodge} alt="Safari lodge" className="mt-8 aspect-[3/4] w-full rounded-2xl object-cover"
+              <img src={expLodge} width={600} height={800} alt="Safari lodge" className="mt-8 aspect-[3/4] w-full rounded-2xl object-cover"
           loading="lazy"
         />
             </div>
@@ -284,4 +287,5 @@ function About() {
       <SiteFooter />
     </div>
   );
-}
+}       
+              
