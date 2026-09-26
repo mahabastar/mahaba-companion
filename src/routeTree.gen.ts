@@ -33,6 +33,10 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ForestsRouteImport } from './routes/forests'
 import { Route as FoodGuideRouteImport } from './routes/food-guide'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as IsUgandaSafeRouteImport } from './routes/is-uganda-safe'
+import { Route as UgandaCurrencyRouteImport } from './routes/uganda-currency'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CulturalHeritageRouteImport } from './routes/cultural-heritage'
@@ -190,6 +194,26 @@ const FoodGuideRoute = FoodGuideRouteImport.update({
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IsUgandaSafeRoute = IsUgandaSafeRouteImport.update({
+  id: '/is-uganda-safe',
+  path: '/is-uganda-safe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UgandaCurrencyRoute = UgandaCurrencyRouteImport.update({
+  id: '/uganda-currency',
+  path: '/uganda-currency',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
@@ -408,6 +432,10 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/experiences': typeof ExperiencesRouteWithChildren
   '/faqs': typeof FaqsRoute
+  '/is-uganda-safe': typeof IsUgandaSafeRoute
+  '/uganda-currency': typeof UgandaCurrencyRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/food-guide': typeof FoodGuideRoute
   '/forests': typeof ForestsRoute
   '/gallery': typeof GalleryRoute
@@ -471,6 +499,10 @@ export interface FileRoutesByTo {
   '/cultural-heritage': typeof CulturalHeritageRoute
   '/dashboard': typeof DashboardRoute
   '/faqs': typeof FaqsRoute
+  '/is-uganda-safe': typeof IsUgandaSafeRoute
+  '/uganda-currency': typeof UgandaCurrencyRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/food-guide': typeof FoodGuideRoute
   '/forests': typeof ForestsRoute
   '/gallery': typeof GalleryRoute
@@ -535,6 +567,10 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/experiences': typeof ExperiencesRouteWithChildren
   '/faqs': typeof FaqsRoute
+  '/is-uganda-safe': typeof IsUgandaSafeRoute
+  '/uganda-currency': typeof UgandaCurrencyRoute
+  '/privacy': typeof PrivacyRoute
+  '/terms': typeof TermsRoute
   '/food-guide': typeof FoodGuideRoute
   '/forests': typeof ForestsRoute
   '/gallery': typeof GalleryRoute
@@ -601,6 +637,10 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/experiences'
     | '/faqs'
+    | '/is-uganda-safe'
+    | '/uganda-currency'
+    | '/privacy'
+    | '/terms'
     | '/food-guide'
     | '/forests'
     | '/gallery'
@@ -664,6 +704,10 @@ export interface FileRouteTypes {
     | '/cultural-heritage'
     | '/dashboard'
     | '/faqs'
+    | '/is-uganda-safe'
+    | '/uganda-currency'
+    | '/privacy'
+    | '/terms'
     | '/food-guide'
     | '/forests'
     | '/gallery'
@@ -727,6 +771,10 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/experiences'
     | '/faqs'
+    | '/is-uganda-safe'
+    | '/uganda-currency'
+    | '/privacy'
+    | '/terms'
     | '/food-guide'
     | '/forests'
     | '/gallery'
@@ -792,6 +840,10 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   ExperiencesRoute: typeof ExperiencesRouteWithChildren
   FaqsRoute: typeof FaqsRoute
+  IsUgandaSafeRoute: typeof IsUgandaSafeRoute
+  UgandaCurrencyRoute: typeof UgandaCurrencyRoute
+  PrivacyRoute: typeof PrivacyRoute
+  TermsRoute: typeof TermsRoute
   FoodGuideRoute: typeof FoodGuideRoute
   ForestsRoute: typeof ForestsRoute
   GalleryRoute: typeof GalleryRoute
@@ -1009,6 +1061,34 @@ declare module '@tanstack/react-router' {
       path: '/faqs'
       fullPath: '/faqs'
       preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/is-uganda-safe': {
+      id: '/is-uganda-safe'
+      path: '/is-uganda-safe'
+      fullPath: '/is-uganda-safe'
+      preLoaderRoute: typeof IsUgandaSafeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uganda-currency': {
+      id: '/uganda-currency'
+      path: '/uganda-currency'
+      fullPath: '/uganda-currency'
+      preLoaderRoute: typeof UgandaCurrencyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences': {
@@ -1320,6 +1400,10 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   ExperiencesRoute: ExperiencesRouteWithChildren,
   FaqsRoute: FaqsRoute,
+  IsUgandaSafeRoute: IsUgandaSafeRoute,
+  UgandaCurrencyRoute: UgandaCurrencyRoute,
+  PrivacyRoute: PrivacyRoute,
+  TermsRoute: TermsRoute,
   FoodGuideRoute: FoodGuideRoute,
   ForestsRoute: ForestsRoute,
   GalleryRoute: GalleryRoute,
