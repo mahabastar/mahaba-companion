@@ -5,11 +5,13 @@ import {
   buildWhatsAppHref,
   getSiteUrl,
 } from "@/lib/site-config";
-import { LOGO_URL } from "@/lib/site-config";
+import { BOOKING_URL, LOGO_SMALL_URL } from "@/lib/site-config";
 
 type FooterItem = {
   label: string;
   to?: string;
+  /** External link, opened in a new tab. */
+  href?: string;
   ask?: boolean;
 };
 
@@ -35,7 +37,7 @@ const COLS: { h: string; items: FooterItem[] }[] = [
       },
       {
         label: "Chimpanzee Trekking, Kibale",
-        to: "/destinations/kibale-forest",
+        to: "/destinations/chimpanzee-trekking",
       },
       {
         label: "Tree-Climbing Lions",
@@ -116,6 +118,10 @@ const COLS: { h: string; items: FooterItem[] }[] = [
         to: "/wildlife-encyclopedia",
       },
       {
+        label: "Safari Packages",
+        to: "/safari-package",
+      },
+      {
         label: "Seasonal Safari Calendar",
         to: "/seasonal-safari-calendar",
       },
@@ -133,7 +139,11 @@ const COLS: { h: string; items: FooterItem[] }[] = [
       },
       {
         label: "Safety",
-        ask: true,
+        to: "/is-uganda-safe",
+      },
+      {
+        label: "Currency",
+        to: "/uganda-currency",
       },
       {
         label: "FAQs",
@@ -147,6 +157,10 @@ const COLS: { h: string; items: FooterItem[] }[] = [
       {
         label: "Build My Safari",
         to: "/build-my-safari",
+      },
+      {
+        label: "Book an Appointment",
+        href: BOOKING_URL,
       },
       {
         label: "Experiences",
@@ -178,11 +192,11 @@ const COLS: { h: string; items: FooterItem[] }[] = [
       },
       {
         label: "Privacy",
-        ask: true,
+        to: "/privacy",
       },
       {
         label: "Terms",
-        ask: true,
+        to: "/terms",
       },
     ],
   },
@@ -246,19 +260,24 @@ export function SiteFooter() {
           </div>
 
           <p className="text-xs leading-relaxed text-ivory/70">
-            Uganda is safe for travel. There is no Ebola outbreak affecting
-            tourist areas, and the national parks, gorilla trekking sectors
-            and travel routes we use are fully open and operating normally.
-            Uganda has a long, well-proven record of containing isolated
-            outbreaks quickly, with screening at Entebbe International Airport
-            and at park entry points. We monitor Ministry of Health and WHO
-            updates daily and will always tell you directly if anything on
-            your itinerary is affected —{" "}
+            Updated 20 September 2026. The World Health Organization declared
+            Uganda's Ebola outbreak over in late August 2026, after cases in
+            May and June. The outbreak in neighbouring DR Congo is continuing.
+            We monitor Ministry of Health and WHO updates daily and will tell
+            you directly if anything on your itinerary is affected. Government
+            advice on travel to Uganda varies, so please read our{" "}
+            <Link
+              to="/is-uganda-safe"
+              className="text-gold underline underline-offset-4 hover:text-ivory"
+            >
+              safety guide
+            </Link>{" "}
+            and check your own government's advice, or{" "}
             <a
               href={askHref("the current Ebola and health situation")}
               className="text-gold underline underline-offset-4 hover:text-ivory"
             >
-              ask us anything about current conditions
+              ask us about current conditions
             </a>
             .
           </p>
@@ -270,7 +289,9 @@ export function SiteFooter() {
           <div className="md:col-span-4">
             <div className="flex items-center gap-3">
               <img
-                src={LOGO_URL}
+                src={LOGO_SMALL_URL}
+                width={48}
+                height={48}
                 alt="Biikuya Trails Uganda logo"
                 className="h-12 w-12 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50"
               />
@@ -361,6 +382,17 @@ export function SiteFooter() {
                       <li key={item.label}>
                         <a
                           href={askHref(item.label)}
+                          className="hover:text-gold"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ) : item.href ? (
+                      <li key={item.label}>
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="hover:text-gold"
                         >
                           {item.label}
