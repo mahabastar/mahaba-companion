@@ -438,12 +438,6 @@ export function SiteFooter() {
     </footer>
   );
 }
-   
-      
-      
-        
-      
-              
 
-              
-                    
+        
+        
