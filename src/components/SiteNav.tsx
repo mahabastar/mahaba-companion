@@ -2,7 +2,7 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 
 import { SEARCH_INDEX } from "@/lib/search-index";
-import { LOGO_URL } from "@/lib/site-config";
+import { BOOKING_URL, LOGO_SMALL_URL } from "@/lib/site-config";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const NAV_LINKS: { label: string; hash: string }[] = [
@@ -34,8 +34,10 @@ const INSPIRATION_LINKS: { label: string; to: string; desc: string }[] = [
   { label: "Wild Uganda TV", to: "/wild-uganda-tv", desc: "Destination films & traveller stories" },
 ];
 
-const PLAN_LINKS: { label: string; to: string; desc: string }[] = [
+const PLAN_LINKS: { label: string; to?: string; href?: string; desc: string }[] = [
+  { label: "Safari Packages", to: "/safari-package", desc: "Compare 3 to 21 day itineraries" },
   { label: "Request a Quote", to: "/quote-request", desc: "A fast, no-obligation quote" },
+  { label: "Book an Appointment", href: BOOKING_URL, desc: "Pick a time to talk it through" },
   { label: "Seasonal Safari Calendar", to: "/seasonal-safari-calendar", desc: "What's best, month by month" },
   { label: "Weather Guide", to: "/weather", desc: "Uganda's climate, region by region" },
   { label: "Safari Budget Calculator", to: "/safari-budget-calculator", desc: "Estimate your trip cost" },
@@ -121,7 +123,7 @@ export function SiteNav() {
         }`}
       >
         <Link to="/" className="flex items-center gap-3 text-ivory">
-          <img src={LOGO_URL} alt="Biikuya Trails Uganda logo" className="h-11 w-11 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50 md:h-12 md:w-12" />
+          <img src={LOGO_SMALL_URL} width={48} height={48} alt="Biikuya Trails Uganda logo" className="h-11 w-11 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50 md:h-12 md:w-12" />
           <span className="font-display text-xl leading-none">
             Biikuya Trails <span className="text-gold">Uganda</span>
           </span>
@@ -172,16 +174,29 @@ export function SiteNav() {
             </button>
             <div className="invisible absolute left-1/2 top-full -translate-x-1/2 pt-4 opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100">
               <div className="w-72 rounded-2xl border border-charcoal/10 bg-white p-2 text-charcoal shadow-luxe">
-                {PLAN_LINKS.map((l) => (
-                  <Link
-                    key={l.to}
-                    to={l.to}
-                    className="block rounded-xl px-4 py-3 transition-colors hover:bg-forest/5"
-                  >
-                    <div className="text-sm font-medium text-charcoal">{l.label}</div>
-                    <div className="mt-0.5 text-xs text-charcoal/50">{l.desc}</div>
-                  </Link>
-                ))}
+                {PLAN_LINKS.map((l) =>
+                  l.href ? (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-xl px-4 py-3 transition-colors hover:bg-forest/5"
+                    >
+                      <div className="text-sm font-medium text-charcoal">{l.label}</div>
+                      <div className="mt-0.5 text-xs text-charcoal/50">{l.desc}</div>
+                    </a>
+                  ) : (
+                    <Link
+                      key={l.to}
+                      to={l.to!}
+                      className="block rounded-xl px-4 py-3 transition-colors hover:bg-forest/5"
+                    >
+                      <div className="text-sm font-medium text-charcoal">{l.label}</div>
+                      <div className="mt-0.5 text-xs text-charcoal/50">{l.desc}</div>
+                    </Link>
+                  ),
+                )}
               </div>
             </div>
           </div>
@@ -255,7 +270,7 @@ export function SiteNav() {
         <div className="fixed inset-0 z-[60] flex flex-col bg-charcoal grain md:hidden">
           <div className="flex items-center justify-between px-6 py-6">
             <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 text-ivory">
-              <img src={LOGO_URL} alt="Biikuya Trails Uganda logo" className="h-11 w-11 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50 md:h-12 md:w-12" />
+              <img src={LOGO_SMALL_URL} width={48} height={48} alt="Biikuya Trails Uganda logo" className="h-11 w-11 shrink-0 rounded-full bg-ivory object-contain p-0.5 ring-1 ring-gold/50 md:h-12 md:w-12" />
               <span className="font-display text-xl leading-none">
                 Biikuya Trails <span className="text-gold">Uganda</span>
               </span>
@@ -320,17 +335,31 @@ export function SiteNav() {
             <div className="mt-6">
               <div className="px-2 text-xs uppercase tracking-widest text-ivory/40">Plan</div>
               <div className="mt-2 flex flex-col">
-                {PLAN_LINKS.map((l) => (
-                  <Link
-                    key={l.to}
-                    to={l.to}
-                    onClick={() => setMobileOpen(false)}
-                    className="rounded-xl px-2 py-3 text-ivory/85 hover:text-gold"
-                  >
-                    <div className="text-base font-medium">{l.label}</div>
-                    <div className="text-xs text-ivory/40">{l.desc}</div>
-                  </Link>
-                ))}
+                {PLAN_LINKS.map((l) =>
+                  l.href ? (
+                    <a
+                      key={l.href}
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileOpen(false)}
+                      className="rounded-xl px-2 py-3 text-ivory/85 hover:text-gold"
+                    >
+                      <div className="text-base font-medium">{l.label}</div>
+                      <div className="text-xs text-ivory/40">{l.desc}</div>
+                    </a>
+                  ) : (
+                    <Link
+                      key={l.to}
+                      to={l.to!}
+                      onClick={() => setMobileOpen(false)}
+                      className="rounded-xl px-2 py-3 text-ivory/85 hover:text-gold"
+                    >
+                      <div className="text-base font-medium">{l.label}</div>
+                      <div className="text-xs text-ivory/40">{l.desc}</div>
+                    </Link>
+                  ),
+                )}
               </div>
             </div>
 
