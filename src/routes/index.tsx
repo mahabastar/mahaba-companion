@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 
 import { SiteNav } from "@/components/SiteNav";
@@ -11,6 +12,16 @@ import {
 } from "@/lib/site-config";
 import { JOURNAL_POSTS } from "@/lib/journal-posts";
 import { JOURNEYS } from "@/lib/journeys";
+import { subscribeNewsletter } from "@/lib/newsletter.functions";
+import { trackEvent } from "@/lib/analytics";
+import { LeadMagnetCTA } from "@/components/lead-magnet/LeadMagnetCTA";
+import {
+  CONSENT_TEXT,
+  GUIDE_FILENAME,
+  GUIDE_URL,
+  markSubscribed,
+  useSubscribed,
+} from "@/lib/lead-magnet";
 import heroGorilla from "@/assets/hero-gorilla.jpg";
 import sceneElephants from "@/assets/scene-elephants.jpg";
 import sceneFalls from "@/assets/scene-falls.jpg";
@@ -39,7 +50,7 @@ import g_pearl_of_africa from "@/assets/gallery/pearl-of-africa.jpg";
 export const Route = createFileRoute("/")({
     head: () => {
     const title =
-      "Uganda Safari Packages & Gorilla Trekking | Biikuya Trails Uganda";
+      "Uganda Safari Packages & Gorilla Trekking | Biikuya Trails";
 
     const description =
       "Explore Uganda safari packages with local guides, gorilla trekking in Bwindi, chimpanzee trekking in Kibale, wildlife safaris and customized Uganda trips.";
@@ -292,6 +303,8 @@ function SceneBlock({ scene, index }: { scene: typeof scenes[number]; index: num
         <div className="group relative overflow-hidden rounded-3xl bg-charcoal/5 shadow-luxe">
           <img
             src={scene.img}
+            width={800}
+            height={600}
             alt={scene.title}
             loading="lazy"
             className="aspect-[4/3] w-full object-cover transition-transform duration-[2000ms] ease-luxe group-hover:scale-105"
@@ -373,6 +386,8 @@ function WhyUganda() {
             >
               <img
                 src={c.img}
+                width={800}
+                height={600}
                 alt={c.title}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1400ms] ease-luxe group-hover:scale-110"
@@ -473,6 +488,8 @@ function Experiences() {
             >
               <img
                 src={e.img}
+                width={800}
+                height={600}
                 alt={e.t}
                 loading="lazy"
                 className="h-full w-full object-cover transition-transform duration-[1400ms] ease-luxe group-hover:scale-110"
@@ -603,6 +620,8 @@ function Bucket() {
               <>
                 <img
                   src={b.img}
+                  width={800}
+                  height={600}
                   alt={b.t}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-[1400ms] ease-luxe group-hover:scale-110"
@@ -635,7 +654,7 @@ function Journeys() {
           invert
           eyebrow="Signature journeys"
           title={<>Not itineraries. <em className="italic text-gold">Stories</em> waiting to be lived.</>}
-          copy="Six routes we run often enough to know intimately — from a three-day gorilla escape to a twenty-one-day circuit of the whole country. Each one is a starting point, adjusted to your pace and interests."
+          copy="Eight routes we run often enough to know intimately — from a three-day gorilla escape to a twenty-one-day circuit of the whole country. Each one is a starting point, adjusted to your pace and interests."
         />
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {JOURNEYS.map((j) => (
@@ -643,6 +662,8 @@ function Journeys() {
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={j.img}
+                  width={800}
+                  height={600}
                   alt={j.title}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-[1400ms] ease-luxe group-hover:scale-110"
@@ -660,6 +681,14 @@ function Journeys() {
               </div>
             </article>
           ))}
+        </div>
+        <div className="mt-14 text-center">
+          <Link
+            to="/safari-package"
+            className="inline-flex items-center gap-2 rounded-full border border-gold/60 px-7 py-3.5 text-sm uppercase tracking-widest text-gold transition-colors hover:bg-gold hover:text-charcoal"
+          >
+            Compare all safari packages <span aria-hidden>→</span>
+          </Link>
         </div>
       </div>
     </section>
@@ -780,8 +809,8 @@ function Planning() {
     { label: "Safari Costs", to: "/safari-budget-calculator" },
     { label: "Gorilla Permits", to: "/gorilla-permit-guide" },
     { label: "Travel Tips", to: "/travel-journal" },
-    { label: "Currency", ask: true },
-    { label: "Safety", ask: true },
+    { label: "Currency", to: "/uganda-currency" },
+    { label: "Safety", to: "/is-uganda-safe" },
     { label: "FAQs", to: "/faqs" },
 
   ];
@@ -862,6 +891,8 @@ function LatestStories() {
             >
               <img
                 src={p.img}
+                width={800}
+                height={600}
                 alt={p.title}
                 loading="lazy"
                 className={`w-full object-cover transition-transform duration-[1400ms] ease-luxe group-hover:scale-105 ${
@@ -885,6 +916,29 @@ function LatestStories() {
 
 /* ---------------- Newsletter ---------------- */
 function Newsletter() {
+  const send = useServerFn(subscribeNewsletter);
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState(""); // honeypot
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [error, setError] = useState<string | null>(null);
+  const subscribed = useSubscribed();
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("sending");
+    setError(null);
+    try {
+      await send({ data: { firstName, email, website, source: "newsletter_section", sourcePath: "/" } });
+      markSubscribed();
+      setStatus("sent");
+      trackEvent("newsletter_signup", { placement: "homepage_newsletter" });
+    } catch (err) {
+      setStatus("error");
+      setError(err instanceof Error && err.message ? err.message : "Something went wrong. Please try again.");
+    }
+  }
+
   return (
     <section className="bg-ivory">
       <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
@@ -896,26 +950,65 @@ function Newsletter() {
                 Letters from the Pearl of Africa.
               </h2>
               <p className="mt-4 max-w-md text-charcoal/75">
-                Field notes from the trail, gorilla family news, honest advice on when to
-                travel, and the occasional photograph we couldn't keep to ourselves — one
-                thoughtful letter a month, and nothing else.
+                Join the Biikuya Trails Uganda travel newsletter and get your FREE Uganda
+                Travel Guide — plus field notes from the trail, gorilla family news, honest
+                advice on when to travel, and the occasional photograph we couldn't keep to
+                ourselves. One thoughtful letter a month, and nothing else.
               </p>
-
             </div>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col gap-3 sm:flex-row"
-            >
-              <input
-                type="email"
-                required
-                placeholder="you@example.com"
-                className="flex-1 rounded-full border border-charcoal/20 bg-ivory px-6 py-4 text-sm text-charcoal outline-none focus:border-charcoal"
-              />
-              <button className="rounded-full bg-charcoal px-7 py-4 text-sm font-medium text-ivory transition-transform hover:scale-105">
-                Subscribe
-              </button>
-            </form>
+
+            {status === "sent" || subscribed ? (
+              <div className="rounded-2xl bg-ivory/70 p-6">
+                <p className="font-display text-lg text-charcoal">Thank you! Your Uganda Travel Guide is ready.</p>
+                <a
+                  href={GUIDE_URL}
+                  download={GUIDE_FILENAME}
+                  onClick={() => trackEvent("lead_magnet_pdf_download", { placement: "homepage_newsletter" })}
+                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-charcoal px-6 py-3.5 text-sm font-medium text-ivory transition-transform hover:scale-105"
+                >
+                  Download Your Free Guide <span aria-hidden>&darr;</span>
+                </a>
+              </div>
+            ) : (
+              <form onSubmit={onSubmit} className="flex flex-col gap-3" noValidate>
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="nl-website">Leave this field empty</label>
+                  <input id="nl-website" type="text" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+                </div>
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <label htmlFor="nl-first-name" className="sr-only">First name</label>
+                  <input
+                    id="nl-first-name"
+                    type="text"
+                    required
+                    autoComplete="given-name"
+                    placeholder="First name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="flex-1 rounded-full border border-charcoal/20 bg-ivory px-6 py-4 text-sm text-charcoal outline-none focus:border-charcoal sm:max-w-[42%]"
+                  />
+                  <label htmlFor="nl-email" className="sr-only">Email address</label>
+                  <input
+                    id="nl-email"
+                    type="email"
+                    required
+                    autoComplete="email"
+                    placeholder="you@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 rounded-full border border-charcoal/20 bg-ivory px-6 py-4 text-sm text-charcoal outline-none focus:border-charcoal"
+                  />
+                  <button
+                    disabled={status === "sending"}
+                    className="rounded-full bg-charcoal px-7 py-4 text-sm font-medium text-ivory transition-transform hover:scale-105 disabled:opacity-60 disabled:hover:scale-100"
+                  >
+                    {status === "sending" ? "Sending…" : "Get the Free Guide"}
+                  </button>
+                </div>
+                {error && <p role="alert" className="text-sm text-red-700">{error}</p>}
+                <p className="text-xs leading-relaxed text-charcoal/60">{CONSENT_TEXT}</p>
+              </form>
+            )}
           </div>
         </div>
       </div>
@@ -930,6 +1023,8 @@ function FinalCTA() {
       <div className="relative h-[80vh] min-h-[560px] w-full">
         <img
           src={ctaSunset}
+          width={1600}
+          height={900}
           alt="Sunset over Kazinga Channel"
           loading="lazy"
           className="h-full w-full object-cover"
@@ -989,6 +1084,11 @@ function Home() {
       <Stories />
       <Planning />
       <LatestStories />
+      <section className="bg-mist">
+        <div className="mx-auto max-w-[900px] px-6 py-20 md:px-10 md:py-24">
+          <LeadMagnetCTA placement="homepage" />
+        </div>
+      </section>
       <Newsletter />
       <FinalCTA />
       <SiteFooter />
@@ -997,3 +1097,4 @@ function Home() {
 }
 
 export default Home;
+        
