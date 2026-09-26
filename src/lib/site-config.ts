@@ -1,4 +1,5 @@
-/**
+
+ /**
  * Single source of truth for Biikuya Trails Uganda business identity,
  * contact details, canonical URL, and verified social profiles.
  *
@@ -176,3 +177,15 @@ export function buildPageMeta(options: {
  * the way an externally hosted asset can.
  */
 export const LOGO_URL = "/logo.png";
+
+/** Online appointment booking page (Picktime). */
+export const BOOKING_URL = "https://www.picktime.com/0cfdbd09-0e71-4ba9-bbd8-90e029a2b503";
+
+/**
+ * 144px copy of the logo for the nav, footer and error pages, where it is
+ * only shown at 44-48px. Use LOGO_URL (512px) for structured data and social cards.
+ */
+export const LOGO_SMALL_URL = "/logo-144.png";
+ 
+ 
+ 
