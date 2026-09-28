@@ -1,132 +1,162 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DestinationPage } from "@/components/DestinationPage";
 import { buildDestinationHead } from "@/lib/destination-head";
-import heroGorilla from "@/assets/hero-gorilla.jpg";
-import sceneBunyonyi from "@/assets/scene-bunyonyi.jpg";
 import expChimp from "@/assets/exp-chimp.jpg";
-import sceneLion from "@/assets/scene-lion.jpg";
+import expCoffee from "@/assets/exp-coffee.jpg";
 import sceneFalls from "@/assets/scene-falls.jpg";
-import g_gorilla_silverback from "@/assets/gallery/gorilla-silverback.jpg";
-import g_gorilla_lookup from "@/assets/gallery/gorilla-lookup.jpg";
-import g_gorilla_baby from "@/assets/gallery/gorilla-baby.jpg";
-import g_gorilla_backlit from "@/assets/gallery/gorilla-backlit.jpg";
-import g_gorilla_tracking_1 from "@/assets/gallery/gorilla-tracking-1.jpg";
-import g_gorilla_tracking_2 from "@/assets/gallery/gorilla-tracking-2.jpg";
-import g_gorilla_tracking_3 from "@/assets/gallery/gorilla-tracking-3.jpg";
-import g_virunga_volcanoes from "@/assets/gallery/virunga-volcanoes.jpg";
-import g_golden_monkey_1 from "@/assets/gallery/golden-monkey-1.jpg";
+import heroGorilla from "@/assets/hero-gorilla.jpg";
+import sceneLion from "@/assets/scene-lion.jpg";
+import g_chimp_trekking_1 from "@/assets/gallery/chimp-trekking-1.jpg";
+import g_chimp_trekking_2 from "@/assets/gallery/chimp-trekking-2.jpg";
+import g_chimp_trekking_3 from "@/assets/gallery/chimp-trekking-3.jpg";
+import g_chimpanzee_1 from "@/assets/gallery/chimpanzee-1.jpg";
+import g_chimp_roadside from "@/assets/gallery/chimp-roadside.jpg";
+import g_ngamba_chimps_1 from "@/assets/gallery/ngamba-chimps-1.jpg";
 
 const FAQS = [
   {
-    q: "How much does a Uganda gorilla trekking permit cost?",
-    a: "A Uganda Wildlife Authority gorilla permit costs USD 800 per person and includes one hour with a habituated gorilla family, ranger guides and park entry. Biikuya Trails Uganda secures permits on your behalf as part of every itinerary.",
+    q: "Where can I go chimpanzee trekking in Uganda?",
+    a: "Three main places: Kibale National Park, which holds the highest chimpanzee density in Africa; Kyambura Gorge in Queen Elizabeth National Park, nicknamed the 'Valley of Apes'; and Budongo Forest near Murchison Falls, one of the country's most established habituation sites.",
   },
   {
-    q: "When is the best time to go gorilla trekking in Bwindi?",
-    a: "The dry seasons of June to September and December to February offer firmer trails and easier trekking. Gorilla trekking runs year-round, and the wet-season months of March–May and October–November mean fewer travellers and beautifully lush forest.",
+    q: "How much does a chimpanzee trekking permit cost?",
+    a: "A standard Kibale permit costs USD 250 per person for one hour with a habituated chimpanzee community, or USD 200 in April, May and November. The Chimpanzee Habituation Experience costs USD 300 and gives you up to four hours with a community still being habituated. Budongo is approximately USD 120 to 130, and Kyambura Gorge rates vary, so we confirm current rates when we book. Biikuya Trails Uganda arranges permits as part of every itinerary.",
   },
   {
-    q: "How difficult is the gorilla trek?",
-    a: "Treks range from 1 to 8 hours through steep, muddy rainforest. Fitness helps, but local porters carry your pack and rangers match each guest to a gorilla family suited to their ability.",
+    q: "How does chimpanzee trekking compare to gorilla trekking?",
+    a: "Chimp trekking is shorter, less demanding and far cheaper than gorilla trekking, with permits at USD 250 against USD 800. Chimpanzees are also more mobile and vocal, so encounters are noisier and more energetic, swinging through the canopy rather than resting on the ground. It works well as a complement to a gorilla trek or as a standalone alternative.",
   },
   {
-    q: "Is Uganda safe for gorilla trekking?",
-    a: "Yes. Bwindi and Mgahinga are two of Africa's safest, best-managed national parks. Every trek is led by armed Uganda Wildlife Authority rangers, and Biikuya Trails Uganda handles logistics, transfers and lodges throughout.",
+    q: "What is the minimum age for chimpanzee trekking?",
+    a: "12 years old, under the current UWA guidelines.",
   },
   {
-    q: "How many people are in a gorilla trekking group?",
-    a: "Groups are limited to a maximum of eight guests per gorilla family, with strict distancing rules to protect the gorillas from disease and stress.",
+    q: "How many people are in a chimpanzee trekking group?",
+    a: "Kibale groups are limited to a maximum of six participants.",
+  },
+  {
+    q: "Which location should I choose?",
+    a: "Kibale offers the highest odds of a sighting and the widest range of primates. Kyambura Gorge suits travellers already based in Queen Elizabeth National Park who want to add primates without a detour. Budongo pairs naturally with Murchison Falls and offers the longer Habituation Experience.",
+  },
+  {
+    q: "What else is there to do around Kibale?",
+    a: "Kibale sits near Fort Portal, in Uganda's crater-lake and tea-growing country. Most itineraries pair chimp trekking with a walk through the Bigodi Wetland, a visit to a working tea estate, or a day looking toward the Rwenzori foothills.",
+  },
+  {
+    q: "When is the best time to trek chimpanzees in Kibale?",
+    a: "Chimp trekking runs year-round. The dry seasons of June to September and December to February offer firmer forest trails, while April, May and November bring quieter trails and a cheaper permit: USD 200 instead of USD 250 for foreign non-residents. Discounted permits cannot be rescheduled, and we confirm current rates when we book.",
+  },
+  {
+    q: "How do I get to Kibale National Park?",
+    a: "Kibale is roughly 5 to 6 hours by road from Kampala or Entebbe, or about 45 minutes by scheduled light aircraft to Kasese airstrip, followed by a short transfer.",
+  },
+  {
+    q: "Are the chimpanzee trekking areas affected by travel advice?",
+    a: "Kyambura Gorge lies inside Queen Elizabeth National Park, where the UK FCDO currently advises against all but essential travel, and US advice covers all of Uganda. Kibale and Budongo are not among the areas the UK lists, but please read your own government's advice, check your insurance and see our safety guide before you book.",
   },
 ];
 
-export const Route = createFileRoute("/destinations/gorilla-trekking")({
+export const Route = createFileRoute("/destinations/chimpanzee-trekking")({
   head: () =>
     buildDestinationHead({
-      slug: "gorilla-trekking",
-      name: "Gorilla Trekking in Bwindi",
-      title: "Gorilla Trekking in Bwindi, Uganda — Permits, Cost & Tours | Biikuya Trails Uganda",
+      slug: "chimpanzee-trekking",
+      name: "Chimpanzee Trekking",
+      title: "Chimp Trekking in Uganda: Kibale & Permits | Biikuya Trails",
       description:
-        "Trek Uganda's Bwindi Impenetrable Forest to meet endangered mountain gorillas face-to-face. Permits, best time to go, itineraries and expert-guided luxury tours from Biikuya Trails Uganda.",
-      ogImage: heroGorilla,
-      region: "South-western Uganda",
+        "Chimpanzee trekking in Uganda: Kibale Forest permits and costs, best time to go, Kyambura Gorge, Budongo, and how it compares to gorilla trekking.",
+      ogImage: expChimp,
+      region: "Western Uganda",
       keywords: [
-        "Uganda gorilla trekking",
-        "Bwindi Impenetrable Forest",
-        "mountain gorilla safari",
-        "gorilla permit Uganda",
-        "Uganda safari",
+        "Uganda chimpanzee trekking",
+        "Kibale National Park",
+        "Kibale chimpanzee permit",
+        "chimp permit Uganda",
+        "Kyambura Gorge",
+        "Budongo Forest chimpanzees",
+        "Chimpanzee Habituation Experience",
+        "Fort Portal Uganda",
         "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
     }),
   component: () => (
     <DestinationPage
-      slug="gorilla-trekking"
-      eyebrow="Bwindi Impenetrable Forest"
-      name="Gorilla Trekking"
-      tagline={<>An hour with the <em className="italic text-gold">silverbacks</em>.</>}
-      intro="You leave the lodge before the mist has lifted, follow a tracker who has known this forest since childhood, and climb until the trail stops being a trail. Then he raises a hand, and three metres away a silverback lifts his head from a stem of wild celery and looks straight at you. There is no fence, no vehicle, no glass. It is the rarest wildlife encounter left on earth — and Uganda protects nearly half of the world's remaining mountain gorillas."
-      heroImage={heroGorilla}
-      heroAlt="Silverback mountain gorilla resting in the undergrowth of Bwindi rainforest"
+      slug="chimpanzee-trekking"
+      eyebrow="Kibale, Kyambura Gorge & Budongo"
+      name="Chimpanzee Trekking"
+      tagline={<>Uganda's <em className="italic text-gold">other</em> great ape.</>}
+      intro="Louder, faster and more expressive than their gorilla cousins, Uganda's chimpanzees can be tracked in three very different forests. Kibale, near Fort Portal, is the classic choice, with an estimated 1,500 chimpanzees and twelve other primate species in a forest that rarely goes quiet."
+      heroImage={expChimp}
+      heroAlt="Wild chimpanzee in the forest canopy of Kibale National Park"
       facts={[
-        { label: "Location", value: "Bwindi & Mgahinga" },
-        { label: "Duration", value: "1 hour with gorillas" },
-        { label: "Permit", value: "USD 800 per person" },
-        { label: "Difficulty", value: "Moderate to Strenuous" },
+        { label: "Best location", value: "Kibale National Park" },
+        { label: "Duration", value: "1 hour with the community" },
+        { label: "Permit (Kibale)", value: "USD 250 (USD 200 low season)" },
+        { label: "Difficulty", value: "Easy to Moderate" },
       ]}
       sections={[
         {
-          title: "A forest older than memory",
-          body: "Bwindi Impenetrable Forest is one of Africa's oldest ecosystems — some 25,000 years of unbroken canopy that survived the Ice Age when forests around it did not. Ferns, orchids and hardwoods layer into a green so complete it changes the colour of the light. More than 400 mountain gorillas live here, roughly half the world's remaining population, in a species whose numbers are now climbing rather than falling: the only great ape on earth of which that is true.",
+          title: "Three forests, three experiences",
+          body: "Kibale holds Africa's highest chimpanzee density and the best odds of a sighting. Kyambura Gorge, a steep-sided rift valley cutting through Queen Elizabeth National Park's savanna, offers a more dramatic setting and a chance to combine chimps with game drives. Budongo Forest near Murchison Falls runs one of Uganda's longest-established habituation programmes.",
         },
         {
-          title: "The hour that changes you",
-          body: "You gather at dawn for a briefing, are matched to a family by fitness, and walk in behind rangers already in radio contact with the trackers who found the group at first light. The walk can take one hour or six. Then the clock starts, and everything narrows: an infant somersaulting off a branch, a mother eating with her back turned, a silverback breathing so audibly you feel it. Almost no one speaks. Almost everyone remembers it as the hour that reset their sense of scale.",
+          title: "Kibale: the primate capital",
+          body: "Kibale National Park protects one of the last major stands of tropical rainforest in Uganda, and with it the highest concentration of primates on the continent: an estimated 1,500 chimpanzees across several communities, alongside red colobus, black-and-white colobus, grey-cheeked mangabeys and L'Hoest's monkeys.",
         },
         {
-          title: "Trekked with intention",
-          body: "Every USD 800 permit funds ranger patrols, veterinary care and the revenue-sharing scheme that returns a fifth of park income to the villages on the forest boundary — the arrangement that turned local farmers from adversaries into the gorillas' most effective protection. Group sizes are capped at eight guests, distancing rules are enforced, and we book porters, guides and community lodges from the surrounding villages, so the money stays where the forest is.",
+          title: "A more active encounter than gorilla trekking",
+          body: "Treks begin with a ranger briefing at the park headquarters, then move into the forest on foot in search of a habituated community. Chimpanzees move fast, forage noisily and rarely stay still, so trackers often follow calls and canopy movement rather than a fixed location. Kibale groups are limited to a maximum of six participants. Expect a faster pace and the occasional dramatic canopy chase before an hour spent simply watching them be chimpanzees.",
         },
         {
-          title: "The people you'll meet along the way",
-          body: "Your tracker is likely a Bakiga man from a farm within sight of the park gate; your porter, a woman from a cooperative that shares the day's earnings across the group. The Batwa, evicted from this forest in 1991, now run guided walks that explain how they lived inside it — how to find water in a vine, fire in wet air, medicine in a leaf. Set aside a morning for it. The gorillas are why you came; these conversations are often what you find yourself describing at home.",
+          title: "The Habituation Experience",
+          body: "For a deeper encounter, Kibale and Budongo both offer a Chimpanzee Habituation Experience: up to four hours following researchers and rangers as they work with a community still being acclimated to human presence, rather than a fully habituated group. In Kibale it costs USD 300 per person, places are limited to a small group, and it is more demanding than a standard trek.",
+        },
+        {
+          title: "Beyond the trek",
+          body: "Most visitors pair a Kibale trek with a walk through the nearby Bigodi Wetland Sanctuary, known for its birdlife and monkeys, or an afternoon among the tea estates that blanket the hills toward Fort Portal, with the Rwenzori's snow line visible on a clear day.",
         },
       ]}
-
       galleryImages={[
-        { src: g_gorilla_silverback, alt: "Silverback gorilla in Bwindi" },
-        { src: g_gorilla_lookup, alt: "Mountain gorilla pausing mid-forage" },
-        { src: g_gorilla_baby, alt: "Infant gorilla feeding in the undergrowth" },
-        { src: g_gorilla_backlit, alt: "Gorilla backlit in the forest canopy" },
-        { src: g_gorilla_tracking_1, alt: "Moments from gorilla tracking" },
-        { src: g_gorilla_tracking_2, alt: "Face to face on a gorilla trek" },
-        { src: g_gorilla_tracking_3, alt: "Trackers on the gorilla trail" },
-        { src: g_virunga_volcanoes, alt: "The Virunga volcanoes above the gorilla forests" },
-        { src: g_golden_monkey_1, alt: "Golden monkey in the Virunga bamboo" },
+        { src: g_chimp_trekking_1, alt: "Chimpanzee trekking in Kibale Forest" },
+        { src: g_chimp_trekking_2, alt: "Chimpanzee high in the forest canopy" },
+        { src: g_chimp_trekking_3, alt: "Moments from a chimpanzee trek" },
+        { src: g_chimpanzee_1, alt: "Chimpanzee portrait in Kibale" },
+        { src: g_chimp_roadside, alt: "Chimpanzee in a roadside tree" },
+        { src: g_ngamba_chimps_1, alt: "Rescued chimpanzees at Ngamba Island" },
       ]}
       highlights={[
-        { title: "Face-to-face encounter", desc: "One hour, three metres, no barriers — the most personal wildlife moment on the planet." },
-        { title: "Small, private groups", desc: "Only eight guests per gorilla family, guided by expert rangers from the community." },
-        { title: "Community porters", desc: "Optional local porters carry your pack — meaningful support for surrounding villages." },
-        { title: "Ancient rainforest", desc: "Trek through 25,000-year-old forest alive with birds, orchids and forest elephants." },
-        { title: "Conservation impact", desc: "Every permit directly funds anti-poaching patrols and gorilla healthcare." },
-        { title: "Boutique lodges", desc: "Sleep in intimate forest lodges built and staffed by neighbouring communities." },
+        { title: "Africa's highest chimp density", desc: "Kibale holds an estimated 1,500 wild chimpanzees, the best sighting odds on the continent." },
+        { title: "Kyambura Gorge, the Valley of Apes", desc: "A dramatic rift gorge inside Queen Elizabeth National Park, chimps included." },
+        { title: "Chimpanzee Habituation Experience", desc: "Up to four hours following researchers as a wild community learns to tolerate humans." },
+        { title: "Twelve other primate species", desc: "Kibale alone also holds red colobus, grey-cheeked mangabey and L'Hoest's monkey." },
+        { title: "Cheaper, easier permits than gorillas", desc: "USD 250 versus USD 800, with far more daily permits available." },
+        { title: "Bigodi Wetland and Fort Portal's tea country", desc: "A community-run sanctuary and rolling tea estates, with the Rwenzori as a backdrop." },
       ]}
       itinerary={[
-        { day: "Day 01", title: "Kampala → Bwindi", desc: "A scenic drive south through the equator, tea estates and terraced hills to your forest lodge on the edge of Bwindi." },
-        { day: "Day 02", title: "Gorilla trek", desc: "An early briefing at the park headquarters, then a guided trek to a habituated gorilla family for your unforgettable hour." },
-        { day: "Day 03", title: "Batwa & community day", desc: "Spend the morning with the Batwa forest people, or hike to a waterfall through banana plantations before a slow evening at the lodge." },
-        { day: "Day 04", title: "Return via Lake Bunyonyi", desc: "Pause at Uganda's most beautiful lake for lunch on the water before continuing north or on to Rwanda." },
+        { day: "Day 01", title: "Arrive & transfer to Kibale", desc: "Fly or drive in from Entebbe to the Fort Portal region, settling into a lodge near the forest edge." },
+        { day: "Day 02", title: "Chimpanzee trekking", desc: "An early briefing, then a guided trek through the forest to find and spend an hour with a chimpanzee community." },
+        { day: "Day 03", title: "Bigodi Wetland or tea estate", desc: "A gentler morning, with a guided wetland walk for birds and monkeys or a visit to a working tea estate, before departing or continuing on." },
       ]}
-      bestTime="June to September and December to February — the dry seasons — bring firmer trails and easier trekking. Gorilla trekking is possible year-round; the wet months of March–May and October–November mean fewer travellers and lush, cinematic light."
-      gettingThere="Fly into Entebbe International Airport. Bwindi is a scenic 8–9 hour drive south, or a 1-hour scheduled flight to Kihihi or Kisoro airstrips followed by a 1–2 hour transfer to your lodge."
+      bestTime="Chimpanzee trekking runs year-round. June to September and December to February bring firmer trails; April, May and November are quieter, and the Kibale permit costs USD 200 instead of USD 250 (discounted permits cannot be rescheduled)."
+      gettingThere="Kibale is roughly a 5 to 6 hour drive from Kampala via Fort Portal, or about 45 minutes by scheduled light aircraft to Kasese airstrip followed by a short transfer. Kyambura Gorge sits inside Queen Elizabeth National Park, and Budongo Forest is en route to Murchison Falls, around 4 to 5 hours from Kampala."
+      showLeadMagnet
+      packageSlugs={["primates-adventure", "ultimate-uganda", "grand-explorer"]}
+      guides={[
+        { name: "Gorilla vs Chimp Trekking", to: "/experiences/gorilla-vs-chimp-trekking", desc: "Cost, difficulty and age limits, and which trek to do first." },
+        { name: "Gorilla Trekking in Uganda", to: "/destinations/gorilla-trekking", desc: "Permits, sectors and what to expect on a gorilla trek." },
+        { name: "Murchison Falls & Budongo", to: "/destinations/murchison-falls", desc: "The Nile, boat cruises and the Budongo chimpanzee forest." },
+        { name: "Queen Elizabeth & Kyambura", to: "/destinations/queen-elizabeth-national-park", desc: "Kazinga Channel, game drives and the Valley of Apes." },
+        { name: "Fort Portal Crater Lakes", to: "/destinations/crater-lakes", desc: "Crater lakes and tea country near Kibale." },
+        { name: "Is Uganda Safe to Visit?", to: "/is-uganda-safe", desc: "Current government advice and how to plan around it." },
+      ]}
       related={[
-        { name: "Chimpanzee Trekking", to: "/destinations/chimpanzee-trekking", img: expChimp },
-        { name: "Tree-Climbing Lions", to: "/destinations/tree-climbing-lions", img: sceneLion },
+        { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking", img: heroGorilla },
+        { name: "The Crater Lakes", to: "/destinations/crater-lakes", img: expCoffee },
+        { name: "Queen Elizabeth National Park", to: "/destinations/queen-elizabeth-national-park", img: sceneLion },
         { name: "Murchison Falls", to: "/destinations/murchison-falls", img: sceneFalls },
-        { name: "Lake Bunyonyi", to: "/destinations/lake-bunyonyi", img: sceneBunyonyi },
       ]}
       faqs={FAQS}
     />
   ),
 });
+
