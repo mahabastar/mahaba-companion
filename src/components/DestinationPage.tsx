@@ -4,7 +4,9 @@ import { type ReactNode } from "react";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { JOURNAL_POSTS } from "@/lib/journal-posts";
+import { JOURNEYS } from "@/lib/journeys";
 import { SITE_CONFIG } from "@/lib/site-config";
+import { LeadMagnetCTA } from "@/components/lead-magnet/LeadMagnetCTA";
 
 export type DestinationFact = { label: string; value: string };
 export type DestinationSection = { title: string; body: string };
@@ -12,6 +14,7 @@ export type DestinationHighlight = { title: string; desc: string };
 export type DestinationItineraryDay = { day: string; title: string; desc: string };
 
 export type DestinationFaq = { q: string; a: string };
+export type DestinationGuide = { name: string; to: string; desc: string };
 
 export interface DestinationPageProps {
   slug: string;
@@ -30,10 +33,17 @@ export interface DestinationPageProps {
   gettingThere: string;
   related: { name: string; to: string; img: string }[];
   faqs?: DestinationFaq[];
+  /** Slugs of journeys (from lib/journeys) to show as ready-made packages. */
+  packageSlugs?: string[];
+  /** Links to supporting guides, shown in a "Plan your trip" block. */
+  guides?: DestinationGuide[];
+  /** Show the free-guide CTA on this page (used on high-intent pages: gorilla and chimp trekking). */
+  showLeadMagnet?: boolean;
 }
 
 export function DestinationPage(p: DestinationPageProps) {
   const relatedPosts = JOURNAL_POSTS.filter((post) => post.destination?.to === `/destinations/${p.slug}`);
+  const packages = (p.packageSlugs ?? []).flatMap((slug) => JOURNEYS.filter((j) => j.slug === slug));
 
   return (
     <div className="bg-ivory text-charcoal">
@@ -43,6 +53,8 @@ export function DestinationPage(p: DestinationPageProps) {
       <section className="relative min-h-[92svh] w-full overflow-hidden bg-charcoal grain">
         <img
           src={p.heroImage}
+          width={1600}
+          height={900}
           alt={p.heroAlt}
           className="absolute inset-0 h-full w-full object-cover ken-burns"
         />
@@ -114,7 +126,9 @@ export function DestinationPage(p: DestinationPageProps) {
               {p.sections.map((s) => (
                 <article key={s.title}>
                   <h3 className="font-display text-2xl text-charcoal md:text-3xl">{s.title}</h3>
-                  <p className="mt-4 text-lg leading-relaxed text-charcoal/75">{s.body}</p>
+                  {s.body.split("\n\n").map((para, i) => (
+                    <p key={i} className="mt-4 text-lg leading-relaxed text-charcoal/75">{para}</p>
+                  ))}
                 </article>
               ))}
             </div>
@@ -137,7 +151,7 @@ export function DestinationPage(p: DestinationPageProps) {
                   i % 6 === 3 ? "col-span-2" : ""
                 }`}
               >
-                <img src={g.src} alt={g.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1400ms] ease-luxe hover:scale-105" />
+                <img src={g.src} width={800} height={600} alt={g.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1400ms] ease-luxe hover:scale-105" />
               </div>
             ))}
           </div>
@@ -204,6 +218,78 @@ export function DestinationPage(p: DestinationPageProps) {
         </div>
       </section>
 
+      {/* Ready-made packages */}
+      {packages.length > 0 && (
+        <section className="bg-mist">
+          <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
+            <div className="eyebrow">Packages</div>
+            <h2 className="mt-5 max-w-3xl font-display text-4xl text-charcoal text-balance md:text-5xl">
+              Ready-made routes, <em className="italic text-forest">shaped around you</em>.
+            </h2>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {packages.map((j) => (
+                <Link
+                  key={j.slug}
+                  to="/journeys/$slug"
+                  params={{ slug: j.slug }}
+                  className="group flex flex-col overflow-hidden rounded-3xl border border-charcoal/10 bg-white hover-lift"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    <img src={j.img} width={800} height={600} alt={j.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute right-4 top-4 rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-widest text-charcoal">
+                      {j.days} Days
+                    </div>
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-display text-xl text-charcoal">{j.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal/65">{j.tagline}</p>
+                    <span className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-forest">
+                      View itinerary <span aria-hidden>→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Supporting guides */}
+      {p.guides && p.guides.length > 0 && (
+        <section className="bg-ivory">
+          <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-10 md:py-32">
+            <div className="eyebrow">Plan your trip</div>
+            <h2 className="mt-5 max-w-3xl font-display text-4xl text-charcoal text-balance md:text-5xl">
+              Everything to know <em className="italic text-forest">before you go</em>.
+            </h2>
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {p.guides.map((g) => (
+                <Link
+                  key={g.to}
+                  to={g.to}
+                  className="group rounded-2xl border border-charcoal/10 bg-white p-6 hover-lift"
+                >
+                  <div className="font-display text-xl text-charcoal">{g.name}</div>
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal/65">{g.desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-widest text-forest">
+                    Read the guide <span aria-hidden>→</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Free Uganda Travel Guide */}
+      {p.showLeadMagnet && (
+        <section className="bg-mist">
+          <div className="mx-auto max-w-[900px] px-6 py-20 md:px-10 md:py-24">
+            <LeadMagnetCTA placement={`destination-${p.slug}`} />
+          </div>
+        </section>
+      )}
+
       {/* From the Journal */}
       {relatedPosts.length > 0 && (
         <section className="bg-ivory">
@@ -221,7 +307,7 @@ export function DestinationPage(p: DestinationPageProps) {
                   className="group flex flex-col overflow-hidden rounded-3xl border border-charcoal/10 bg-white hover-lift"
                 >
                   <div className="aspect-[4/3] w-full overflow-hidden">
-                    <img src={post.img} alt={post.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <img src={post.img} width={800} height={600} alt={post.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   </div>
                   <div className="p-6">
                     <div className="eyebrow !text-gold">{post.category} · {post.readMins} min read</div>
@@ -272,7 +358,7 @@ export function DestinationPage(p: DestinationPageProps) {
                 to={r.to}
                 className="group relative block h-[320px] overflow-hidden rounded-3xl hover-lift"
               >
-                <img src={r.img} alt={r.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1400ms] ease-luxe group-hover:scale-110" />
+                <img src={r.img} width={800} height={600} alt={r.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-[1400ms] ease-luxe group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent" />
                 <div className="absolute inset-x-6 bottom-6">
                   <div className="font-display text-2xl text-ivory">{r.name}</div>
