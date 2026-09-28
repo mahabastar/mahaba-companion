@@ -14,7 +14,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { trackPageview, GA_MEASUREMENT_ID } from "@/lib/analytics";
+import { trackPageview } from "@/lib/analytics";
 import { SITE_CONFIG, LOGO_URL } from "@/lib/site-config";
 
 function NotFoundComponent() {
@@ -279,7 +279,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap",
       },
     ],
 
@@ -293,17 +293,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify(WEBSITE_LD),
       },
 
-      ...(GA_MEASUREMENT_ID
-        ? [
-            {
-              src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`,
-              async: true,
-            },
-            {
-              children: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}',{send_page_view:false});`,
-            },
-          ]
-        : []),
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-CLZE8GT71P",
+        async: true,
+      },
+      {
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-CLZE8GT71P', { send_page_view: false });
+        `,
+      },
     ],
   }),
 
