@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
+import { Link } from "@tanstack/react-router";
+import { BookAppointmentButton } from "@/components/BookAppointmentButton";
 
 import { submitBooking } from "@/lib/booking.functions";
 import { SITE_CONFIG, buildEmailHref, buildWhatsAppHref } from "@/lib/site-config";
@@ -183,6 +185,23 @@ export function BookingForm({ tripName, sourcePath, title, intro }: Props) {
           No payment now. We reply from {SITE_CONFIG.email}.
         </span>
       </div>
+
+      <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-charcoal/10 pt-5 text-sm text-charcoal/70">
+        <span>Prefer to talk it through?</span>
+        <BookAppointmentButton label="Book an appointment" source="booking-form" className="!px-5 !py-2.5" />
+      </div>
+
+      <p className="mt-4 text-xs text-charcoal/50">
+        By sending this request you agree to our{" "}
+        <Link to="/privacy" className="underline underline-offset-2 hover:text-forest">
+          Privacy Policy
+        </Link>{" "}
+        and{" "}
+        <Link to="/terms" className="underline underline-offset-2 hover:text-forest">
+          Terms
+        </Link>
+        .
+      </p>
     </form>
   );
 }
