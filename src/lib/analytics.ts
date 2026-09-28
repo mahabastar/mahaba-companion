@@ -1,4 +1,4 @@
-/**
+ /**
  * Google Analytics 4 integration.
  *
  * Analytics is enabled only when VITE_GA_MEASUREMENT_ID is explicitly
@@ -29,14 +29,14 @@ declare global {
 /**
  * Read the GA4 Measurement ID from the Vite environment.
  *
- * Do NOT hard-code the production Measurement ID here.
+ * The production Measurement ID should be configured through:
  *
- * This prevents analytics from being silently enabled when the
- * environment variable has not been configured.
+ * VITE_GA_MEASUREMENT_ID=G-CLZE8GT71P
+ *
+ * Do not hard-code the production Measurement ID here.
  */
 export const GA_MEASUREMENT_ID =
-  (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined)?.trim() ||
-  "G-220C41KXQ1";
+  (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined)?.trim() || "";
 
 /**
  * Whether analytics is configured.
@@ -67,7 +67,7 @@ export function trackPageview(path: string): void {
 }
 
 /**
- * Record a custom analytics event.
+ * Record a custom GA4 event.
  *
  * Example:
  *
