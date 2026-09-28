@@ -1,84 +1,64 @@
-import { createFileRoute } from "@tanstack/react-router";
+
+ import { createFileRoute } from "@tanstack/react-router";
 
 import { LegalPage, type LegalSection } from "@/components/LegalPage";
 import { SITE_CONFIG, buildPageMeta } from "@/lib/site-config";
 
 const SECTIONS: LegalSection[] = [
   {
-    title: "What governments currently advise",
-    paragraphs: ["Uganda's safety picture in 2026 is more complicated than a simple yes or no. As of 20 September 2026:"],
-    bullets: ["United States: the State Department rates Uganda Level 4, Do Not Travel, in an advisory issued on 4 June 2026. The level was raised from Level 3 on 17 May 2026 after an Ebola outbreak, and the advisory cites crime, health, terrorism and unrest.", "United Kingdom: the FCDO advises against all but essential travel to Queen Elizabeth National Park, the area south-west of Kasese town, and Semuliki National Park. It warns that your travel insurance could be invalidated if you travel against its advice.", "Other governments publish their own advice, so check your own country's latest guidance before you book."],
+    title: "Uganda's currency",
+    paragraphs: ["Uganda's currency is the Ugandan shilling (UGX). During 2026 the US dollar has traded at roughly UGX 3,500 to 3,950. Rates move daily, so check the live rate before you travel and treat any figure here as a guide."],
   },
   {
-    title: "What this means for your trip",
-    paragraphs: ["Advisories change, and different governments weigh the same facts differently. We will tell you directly if anything on your itinerary is affected by current advice, and we recommend you check with your insurer before you book."],
+    title: "Bring US dollars in good condition",
+    paragraphs: ["US dollars are the most useful foreign currency to carry. Banks and forex bureaus will not exchange dollar notes printed before 2009, or notes that are torn, worn or marked, so bring crisp, recent notes."],
+    bullets: ["Larger notes ($50 and $100) get better exchange rates than smaller ones.", "Bring a stack of small, clean notes ($1, $5 and $10) for tips.", "Some lodges and tours price in dollars, but everyday purchases are in shillings."],
   },
   {
-    title: "Ebola: where things stand",
-    paragraphs: ["An outbreak of Ebola caused by the Bundibugyo virus was declared in DR Congo on 15 May 2026, and Uganda reported cases soon after. Uganda recorded 20 confirmed cases, and the World Health Organization declared Uganda's outbreak over in late August 2026, after 42 days with no new case.", "The outbreak in DR Congo is continuing. Uganda closed its border crossings with DR Congo during the outbreak, and travellers arriving from DR Congo were required to quarantine for 21 days. Rules can change quickly, so check the WHO and CDC pages below for the latest."],
+    title: "Changing money",
+    paragraphs: ["Banks and forex bureaus in Kampala and Entebbe give the best rates, and rates are usually worse in remote areas. Compare a couple of counters, count your money before you leave the window, and avoid changing money on the street."],
   },
   {
-    title: "Crime and personal safety",
-    paragraphs: ["Petty theft, bag snatching and phone theft are the most common problems for visitors, especially in Kampala. Armed robbery also occurs, including in daylight, and is more common in larger cities, the Karamoja region and near the western and northern borders."],
-    bullets: ["Do not display expensive jewellery, watches or phones.", "Avoid walking at night, and use a trusted driver or a reputable ride-hailing app.", "Do not physically resist a robbery attempt.", "Be extra careful at banks and ATMs.", "Keep food and drinks in sight. Women travellers have reported being drugged, so stay with a group in public."],
+    title: "ATMs and cards",
+    paragraphs: ["ATMs are available in Kampala, Entebbe and larger towns, but the US State Department notes that many only work for customers of a specific Ugandan bank, so a foreign card may fail. Card payments are common in Kampala and at larger lodges, and may carry a fee, but they are less reliable in remote parks. Carry enough cash as a backup.", "Use ATMs inside a bank during the day, and be extra careful when withdrawing cash."],
   },
   {
-    title: "Road safety",
-    paragraphs: ["Road crashes are a leading danger for visitors. The US State Department cites 5,144 road deaths in 2024, and highway driving at night is especially risky, including the road between Entebbe airport and Kampala."],
-    bullets: ["Avoid night driving wherever possible.", "Travel with an experienced driver-guide rather than driving yourself.", "Avoid motorbike taxis (boda-bodas) and crowded minibus taxis.", "Wear a seatbelt on every journey."],
+    title: "Mobile money",
+    paragraphs: ["Many Ugandans pay for everyday things with mobile money. As a visitor you will mostly use cash, and your guide can help with small purchases."],
   },
   {
-    title: "Terrorism and border areas",
-    paragraphs: ["The risk is highest in western Uganda near the border with DR Congo, where armed groups are active in the east of DR Congo. In 2023, attacks in Queen Elizabeth National Park, Kasese and Mpondwe killed both Ugandans and foreign nationals. The Karamoja region in the north-east is also volatile because of crime-related conflict.", "This is why the UK advises against all but essential travel to parts of western Uganda. If your itinerary includes western Uganda or Karamoja, talk to us about the route and current conditions before you book."],
+    title: "Tipping",
+    paragraphs: ["Tipping guides, rangers and porters is expected and is a meaningful part of local income. US dollars in small, clean notes are widely accepted for tips. We give guidance on typical amounts with your itinerary."],
   },
   {
-    title: "Protests and unrest",
-    paragraphs: ["Protests can happen with little warning, and security forces have used batons, tear gas and gunfire to disperse crowds. During the Ebola outbreak, the Ministry of Health also restricted mass gatherings in Kampala and border districts. Avoid demonstrations and crowds, and follow local media for updates."],
+    title: "What you do not need to carry",
+    paragraphs: ["Gorilla and chimpanzee permits are paid through us when you book, so you do not need cash for them. Keep your cash for tips, drinks, souvenirs and the occasional extra."],
   },
   {
-    title: "Wildlife, treks and tourism safety",
-    paragraphs: ["Gorilla and chimpanzee treks are led by armed Uganda Wildlife Authority rangers, who brief every group before you set off. Follow their instructions on distance from the animals.", "Outside the parks, the US State Department notes that safety inspections in tourism are rare and that emergency responders may not reach remote areas. Choose a reputable operator, ask about vehicle maintenance and guide training, and carry travel insurance that includes medical evacuation."],
-  },
-  {
-    title: "Health basics",
-    bullets: ["Carry your yellow fever vaccination certificate, and check current entry requirements with your doctor and the Ugandan embassy.", "Talk to your doctor about malaria prevention well before you travel.", "Drink bottled or filtered water only.", "Good medical care is concentrated in Kampala. Outside it, facilities are basic, and hospitals often want payment upfront, so insurance with medical evacuation matters."],
-  },
-  {
-    title: "LGBT+ travellers",
-    paragraphs: ["Uganda's 2023 Anti-Homosexuality Act criminalises consensual same-sex relations, and it applies to visitors as well as residents. People have reported harassment, blackmail and violence based on real or perceived sexual orientation. LGBT+ travellers should read their own government's guidance before booking."],
-  },
-  {
-    title: "Photography, drones and local laws",
-    paragraphs: ["Avoid photographing military, government or security buildings, and do not bring a drone without approval, because travellers have been questioned, detained or arrested. Camouflage clothing is illegal for civilians in Uganda."],
-  },
-  {
-    title: "Emergency numbers",
-    paragraphs: ["Police and emergencies: 999 (or 112). Keep your lodge's number and your guide's number to hand. If anything goes wrong on a trip with us, call us too."],
+    title: "Keeping your money safe",
+    bullets: ["Do not carry more cash than you need for the day.", "Use your lodge's safe for spare cash and your passport.", "Split your cash between bags.", "Keep notes out of sight when paying."],
   },
 ];
 
 const FAQS = [
-  { q: "Is Uganda safe to visit right now?", a: "It depends on where you go and how you travel. Some governments currently advise against travel to all or parts of Uganda, while many visitors travel without incident on organised itineraries. Read the advice from your own government, check with your insurer, and talk to us about your route." },
-  { q: "Is there Ebola in Uganda?", a: "The World Health Organization declared Uganda's 2026 outbreak over in late August, after 42 days with no new case. The outbreak in DR Congo is continuing, so check the latest WHO and CDC updates before you travel." },
-  { q: "Is gorilla trekking safe?", a: "Treks are led by armed Uganda Wildlife Authority rangers who brief every group. The UK's list of areas it advises against does not include Bwindi, but US advice covers all of Uganda, so check your own government's advice." },
-  { q: "Is Uganda safe for solo travellers?", a: "Solo travellers face the same main risks as everyone: petty theft, robbery in larger cities and road safety. Use trusted transport, avoid walking at night and keep food and drinks in sight." },
-  { q: "Will my travel insurance cover me?", a: "That depends on your insurer and your government's advice. The UK FCDO warns that insurance could be invalidated if you travel against its advice, so confirm your cover for your itinerary before you book." },
+  { q: "What currency is used in Uganda?", a: "The Ugandan shilling (UGX). US dollars are widely accepted for tips and some tourist services, but everyday purchases are in shillings." },
+  { q: "Which US dollar notes are accepted?", a: "Notes printed in 2009 or later, in good condition. Older notes, and notes that are torn, worn or marked, are refused by banks and forex bureaus. Larger notes get better rates than small ones." },
+  { q: "Can I use credit cards in Uganda?", a: "Cards are common in Kampala and at larger lodges, and may carry a fee. They are less reliable in remote parks, so carry cash as a backup." },
+  { q: "Will foreign cards work in Ugandan ATMs?", a: "Sometimes. Many ATMs only work for customers of a specific bank, so do not rely on a single card or a single machine." },
+  { q: "How much cash should I bring?", a: "Enough for tips, drinks, souvenirs and small extras. Permits and your package are arranged through us, so you do not need cash for them." },
 ];
 
 const SOURCES = [
-  { label: "US State Department: Uganda travel advisory", href: "https://travel.state.gov/en/international-travel/travel-advisories/uganda.html" },
-  { label: "UK FCDO: Uganda travel advice", href: "https://www.gov.uk/foreign-travel-advice/uganda" },
-  { label: "WHO: Ebola outbreak, DR Congo and Uganda 2026", href: "https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" },
-  { label: "CDC: Ebola outbreak, current situation", href: "https://www.cdc.gov/ebola/situation-summary/index.html" },
+  { label: "US State Department: Uganda travel guidance", href: "https://travel.state.gov/en/international-travel/travel-advisories/uganda.html" },
 ];
 
-export const Route = createFileRoute("/is-uganda-safe")({
+export const Route = createFileRoute("/uganda-currency")({
   head: () => ({
     ...buildPageMeta({
-      title: "Is Uganda Safe to Visit? Safety Guide | Biikuya Trails",
+      title: "Uganda Currency: Shillings, Dollars & ATMs | Biikuya Trails",
       description:
-        "An honest guide to safety in Uganda: current government advice, Ebola, crime, roads, health and how to travel more safely on safari.",
-      path: "/is-uganda-safe",
+        "Uganda's currency explained: the Ugandan shilling, which US dollar notes to bring, changing money, ATMs, cards, mobile money and tipping.",
+      path: "/uganda-currency",
     }),
     scripts: [
       {
@@ -100,7 +80,7 @@ export const Route = createFileRoute("/is-uganda-safe")({
           "@type": "BreadcrumbList",
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: SITE_CONFIG.url },
-            { "@type": "ListItem", position: 2, name: "Is Uganda Safe to Visit?", item: `${SITE_CONFIG.url}/is-uganda-safe` },
+            { "@type": "ListItem", position: 2, name: "Uganda Currency Guide", item: `${SITE_CONFIG.url}/uganda-currency` },
           ],
         }),
       },
@@ -108,16 +88,17 @@ export const Route = createFileRoute("/is-uganda-safe")({
   }),
   component: () => (
     <LegalPage
-      eyebrow="Safety Guide"
-      title="Is Uganda Safe to Visit?"
+      eyebrow="Money Guide"
+      title="Uganda Currency Guide"
       updated="20 September 2026"
       updatedLabel="Last reviewed"
-      intro="Most visitors on organised safaris travel without serious incident, but the honest answer in 2026 depends on where you go and how you travel. Here is what governments advise, what the real risks are, and how to plan around them."
+      intro="What money to bring to Uganda, how to change it, where cards and ATMs work, and how tipping works on safari."
       sections={SECTIONS}
       numbered={false}
       faqs={FAQS}
       sources={SOURCES}
-      related={{ label: "Uganda Safari FAQs", to: "/faqs" }}
+      related={{ label: "Packing Guide", to: "/packing-guide" }}
     />
   ),
 });
+   
