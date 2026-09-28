@@ -1,4 +1,6 @@
 import heroGorilla from "@/assets/hero-gorilla.jpg";
+import gorillaLookup from "@/assets/gorilla-lookup.jpg";
+import gorillaBabyEating from "@/assets/gorilla-baby-eating.jpg";
 import expChimp from "@/assets/exp-chimp.jpg";
 import sceneFalls from "@/assets/scene-falls.jpg";
 import sceneElephants from "@/assets/scene-elephants.jpg";
@@ -44,6 +46,47 @@ export const JOURNEYS: Journey[] = [
       { day: 1, title: "Arrive & transfer to Bwindi", copy: "Land at Entebbe and connect on to the Bwindi region, either by light aircraft or a scenic road transfer through the Kigezi highlands. Evening briefing at your lodge, with the forest visible from the terrace." },
       { day: 2, title: "Gorilla trekking day", copy: "An early breakfast, a ranger briefing, and then into the forest to track a habituated gorilla family — anywhere from one to several hours of hiking, followed by an hour in their company.", destination: { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking" } },
       { day: 3, title: "Lake Bunyonyi & departure", copy: "A short transfer to Lake Bunyonyi for a slow final morning — a dugout canoe on still water, lunch on a terraced hillside — before connecting back to Entebbe.", destination: { name: "Lake Bunyonyi", to: "/destinations/lake-bunyonyi" } },
+    ],
+  },
+  {
+    slug: "budget-gorilla-safari",
+    title: "Budget Gorilla Safari",
+    days: "3",
+    tagline: "The essential gorilla trek by road, with the extras kept lean.",
+    copy: "The essential gorilla trek by road, with the extras kept lean.",
+    img: gorillaBabyEating,
+    overview:
+      "The same rangers, the same forest and the same hour with a habituated gorilla family, with the costs around the permit kept as light as possible. You travel by road instead of by air, stay in simple, comfortable lodges near the forest edge, and have a private vehicle and driver-guide throughout. The permit is the biggest single cost, and it drops from USD 800 to USD 600 in April, May and November, so everything else is built to stay lean.",
+    highlights: ["One gorilla trekking permit in Bwindi", "Road transfers by private vehicle with a driver-guide", "Simple, comfortable lodges near the forest edge"],
+    destinations: [
+      { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking" },
+      { name: "Bwindi Impenetrable National Park", to: "/destinations/bwindi-impenetrable" },
+    ],
+    itinerary: [
+      { day: 1, title: "Drive to Bwindi", copy: "Leave Entebbe or Kampala early for a long but scenic drive south-west through the Kigezi highlands, with stops along the way. Arrive at your lodge near the forest in time for dinner and an early night.", destination: { name: "Bwindi Impenetrable National Park", to: "/destinations/bwindi-impenetrable" } },
+      { day: 2, title: "Gorilla trekking day", copy: "An early breakfast and a ranger briefing, then into the forest to track a habituated gorilla family — anywhere from one to several hours of hiking, followed by an hour in their company.", destination: { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking" } },
+      { day: 3, title: "Return to Entebbe", copy: "A relaxed breakfast, then the road back to Entebbe or Kampala, arriving in the evening. We will advise on the best onward flight time when we plan your dates." },
+    ],
+  },
+  {
+    slug: "gorilla-and-bunyonyi",
+    title: "Gorilla & Lake Bunyonyi",
+    days: "4",
+    tagline: "A gorilla trek by road, then a slow day on the water at Lake Bunyonyi.",
+    copy: "A gorilla trek by road, then a slow day on the water at Lake Bunyonyi.",
+    img: gorillaLookup,
+    overview:
+      "Four days that give the classic gorilla trek room to breathe. You travel by road through the Kigezi highlands, spend a full day tracking a habituated gorilla family in Bwindi, then unwind at Lake Bunyonyi before the journey home. It suits travellers who want to see the countryside and finish with something gentle.",
+    highlights: ["One gorilla trekking permit in Bwindi", "A slow afternoon and morning on Lake Bunyonyi", "A scenic road journey through the Kigezi highlands"],
+    destinations: [
+      { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking" },
+      { name: "Lake Bunyonyi", to: "/destinations/lake-bunyonyi" },
+    ],
+    itinerary: [
+      { day: 1, title: "Drive to Bwindi", copy: "Leave Entebbe or Kampala early for a scenic drive south-west through the Kigezi highlands, with stops along the way. Arrive at your forest-edge lodge in time for a briefing and an early night.", destination: { name: "Bwindi Impenetrable National Park", to: "/destinations/bwindi-impenetrable" } },
+      { day: 2, title: "Gorilla trekking day", copy: "An early breakfast and a ranger briefing, then into the forest to track a habituated gorilla family — anywhere from one to several hours of hiking, followed by an hour in their company.", destination: { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking" } },
+      { day: 3, title: "Transfer to Lake Bunyonyi", copy: "After breakfast, a short transfer to Lake Bunyonyi. Spend the afternoon in a dugout canoe, walking the terraced hillsides, or simply watching the light change over the water.", destination: { name: "Lake Bunyonyi", to: "/destinations/lake-bunyonyi" } },
+      { day: 4, title: "Return to Entebbe", copy: "A slow morning by the lake, then the road back to Entebbe or Kampala. A light-aircraft connection can shorten this day if you would rather fly." },
     ],
   },
   {
@@ -187,3 +230,7 @@ export const JOURNEYS: Journey[] = [
 export function getJourney(slug: string): Journey | undefined {
   return JOURNEYS.find((j) => j.slug === slug);
 }
+
+  
+    
+    
