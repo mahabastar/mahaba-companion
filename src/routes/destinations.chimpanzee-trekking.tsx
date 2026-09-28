@@ -405,4 +405,3 @@ export function DestinationPage(p: DestinationPageProps) {
     </div>
   );
 }
-
