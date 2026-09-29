@@ -11,18 +11,32 @@ interface BookAppointmentButtonProps {
 /**
  * Link to the Picktime appointment page. Opens in a new tab and is styled to
  * match the site rather than using Picktime's stock violet button image.
+ *
+ * GA4 tracking:
+ * - Event: book_appointment_click
+ * - source: identifies where the button was clicked
  */
 export function BookAppointmentButton({
   label = "Book an appointment",
   source = "site",
   className = "",
 }: BookAppointmentButtonProps) {
+  const handleClick = () => {
+    trackEvent("book_appointment_click", {
+      source,
+      page_path:
+        typeof window !== "undefined"
+          ? window.location.pathname
+          : undefined,
+    });
+  };
+
   return (
     <a
       href={BOOKING_URL}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => trackEvent("book_appointment_click", { source })}
+      onClick={handleClick}
       className={`inline-flex items-center gap-2 rounded-full bg-forest px-6 py-3 text-sm font-medium text-ivory shadow-md transition-all hover:scale-105 hover:bg-forest-deep ${className}`}
     >
       {label} <span aria-hidden>→</span>
