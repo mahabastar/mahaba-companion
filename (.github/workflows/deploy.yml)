@@ -1,0 +1,48 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm' # Or 'yarn' / 'pnpm' / 'bun' depending on your package manager
+
+      - name: Install Dependencies
+        run: npm ci # Use `bun install --frozen-lockfile` if using Bun
+
+      - name: Run Linting / Type Checking
+        run: npm run lint # Adjust script name as needed for your project
+
+      - name: Run Build
+        run: npm run build
+
+  deploy:
+    needs: build-and-test
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Add your deployment step here below (e.g., AWS, Vercel, or custom server)
+      - name: Deployment Placeholder
+        run: |
+          echo "Build passed successfully. Add your deployment script or action here."
