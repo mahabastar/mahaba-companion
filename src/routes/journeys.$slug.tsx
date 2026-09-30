@@ -4,6 +4,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { JourneyPage } from "@/components/JourneyPage";
 import { RouteErrorBoundary, RouteNotFoundBoundary } from "@/components/RouteBoundary";
 import { getJourney } from "@/lib/journeys";
+import { JOURNEY_SEO_TITLES } from "@/lib/seo-titles";
 
 export const Route = createFileRoute("/journeys/$slug")({
   loader: ({ params }) => {
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/journeys/$slug")({
     return {
     meta: loaderData
       ? [
-          { title: `${loaderData.title} — ${loaderData.days}-Day Uganda Journey | Biikuya Trails Uganda` },
+          { title: JOURNEY_SEO_TITLES[params.slug] ?? `${loaderData.days}-Day ${loaderData.title} Uganda Safari | Biikuya Trails` },
           { name: "description", content: loaderData.overview },
           { property: "og:title", content: loaderData.title },
           { property: "og:description", content: loaderData.overview },
