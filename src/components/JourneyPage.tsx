@@ -1,3 +1,5 @@
+ 
+  import { LeadMagnetCTA } from "@/components/lead-magnet/LeadMagnetCTA";
 import { Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
@@ -14,12 +16,12 @@ export function JourneyPage({ journey }: { journey: Journey }) {
 
       {/* Hero */}
       <section className="relative min-h-[75svh] w-full overflow-hidden bg-charcoal">
-        <img src={journey.img} alt={journey.title} className="absolute inset-0 h-full w-full object-cover"
+        <img src={journey.img} width={1600} height={900} alt={journey.title} className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-charcoal/20" />
         <div className="relative mx-auto flex min-h-[75svh] max-w-[1000px] flex-col justify-end px-6 pb-16 pt-40 md:px-10">
           <nav className="mb-6 text-xs uppercase tracking-widest text-ivory/70">
-            <Link to="/" hash="journeys" className="hover:text-gold">Signature Journeys</Link>
+            <Link to="/safari-package" className="hover:text-gold">Safari Packages</Link>
           </nav>
           <div className="eyebrow !text-gold">{journey.days}-Day Journey</div>
           <h1 className="mt-4 font-display text-[clamp(2.2rem,6vw,4.5rem)] text-ivory text-balance">{journey.title}</h1>
@@ -123,7 +125,7 @@ export function JourneyPage({ journey }: { journey: Journey }) {
                 params={{ slug: j.slug }}
                 className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
               >
-                <img src={j.img} alt={j.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                <img src={j.img} width={800} height={600} alt={j.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/10 to-transparent" />
@@ -134,6 +136,13 @@ export function JourneyPage({ journey }: { journey: Journey }) {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Free Uganda Travel Guide */}
+      <section className="bg-mist">
+        <div className="mx-auto max-w-[900px] px-6 py-16 md:px-10 md:py-20">
+          <LeadMagnetCTA placement={`journey-${journey.slug}`} />
         </div>
       </section>
 
@@ -168,3 +177,5 @@ export function JourneyPage({ journey }: { journey: Journey }) {
     </div>
   );
 }
+            
+        
