@@ -33,7 +33,7 @@ export const Route = createFileRoute("/destinations/crater-lakes")({
     buildDestinationHead({
       slug: "crater-lakes",
       name: "The Crater Lakes",
-      title: "Uganda's Crater Lakes, Fort Portal — Guide & Best Lodges | Biikuya Trails Uganda",
+      title: "Fort Portal Crater Lakes: Guide & Lodges | Biikuya Trails",
       description:
         "The Ndali-Kasenda crater field near Fort Portal — around 50 volcanic lakes set among tea and coffee gardens, best paired with a Kibale chimp trek.",
       ogImage: expCoffee,
@@ -97,10 +97,13 @@ export const Route = createFileRoute("/destinations/crater-lakes")({
       bestTime="Visitable year-round given the region's moderate elevation. June–September and December–February are driest and offer the clearest mountain views; the wetter months bring lush, deep-green scenery."
       gettingThere="Roughly a 4–5 hour drive from Kampala via Mubende, or a short 20–30 minute drive from Fort Portal town itself, right beside Kibale National Park."
       related={[
-        { name: "Kibale", to: "/destinations/kibale-forest", img: expChimp },
+        { name: "Chimpanzee Trekking, Kibale", to: "/destinations/chimpanzee-trekking", img: expChimp },
         { name: "Queen Elizabeth National Park", to: "/destinations/queen-elizabeth-national-park", img: sceneLion },
       ]}
       faqs={FAQS}
     />
   ),
 });
+
+      
+        
