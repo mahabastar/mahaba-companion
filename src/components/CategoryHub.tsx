@@ -34,6 +34,8 @@ function ItemCard({ item }: { item: CategoryItem }) {
     <>
       <img
         src={item.img}
+        width={800}
+        height={600}
         alt={item.name}
         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
@@ -90,7 +92,7 @@ export function CategoryHub(p: CategoryHubProps) {
 
       {/* Hero */}
       <section className="relative min-h-[60svh] w-full overflow-hidden bg-charcoal grain">
-        <img src={p.heroImage} alt={p.heroAlt} className="absolute inset-0 h-full w-full object-cover ken-burns opacity-60" />
+        <img src={p.heroImage} width={1600} height={900} alt={p.heroAlt} className="absolute inset-0 h-full w-full object-cover ken-burns opacity-60" />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="relative z-10 mx-auto flex min-h-[60svh] max-w-[1000px] flex-col justify-end px-6 pb-16 pt-40 text-center md:px-10 md:pb-20">
           <div className="eyebrow !text-gold">{p.eyebrow}</div>
@@ -140,3 +142,12 @@ export function CategoryHub(p: CategoryHubProps) {
     </div>
   );
 }
+
+
+
+    
+  
+
+  
+          
+      
