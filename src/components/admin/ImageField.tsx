@@ -46,7 +46,7 @@ export function ImageField({
       <div className="flex flex-wrap items-start gap-4">
         <div className="h-24 w-36 shrink-0 overflow-hidden rounded-xl bg-charcoal/5">
           {preview ? (
-            <img src={preview} alt="" className="h-full w-full object-cover" />
+            <img src={preview} width={144} height={96} alt="" className="h-full w-full object-cover" />
           ) : (
             <div className="flex h-full items-center justify-center text-[11px] text-charcoal/40">No photo</div>
           )}
@@ -108,3 +108,6 @@ export function ImageField({
     </div>
   );
 }
+
+  
+  
