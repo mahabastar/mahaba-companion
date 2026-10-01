@@ -267,7 +267,7 @@ export function SiteFooter() {
             you directly if anything on your itinerary is affected. Government
             advice on travel to Uganda varies, so please read our{" "}
             <Link
-              to="/is-uganda-safe"
+              to="/faqs"
               className="text-gold underline underline-offset-4 hover:text-ivory"
             >
               safety guide
