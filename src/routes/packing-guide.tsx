@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/packing-guide")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Packing Guide — What to Bring | Biikuya Trails Uganda",
+      title: "Uganda Safari Packing List: What to Bring | Biikuya Trails",
       description: "What to pack for a Uganda safari — clothing, gorilla trekking gear, health essentials, and one clothing rule that surprises most first-time visitors.",
       path: "/packing-guide",
     }),
@@ -62,7 +62,7 @@ export const Route = createFileRoute("/packing-guide")({
             "Universal or UK-style (Type G) plug adapter",
             "Portable power bank",
             "Headlamp or torch for early starts",
-            "USD cash, small denominations, notes printed 2006 or later",
+            "USD cash, small denominations, notes printed 2009 or later",
             "A dry bag or ziplock bags for river crossings and rain",
           ],
         },
@@ -71,7 +71,7 @@ export const Route = createFileRoute("/packing-guide")({
         { q: "Do I really need to avoid camouflage clothing?", a: "Yes — it's a genuine legal restriction for civilians in Uganda, not just a style preference. Neutral khaki or olive tones achieve the same look without any issue." },
         { q: "What footwear is best for gorilla trekking?", a: "Waterproof, ankle-supporting hiking boots that are already broken in — Bwindi's trails are steep and often muddy, and new boots plus a multi-hour trek is a bad combination." },
         { q: "Should I bring a daypack?", a: "Yes — a 20–30 litre daypack for water, rain gear and camera equipment on trekking days, separate from your main luggage." },
-        { q: "Is tipping in USD or Ugandan Shillings better?", a: "USD cash, in small denominations printed 2006 or later, is the most widely accepted and preferred currency for tipping guides, rangers and porters." },
+        { q: "Is tipping in USD or Ugandan Shillings better?", a: "USD cash, in small denominations printed 2009 or later, is the most widely accepted and preferred currency for tipping guides, rangers and porters." },
       ]}
       related={[
         { name: "Visa Guide", to: "/visa-guide" },
@@ -81,3 +81,5 @@ export const Route = createFileRoute("/packing-guide")({
     />
   ),
 });
+
+  
