@@ -41,7 +41,7 @@ export const Route = createFileRoute("/destinations/lake-bunyonyi")({
     buildDestinationHead({
       slug: "lake-bunyonyi",
       name: "Lake Bunyonyi",
-      title: "Lake Bunyonyi, Uganda — Island Stays & Canoe Safaris | Biikuya Trails Uganda",
+      title: "Lake Bunyonyi: Island Stays & Canoe Trips | Biikuya Trails",
       description:
         "Africa's second-deepest lake — 29 emerald islands, terraced hills and hippo-free swimming. Plan a luxury Lake Bunyonyi escape with Biikuya Trails Uganda.",
       ogImage: sceneBunyonyi,
@@ -119,3 +119,7 @@ export const Route = createFileRoute("/destinations/lake-bunyonyi")({
     />
   ),
 });
+
+      
+        
+          
