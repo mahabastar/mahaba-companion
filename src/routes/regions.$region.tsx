@@ -29,6 +29,7 @@ import nileBridgeAerial from "@/assets/nile-bridge-aerial.jpg";
 import semulikiHotSprings from "@/assets/semuliki-hot-springs.jpg";
 import ctaSunset from "@/assets/cta-sunset.jpg";
 import karamojongCulture from "@/assets/gallery/karamojong-culture.jpg";
+import { REGION_SEO_TITLES } from "@/lib/seo-titles";
 
 type Spot = { name: string; to: string; img: string; blurb: string };
 type Region = {
@@ -55,7 +56,7 @@ const REGIONS: Record<string, Region> = {
     spots: [
       { name: "Bwindi Impenetrable Forest", to: "/destinations/bwindi-impenetrable", img: heroGorilla, blurb: "Roughly half the world's mountain gorillas, in ancient montane rainforest." },
       { name: "Mgahinga Gorilla National Park", to: "/destinations/mgahinga-gorilla", img: mgahingaMoment, blurb: "Volcano slopes, golden monkeys and a quieter gorilla trek." },
-      { name: "Kibale Forest", to: "/destinations/kibale-forest", img: expChimp, blurb: "The highest primate density in Africa, led by wild chimpanzees." },
+      { name: "Kibale Forest", to: "/destinations/chimpanzee-trekking", img: expChimp, blurb: "The highest primate density in Africa, led by wild chimpanzees." },
       { name: "Queen Elizabeth National Park", to: "/destinations/queen-elizabeth-national-park", img: qenpPhoto, blurb: "The Kazinga Channel, Kasenyi plains and Kyambura Gorge." },
       { name: "Tree-Climbing Lions, Ishasha", to: "/destinations/tree-climbing-lions", img: treeLion, blurb: "Lions draped over fig branches in the park's southern sector." },
       { name: "Rwenzori Mountains", to: "/destinations/rwenzori-mountains", img: rwenzoriSnow, blurb: "Glaciated peaks on the equator — Africa's third-highest summit." },
@@ -142,7 +143,7 @@ export const Route = createFileRoute("/regions/$region")({
     if (!region) {
       return { meta: [{ title: "Region not found — Biikuya Trails Uganda" }, { name: "robots", content: "noindex" }] };
     }
-    const title = `${region.name} — Safari Destinations & Highlights | Biikuya Trails Uganda`;
+    const title = REGION_SEO_TITLES[params.region] ?? `${region.name} Travel Guide | Biikuya Trails`;
     const description = `${region.tagline} ${region.intro}`.slice(0, 155);
     return buildPageMeta({
       title,
@@ -188,6 +189,8 @@ function RegionPage() {
       <section className="relative min-h-[60svh] w-full overflow-hidden bg-charcoal">
         <img
           src={region.hero}
+          width={1600}
+          height={900}
           alt={region.heroAlt}
           className="absolute inset-0 h-full w-full object-cover opacity-60"
         />
@@ -224,6 +227,8 @@ function RegionPage() {
               >
                 <img
                   src={s.img}
+                  width={800}
+                  height={600}
                   alt={s.name}
                   loading="lazy"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
