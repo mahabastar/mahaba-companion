@@ -6,7 +6,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/cultural-heritage")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Cultural Heritage — Kingdoms, Batwa & Karamojong",
+      title: "Uganda Cultural Heritage: Kingdoms & Batwa | Biikuya Trails",
       description: "Uganda's four traditional kingdoms, the Batwa forest people, Karamojong pastoralists, village life, music, craft and food — and how to visit communities respectfully.",
       path: "/cultural-heritage",
     }),
@@ -62,3 +62,5 @@ export const Route = createFileRoute("/cultural-heritage")({
     />
   ),
 });
+
+        
