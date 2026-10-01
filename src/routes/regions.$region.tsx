@@ -157,6 +157,8 @@ const REGION_TRIPS: Record<string, { journeys: string[]; experiences: string[] }
     experiences: ["adventure-safaris", "self-drive-tours", "photography-safaris"],
   },
 };
+
+export const Route = createFileRoute("/regions/$region")({
   loader: ({ params }) => {
     const region = REGIONS[params.region];
     if (!region) throw notFound();
