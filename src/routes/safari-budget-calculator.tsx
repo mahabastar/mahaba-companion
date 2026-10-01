@@ -9,7 +9,7 @@ import { trackEvent } from "@/lib/analytics";
 export const Route = createFileRoute("/safari-budget-calculator")({
   head: () => ({
     ...buildPageMeta({
-      title: "Safari Budget Calculator — Biikuya Trails Uganda",
+      title: "Uganda Safari Budget Calculator & Costs | Biikuya Trails",
       description: "Estimate your Uganda safari budget based on trip duration, accommodation, activities and travel preferences, then request a customized itinerary from Biikuya Trails Uganda.",
       path: "/safari-budget-calculator",
     }),
@@ -31,6 +31,7 @@ const STYLES = [
 const GORILLA_PERMIT = 800; // USD, foreign non-resident, standard season
 const GORILLA_PERMIT_LOW_SEASON = 600; // USD, Apr / May / Nov
 const CHIMP_PERMIT = 250; // USD, foreign non-resident
+const CHIMP_PERMIT_LOW_SEASON = 200; // USD, Apr / May / Nov
 
 /* ---------------- Component ---------------- */
 
@@ -47,7 +48,8 @@ function SafariBudgetCalculator() {
   const { baseTotal, permitsTotal, grandTotal, perPerson, perPersonPerDay } = useMemo(() => {
     const base = style.rate * days * travelers;
     const gorillaRate = lowSeason ? GORILLA_PERMIT_LOW_SEASON : GORILLA_PERMIT;
-    const permits = (gorilla ? gorillaRate * travelers : 0) + (chimp ? CHIMP_PERMIT * travelers : 0);
+    const chimpRate = lowSeason ? CHIMP_PERMIT_LOW_SEASON : CHIMP_PERMIT;
+    const permits = (gorilla ? gorillaRate * travelers : 0) + (chimp ? chimpRate * travelers : 0);
     const grand = base + permits;
     return {
       baseTotal: base,
@@ -129,15 +131,15 @@ function SafariBudgetCalculator() {
                   checked={gorilla}
                   onChange={setGorilla}
                 />
-                {gorilla && (
+                {(gorilla || chimp) && (
                   <label className="ml-4 flex items-center gap-2 text-xs text-charcoal/60">
                     <input type="checkbox" checked={lowSeason} onChange={(e) => setLowSeason(e.target.checked)} className="accent-forest" />
-                    Traveling in low season (Apr / May / Nov) — ${GORILLA_PERMIT_LOW_SEASON} rate
+                    Traveling in low season (Apr / May / Nov) — gorilla ${GORILLA_PERMIT_LOW_SEASON}, chimp ${CHIMP_PERMIT_LOW_SEASON}
                   </label>
                 )}
                 <Toggle
                   label="Chimpanzee trekking permit"
-                  sub={`$${CHIMP_PERMIT} per person`}
+                  sub={`$${lowSeason ? CHIMP_PERMIT_LOW_SEASON : CHIMP_PERMIT} per person`}
                   checked={chimp}
                   onChange={setChimp}
                 />
@@ -244,3 +246,7 @@ function Toggle({ label, sub, checked, onChange }: { label: string; sub: string;
     </button>
   );
 }
+
+          
+                  
+      
