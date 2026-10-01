@@ -14,7 +14,7 @@ import sceneRwenzori from "@/assets/scene-rwenzori.jpg";
 export const Route = createFileRoute("/ai-trip-planner")({
   head: () => ({
     meta: [
-      { title: "AI Trip Planner — Biikuya Trails Uganda" },
+      { title: "AI Uganda Trip Planner: Draft Your Safari | Biikuya Trails" },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -84,7 +84,7 @@ function AiTripPlanner() {
 
       {/* Hero */}
       <section className="relative min-h-[55svh] w-full overflow-hidden bg-charcoal grain">
-        <img src={sceneRwenzori} alt="Uganda landscape" className="absolute inset-0 h-full w-full object-cover opacity-40"
+        <img src={sceneRwenzori} width={1600} height={900} alt="Uganda landscape" className="absolute inset-0 h-full w-full object-cover opacity-40"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="relative z-10 mx-auto flex min-h-[55svh] max-w-[900px] flex-col justify-end px-6 pb-16 pt-40 text-center md:px-10 md:pb-20">
@@ -186,6 +186,8 @@ function AiTripPlanner() {
               <div className="h-56 w-full overflow-hidden md:h-auto md:w-2/5">
                 <img
                   src={plan.journey.img}
+                  width={800}
+                  height={600}
                   alt={plan.journey.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
@@ -214,6 +216,8 @@ function AiTripPlanner() {
                     <div className="h-40 w-full overflow-hidden">
                       <img
                         src={e.heroImg}
+                        width={800}
+                        height={600}
                         alt={e.title}
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
