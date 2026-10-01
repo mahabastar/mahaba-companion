@@ -31,6 +31,10 @@ const FAQS = [
     q: "When is the best time to visit?",
     a: "June–September and December–February bring the driest conditions, when wildlife concentrates most reliably around the Kazinga Channel's shoreline.",
   },
+  {
+    q: "Is Queen Elizabeth National Park affected by travel advice?",
+    a: "Yes. The UK FCDO currently advises against all but essential travel to Queen Elizabeth National Park, and US advice covers all of Uganda. Please read your own government's advice, check that your insurance is valid for your itinerary, and see our safety guide before you book. We will tell you directly if current advice affects your itinerary.",
+  },
 ];
 
 export const Route = createFileRoute("/destinations/queen-elizabeth-national-park")({
@@ -38,7 +42,7 @@ export const Route = createFileRoute("/destinations/queen-elizabeth-national-par
     buildDestinationHead({
       slug: "queen-elizabeth-national-park",
       name: "Queen Elizabeth National Park",
-      title: "Queen Elizabeth National Park, Uganda — Kazinga Channel & Kasenyi Plains | Biikuya Trails Uganda",
+      title: "Queen Elizabeth National Park Safaris | Biikuya Trails",
       description:
         "Cruise the Kazinga Channel past thousands of hippos, track chimps in Kyambura Gorge and game-drive the Kasenyi Plains. Guided tours from Biikuya Trails Uganda.",
       ogImage: sceneElephants,
