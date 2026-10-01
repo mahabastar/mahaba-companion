@@ -32,7 +32,7 @@ const FAQS = [
   },
   {
     q: "Is Queen Elizabeth National Park safe?",
-    a: "Yes. It is one of Uganda's flagship national parks with a strong ranger presence, well-managed lodges and paved main access. All Biikuya Trails Uganda safaris include private guiding and 24/7 support.",
+    a: "The UK FCDO currently advises against all but essential travel to Queen Elizabeth National Park, and US advice covers all of Uganda. Attacks in 2023 in and around the park killed both Ugandans and foreign nationals. Many travellers still visit on organised itineraries with experienced guides, but please read your own government's advice, check your insurance and see our safety guide before you book. We will tell you directly if current advice affects your itinerary.",
   },
 ];
 
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/destinations/tree-climbing-lions")({
     buildDestinationHead({
       slug: "tree-climbing-lions",
       name: "Tree-Climbing Lions of Ishasha",
-      title: "Tree-Climbing Lions of Ishasha, Queen Elizabeth NP | Biikuya Trails Uganda",
+      title: "Tree-Climbing Lions in Ishasha, Uganda | Biikuya Trails",
       description:
         "Track the world-famous tree-climbing lions of Ishasha in Uganda's Queen Elizabeth National Park — expert-guided luxury safaris with Biikuya Trails Uganda.",
       ogImage: sceneLion,
@@ -119,3 +119,5 @@ export const Route = createFileRoute("/destinations/tree-climbing-lions")({
     />
   ),
 });
+ 
+  
