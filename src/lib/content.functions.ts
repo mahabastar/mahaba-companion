@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
-import type { Database } from "@/integrations/supabase/types";
+import type { Database, Json } from "@/integrations/supabase/types";
 import { resolveImg } from "@/lib/asset-library";
 import type { Journey } from "@/lib/journeys";
 import type { Experience } from "@/lib/experiences";
@@ -125,7 +125,7 @@ export const adminListContent = createServerFn({ method: "POST" })
       .select("*")
       .order("sort_order", { ascending: true });
     if (error) throw new Error(error.message);
-    return (rows ?? []) as Row[];
+    return (rows ?? []) as Record<string, Json>[];
   });
 
 export const adminSaveContent = createServerFn({ method: "POST" })
@@ -143,7 +143,7 @@ export const adminSaveContent = createServerFn({ method: "POST" })
       : context.supabase.from(data.table).insert(row as never).select("*").single();
     const { data: saved, error } = await query;
     if (error) throw new Error(error.message);
-    return saved as Row;
+    return saved as Record<string, Json>;
   });
 
 export const adminDeleteContent = createServerFn({ method: "POST" })
