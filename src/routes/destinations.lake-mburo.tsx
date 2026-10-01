@@ -36,7 +36,7 @@ export const Route = createFileRoute("/destinations/lake-mburo")({
     buildDestinationHead({
       slug: "lake-mburo",
       name: "Lake Mburo National Park",
-      title: "Lake Mburo National Park, Uganda — Walking Safaris & Zebra | Biikuya Trails Uganda",
+      title: "Lake Mburo National Park: Walking Safaris | Biikuya Trails",
       description:
         "Uganda's most compact savanna park, closest to Kampala — walking and horseback safaris among zebra and impala, with a signature boat cruise.",
       ogImage: g_mburo_zebras,
@@ -110,3 +110,4 @@ export const Route = createFileRoute("/destinations/lake-mburo")({
     />
   ),
 });
+
