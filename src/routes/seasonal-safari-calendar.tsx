@@ -8,7 +8,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/seasonal-safari-calendar")({
   head: () => ({
     ...buildPageMeta({
-      title: "Seasonal Safari Calendar — Biikuya Trails Uganda",
+      title: "Uganda Safari Calendar: Best Months to Go | Biikuya Trails",
       description: "What's best each month in Uganda — weather, wildlife highlights, and which destinations to prioritise, from dry-season gorilla trekking to green-season birding.",
       path: "/seasonal-safari-calendar",
     }),
@@ -263,3 +263,7 @@ function SeasonalSafariCalendar() {
     </div>
   );
 }
+
+    
+            
+        
