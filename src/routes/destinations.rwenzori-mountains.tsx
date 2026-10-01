@@ -41,7 +41,7 @@ export const Route = createFileRoute("/destinations/rwenzori-mountains")({
     buildDestinationHead({
       slug: "rwenzori-mountains",
       name: "Rwenzori Mountains",
-      title: "Rwenzori Mountains Trekking, Uganda — Margherita Peak & Day Hikes | Biikuya Trails Uganda",
+      title: "Rwenzori Mountains Trekking & Day Hikes | Biikuya Trails",
       description:
         "Trek Africa's 'Mountains of the Moon' — from gentle foothill day hikes to the full 7–9 day expedition to Margherita Peak. Costs, routes and guided tours from Biikuya Trails Uganda.",
       ogImage: sceneRwenzori,
@@ -110,7 +110,7 @@ export const Route = createFileRoute("/destinations/rwenzori-mountains")({
       bestTime="June–August and December–February bring the clearest, driest conditions for both summit attempts and shorter day hikes. Expect rain and mud in any season — this is one of the wettest ranges in Africa."
       gettingThere="Fly into Entebbe International Airport, then drive roughly 5–6 hours west to the Kasese or Kilembe trailheads, or connect via a short domestic flight to Kasese airstrip followed by a short transfer."
       related={[
-        { name: "Chimpanzee Trekking, Kibale", to: "/destinations/kibale-forest", img: expChimp },
+        { name: "Chimpanzee Trekking, Kibale", to: "/destinations/chimpanzee-trekking", img: expChimp },
         { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking", img: heroGorilla },
         { name: "Murchison Falls", to: "/destinations/murchison-falls", img: sceneFalls },
       ]}
@@ -118,3 +118,5 @@ export const Route = createFileRoute("/destinations/rwenzori-mountains")({
     />
   ),
 });
+
+  
