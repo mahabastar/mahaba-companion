@@ -5,11 +5,12 @@ import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SITE_CONFIG, buildWhatsAppHref, buildEmailHref, buildPageMeta } from "@/lib/site-config";
 import { trackEvent } from "@/lib/analytics";
+import { BookAppointmentButton } from "@/components/BookAppointmentButton";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     ...buildPageMeta({
-      title: "Contact Biikuya Trails Uganda — Talk to a Ugandan Guide",
+      title: "Contact Us: Talk to a Ugandan Safari Guide | Biikuya Trails",
       description: "Speak directly with the Ugandan guides who will plan and lead your safari. WhatsApp, phone or email — a founder replies personally, usually within a day.",
       path: "/contact",
     }),
@@ -194,6 +195,14 @@ function Contact() {
                   financial transactions are securely processed by Biikuya
                   Afric Company Limited.
                 </p>
+              </div>
+
+              <div className="rounded-3xl border border-charcoal/10 bg-white p-8 shadow-luxe">
+                <div className="eyebrow !text-forest">Prefer to talk live?</div>
+                <p className="mt-3 text-sm text-charcoal/70">
+                  Pick a time that suits you and we will talk your trip through by phone or video.
+                </p>
+                <BookAppointmentButton className="mt-5" source="contact" />
               </div>
 
               <div className="rounded-3xl border border-charcoal/10 bg-mist p-8">
