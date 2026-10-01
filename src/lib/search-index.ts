@@ -26,7 +26,7 @@ const DESTINATIONS: SearchItem[] = [
   { label: "Semuliki National Park", category: "Destination", to: "/destinations/semuliki" },
   { label: "Mount Elgon National Park", category: "Destination", to: "/destinations/mount-elgon" },
   { label: "Lake Mburo National Park", category: "Destination", to: "/destinations/lake-mburo" },
-  { label: "Kibale National Park", category: "Destination", to: "/destinations/kibale-forest" },
+  { label: "Kibale National Park", category: "Destination", to: "/destinations/chimpanzee-trekking" },
   { label: "The Crater Lakes, Fort Portal", category: "Destination", to: "/destinations/crater-lakes" },
   { label: "Ziwa Rhino Sanctuary", category: "Destination", to: "/destinations/ziwa-rhino-sanctuary" },
 ];
@@ -83,3 +83,5 @@ const EXPERIENCE_ITEMS: SearchItem[] = EXPERIENCES.map((e) => ({
 }));
 
 export const SEARCH_INDEX: SearchItem[] = [...DESTINATIONS, ...TOOLS, ...JOURNEY_ITEMS, ...EXPERIENCE_ITEMS, ...JOURNAL];
+
+  
