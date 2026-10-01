@@ -41,7 +41,7 @@ export const Route = createFileRoute("/destinations/mgahinga-gorilla")({
     buildDestinationHead({
       slug: "mgahinga-gorilla",
       name: "Mgahinga Gorilla National Park",
-      title: "Mgahinga Gorilla National Park, Uganda — Volcanoes & Golden Monkeys | Biikuya Trails Uganda",
+      title: "Mgahinga Gorilla National Park Guide | Biikuya Trails",
       description:
         "Uganda's smallest national park — three Virunga volcanoes, golden monkey trekking, and a single habituated gorilla family, in the far south-west.",
       ogImage: sceneRwenzori,
