@@ -25,6 +25,10 @@ const FAQS = [
     q: "How do I get to Semuliki?",
     a: "It's roughly a 5–6 hour drive from Kampala via Fort Portal, and is usually combined with Kibale, Queen Elizabeth or Rwenzori Mountains National Park on a western Uganda circuit rather than visited on its own.",
   },
+  {
+    q: "Is Semuliki National Park affected by travel advice?",
+    a: "Yes. Semuliki lies on the border with DR Congo, and the UK FCDO currently advises against all but essential travel to Semuliki National Park. US advice covers all of Uganda. Please read your own government's advice, check your insurance and see our safety guide before you book.",
+  },
 ];
 
 export const Route = createFileRoute("/destinations/semuliki")({
@@ -32,7 +36,7 @@ export const Route = createFileRoute("/destinations/semuliki")({
     buildDestinationHead({
       slug: "semuliki",
       name: "Semuliki National Park",
-      title: "Semuliki National Park, Uganda — Hot Springs & Congo-Basin Birding | Biikuya Trails Uganda",
+      title: "Semuliki National Park: Hot Springs & Birds | Biikuya Trails",
       description:
         "Uganda's slice of the Congo Basin rainforest — boiling Sempaya hot springs and birding found nowhere else in East Africa, on the DR Congo border.",
       ogImage: semulikiHotSprings,
@@ -95,10 +99,13 @@ export const Route = createFileRoute("/destinations/semuliki")({
       bestTime="December–February and June–September are driest and most comfortable for walking. Birding is good year-round, with resident species present regardless of season."
       gettingThere="Roughly a 5–6 hour drive from Kampala via Fort Portal. Most visitors combine it with Kibale, Queen Elizabeth, or Rwenzori Mountains National Park on a western Uganda circuit."
       related={[
-        { name: "Kibale", to: "/destinations/kibale-forest", img: expChimp },
+        { name: "Chimpanzee Trekking, Kibale", to: "/destinations/chimpanzee-trekking", img: expChimp },
         { name: "Rwenzori Mountains", to: "/destinations/rwenzori-mountains", img: sceneRwenzori },
       ]}
       faqs={FAQS}
     />
   ),
 });
+
+    
+      
