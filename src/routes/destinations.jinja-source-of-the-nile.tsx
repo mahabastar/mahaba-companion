@@ -44,7 +44,7 @@ export const Route = createFileRoute("/destinations/jinja-source-of-the-nile")({
     buildDestinationHead({
       slug: "jinja-source-of-the-nile",
       name: "Jinja — Source of the Nile",
-      title: "Jinja & White Water Rafting on the Nile, Uganda | Biikuya Trails Uganda",
+      title: "Jinja White Water Rafting & Nile Source | Biikuya Trails",
       description:
         "Raft Grade 3–5 rapids on the White Nile, visit the historic source of the Nile, and explore East Africa's adventure capital with Biikuya Trails Uganda.",
       ogImage: sourceOfTheNileMain,
