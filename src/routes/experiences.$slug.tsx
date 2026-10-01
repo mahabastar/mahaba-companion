@@ -4,6 +4,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { ExperiencePage } from "@/components/ExperiencePage";
 import { RouteErrorBoundary, RouteNotFoundBoundary } from "@/components/RouteBoundary";
 import { getExperience } from "@/lib/experiences";
+import { EXPERIENCE_SEO_TITLES } from "@/lib/seo-titles";
 
 export const Route = createFileRoute("/experiences/$slug")({
   loader: ({ params }) => {
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/experiences/$slug")({
     return {
     meta: loaderData
       ? [
-          { title: `${loaderData.title} — Biikuya Trails Uganda` },
+          { title: EXPERIENCE_SEO_TITLES[params.slug] ?? `${loaderData.title} | Biikuya Trails` },
           { name: "description", content: loaderData.excerpt },
           { property: "og:title", content: loaderData.title },
           { property: "og:description", content: loaderData.excerpt },
@@ -43,3 +44,6 @@ function ExperienceRoute() {
   const experience = Route.useLoaderData();
   return <ExperiencePage experience={experience} />;
 }
+
+  
+  
