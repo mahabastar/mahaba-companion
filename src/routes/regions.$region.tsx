@@ -30,6 +30,8 @@ import semulikiHotSprings from "@/assets/semuliki-hot-springs.jpg";
 import ctaSunset from "@/assets/cta-sunset.jpg";
 import karamojongCulture from "@/assets/gallery/karamojong-culture.jpg";
 import { REGION_SEO_TITLES } from "@/lib/seo-titles";
+import { JOURNEYS } from "@/lib/journeys";
+import { EXPERIENCES } from "@/lib/experiences";
 
 type Spot = { name: string; to: string; img: string; blurb: string };
 type Region = {
@@ -129,6 +131,30 @@ const REGIONS: Record<string, Region> = {
       { name: "Mount Moroto & Elgon Highlands", to: "/mountains", img: sceneRwenzori, blurb: "Dry-country peaks rising straight out of the plains." },
       { name: "Responsible Travel Here", to: "/responsible-tourism", img: batwaDance, blurb: "How visits are arranged so revenue reaches the communities involved." },
     ],
+  },
+};
+
+/** Journeys and experiences that include each region, by slug. */
+const REGION_TRIPS: Record<string, { journeys: string[]; experiences: string[] }> = {
+  "western-uganda": {
+    journeys: ["gorilla-escape", "budget-gorilla-safari", "gorilla-and-bunyonyi", "primates-adventure", "wildlife-and-primates", "pearl-of-africa", "ultimate-uganda", "grand-explorer"],
+    experiences: ["gorilla-vs-chimp-trekking", "wildlife-safaris", "honeymoon-safaris", "luxury-safaris", "photography-safaris", "walking-safaris"],
+  },
+  "central-uganda": {
+    journeys: ["pearl-of-africa", "ultimate-uganda", "grand-explorer"],
+    experiences: ["family-safaris", "birding", "fly-in-safaris"],
+  },
+  "eastern-uganda": {
+    journeys: ["grand-explorer"],
+    experiences: ["adventure-safaris", "walking-safaris", "self-drive-tours", "photography-safaris"],
+  },
+  "northern-uganda": {
+    journeys: ["pearl-of-africa", "wildlife-and-primates", "ultimate-uganda", "grand-explorer"],
+    experiences: ["wildlife-safaris", "family-safaris", "photography-safaris", "birding"],
+  },
+  karamoja: {
+    journeys: ["ultimate-uganda", "grand-explorer"],
+    experiences: ["adventure-safaris", "self-drive-tours", "photography-safaris"],
   },
 };
 
@@ -244,6 +270,91 @@ function RegionPage() {
           </div>
         </div>
       </section>
+
+      {/* Journeys & experiences in this region */}
+      {(() => {
+        const trips = REGION_TRIPS[slug];
+        if (!trips) return null;
+        const journeys = trips.journeys
+          .map((s) => JOURNEYS.find((j) => j.slug === s))
+          .filter((j): j is (typeof JOURNEYS)[number] => Boolean(j));
+        const experiences = trips.experiences
+          .map((s) => EXPERIENCES.find((e) => e.slug === s))
+          .filter((e): e is (typeof EXPERIENCES)[number] => Boolean(e));
+        return (
+          <>
+            {journeys.length > 0 && (
+              <section className="bg-ivory">
+                <div className="mx-auto max-w-[1400px] px-6 pb-16 md:px-10 md:pb-24">
+                  <div className="eyebrow !text-forest">Trips</div>
+                  <h2 className="mt-4 font-display text-3xl text-charcoal text-balance md:text-4xl">
+                    Journeys through {region.name}
+                  </h2>
+                  <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {journeys.map((j) => (
+                      <Link
+                        key={j.slug}
+                        to="/journeys/$slug"
+                        params={{ slug: j.slug }}
+                        className="group relative block overflow-hidden rounded-3xl hover-lift"
+                      >
+                        <img
+                          src={j.img}
+                          width={800}
+                          height={600}
+                          alt={j.title}
+                          loading="lazy"
+                          className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
+                        <div className="absolute inset-x-5 bottom-5">
+                          <div className="text-xs uppercase tracking-widest text-gold">{j.days} days</div>
+                          <div className="mt-1 font-display text-xl text-ivory md:text-2xl">{j.title}</div>
+                          <p className="mt-1 text-sm text-ivory/75">{j.tagline}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+            {experiences.length > 0 && (
+              <section className="bg-ivory">
+                <div className="mx-auto max-w-[1400px] px-6 pb-16 md:px-10 md:pb-24">
+                  <div className="eyebrow !text-forest">Things to do</div>
+                  <h2 className="mt-4 font-display text-3xl text-charcoal text-balance md:text-4xl">
+                    Experiences in {region.name}
+                  </h2>
+                  <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {experiences.map((e) => (
+                      <Link
+                        key={e.slug}
+                        to="/experiences/$slug"
+                        params={{ slug: e.slug }}
+                        className="group relative block overflow-hidden rounded-3xl hover-lift"
+                      >
+                        <img
+                          src={e.heroImg}
+                          width={800}
+                          height={600}
+                          alt={e.title}
+                          loading="lazy"
+                          className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
+                        <div className="absolute inset-x-5 bottom-5">
+                          <div className="font-display text-xl text-ivory md:text-2xl">{e.title}</div>
+                          <p className="mt-1 text-sm text-ivory/75">{e.tagline}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+          </>
+        );
+      })()}
 
       {/* When to go */}
       <section className="bg-forest-deep grain text-ivory">
