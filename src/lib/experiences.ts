@@ -46,7 +46,7 @@ export const EXPERIENCES: Experience[] = [
       labelB: "Chimpanzees",
       rows: [
         { label: "Where", a: "Bwindi or Mgahinga", b: "Kibale, or Kyambura Gorge" },
-        { label: "Permit cost (2026)", a: "USD 800 (USD 600 low season)", b: "USD 250 (Kibale)" },
+        { label: "Permit cost (2026)", a: "USD 800 (USD 600 low season)", b: "USD 250 (USD 200 low season, Kibale)" },
         { label: "Minimum age", a: "15 years, strictly enforced", b: "Around 12 years" },
         { label: "Time with them", a: "1 hour", b: "1 hour (full day for habituation)" },
         { label: "Trek difficulty", a: "Moderate to strenuous", b: "Easy to moderate" },
@@ -499,7 +499,7 @@ export const EXPERIENCES: Experience[] = [
       { name: "Lake Mburo", to: "/destinations/lake-mburo" },
       { name: "Bwindi Impenetrable", to: "/destinations/bwindi-impenetrable" },
       { name: "Queen Elizabeth National Park", to: "/destinations/queen-elizabeth-national-park" },
-      { name: "Kibale", to: "/destinations/kibale-forest" },
+      { name: "Chimpanzee Trekking, Kibale", to: "/destinations/chimpanzee-trekking" },
     ],
     faqs: [
       { q: "Is self-driving in Uganda safe?", a: "On the main southern and western circuit, yes, with normal travel precautions — reasonable roads, clear routes, and reliable fuel stops. We'll advise against self-driving specific remote legs where conditions don't suit it." },
@@ -512,3 +512,9 @@ export const EXPERIENCES: Experience[] = [
 export function getExperience(slug: string): Experience | undefined {
   return EXPERIENCES.find((e) => e.slug === slug);
 }
+
+        
+    
+  
+  
+    
