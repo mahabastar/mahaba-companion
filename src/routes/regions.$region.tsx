@@ -271,6 +271,91 @@ function RegionPage() {
         </div>
       </section>
 
+      {/* Journeys & experiences in this region */}
+      {(() => {
+        const trips = REGION_TRIPS[slug];
+        if (!trips) return null;
+        const journeys = trips.journeys
+          .map((s) => JOURNEYS.find((j) => j.slug === s))
+          .filter((j): j is (typeof JOURNEYS)[number] => Boolean(j));
+        const experiences = trips.experiences
+          .map((s) => EXPERIENCES.find((e) => e.slug === s))
+          .filter((e): e is (typeof EXPERIENCES)[number] => Boolean(e));
+        return (
+          <>
+            {journeys.length > 0 && (
+              <section className="bg-ivory">
+                <div className="mx-auto max-w-[1400px] px-6 pb-16 md:px-10 md:pb-24">
+                  <div className="eyebrow !text-forest">Trips</div>
+                  <h2 className="mt-4 font-display text-3xl text-charcoal text-balance md:text-4xl">
+                    Journeys through {region.name}
+                  </h2>
+                  <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {journeys.map((j) => (
+                      <Link
+                        key={j.slug}
+                        to="/journeys/$slug"
+                        params={{ slug: j.slug }}
+                        className="group relative block overflow-hidden rounded-3xl hover-lift"
+                      >
+                        <img
+                          src={j.img}
+                          width={800}
+                          height={600}
+                          alt={j.title}
+                          loading="lazy"
+                          className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
+                        <div className="absolute inset-x-5 bottom-5">
+                          <div className="text-xs uppercase tracking-widest text-gold">{j.days} days</div>
+                          <div className="mt-1 font-display text-xl text-ivory md:text-2xl">{j.title}</div>
+                          <p className="mt-1 text-sm text-ivory/75">{j.tagline}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+            {experiences.length > 0 && (
+              <section className="bg-ivory">
+                <div className="mx-auto max-w-[1400px] px-6 pb-16 md:px-10 md:pb-24">
+                  <div className="eyebrow !text-forest">Things to do</div>
+                  <h2 className="mt-4 font-display text-3xl text-charcoal text-balance md:text-4xl">
+                    Experiences in {region.name}
+                  </h2>
+                  <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {experiences.map((e) => (
+                      <Link
+                        key={e.slug}
+                        to="/experiences/$slug"
+                        params={{ slug: e.slug }}
+                        className="group relative block overflow-hidden rounded-3xl hover-lift"
+                      >
+                        <img
+                          src={e.heroImg}
+                          width={800}
+                          height={600}
+                          alt={e.title}
+                          loading="lazy"
+                          className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
+                        <div className="absolute inset-x-5 bottom-5">
+                          <div className="font-display text-xl text-ivory md:text-2xl">{e.title}</div>
+                          <p className="mt-1 text-sm text-ivory/75">{e.tagline}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            )}
+          </>
+        );
+      })()}
+
       {/* When to go */}
       <section className="bg-forest-deep grain text-ivory">
         <div className="mx-auto max-w-[900px] px-6 py-20 md:px-10 md:py-24">
