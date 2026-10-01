@@ -41,7 +41,7 @@ export const Route = createFileRoute("/destinations/sipi-falls")({
     buildDestinationHead({
       slug: "sipi-falls",
       name: "Sipi Falls & Mount Elgon",
-      title: "Sipi Falls & Mount Elgon, Uganda — Hikes, Coffee & Tours | Biikuya Trails Uganda",
+      title: "Sipi Falls: Waterfall Hikes & Coffee Tours | Biikuya Trails",
       description:
         "Hike between three cascading waterfalls on Mount Elgon, roast Arabica coffee with local farmers and watch the sun set over Karamoja — luxury Sipi Falls tours by Biikuya Trails Uganda.",
       ogImage: expSipi,
@@ -119,3 +119,4 @@ export const Route = createFileRoute("/destinations/sipi-falls")({
     />
   ),
 });
+
