@@ -15,7 +15,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/wildlife-encyclopedia")({
   head: () => ({
     ...buildPageMeta({
-      title: "Wildlife Encyclopedia — Biikuya Trails Uganda",
+      title: "Uganda Wildlife Encyclopedia & Animal Guide | Biikuya Trails",
       description: "A searchable guide to Uganda's mammals, primates, birds and reptiles — what to look for, where to see it, and when.",
       path: "/wildlife-encyclopedia",
     }),
@@ -326,7 +326,7 @@ function WildlifeEncyclopedia() {
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-deep/10">
                     {s.img ? (
-                      <img src={s.img} alt={s.name} loading="lazy" className="h-full w-full object-cover" />
+                      <img src={s.img} width={800} height={600} alt={s.name} loading="lazy" className="h-full w-full object-cover" />
                     ) : (
                       <div className="flex h-full w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-forest/10 to-earth/10 text-forest/40">
                         <svg viewBox="0 0 24 24" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -391,3 +391,9 @@ function WildlifeEncyclopedia() {
     </div>
   );
 }
+
+
+
+    
+      
+       
