@@ -12,7 +12,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/responsible-tourism")({
   head: () => ({
     ...buildPageMeta({
-      title: "Responsible Tourism in Uganda — Conservation & Community",
+      title: "Responsible Tourism in Uganda: Conservation | Biikuya Trails",
       description: "How Uganda's revenue-sharing model turned gorilla tourism into conservation that works — and exactly how Biikuya Trails Uganda supports rangers, schools and the communities bordering the parks.",
       path: "/responsible-tourism",
     }),
@@ -70,7 +70,7 @@ function ResponsibleTourism() {
 
       {/* Hero */}
       <section className="relative min-h-[70svh] w-full overflow-hidden bg-charcoal grain">
-        <img src={sceneCulture} alt="Community members in south-western Uganda" className="absolute inset-0 h-full w-full object-cover opacity-50"
+        <img src={sceneCulture} width={1600} height={900} alt="Community members in south-western Uganda" className="absolute inset-0 h-full w-full object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/30" />
         <div className="relative mx-auto flex min-h-[70svh] max-w-[1000px] flex-col justify-end px-6 pb-16 pt-40 text-center md:px-10 md:pb-20 md:pt-48">
@@ -122,7 +122,7 @@ function ResponsibleTourism() {
             {PILLARS.map((p) => (
               <div key={p.title} className="overflow-hidden rounded-3xl border border-ivory/10">
                 <div className="aspect-[16/9] w-full overflow-hidden">
-                  <img src={p.img} alt={p.title} className="h-full w-full object-cover"
+                  <img src={p.img} width={800} height={450} alt={p.title} className="h-full w-full object-cover"
           loading="lazy"
         />
                 </div>
