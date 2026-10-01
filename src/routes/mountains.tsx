@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+ import { createFileRoute } from "@tanstack/react-router";
 import { CategoryHub } from "@/components/CategoryHub";
 import { MOUNTAINS } from "@/lib/mountains";
 import sceneRwenzori from "@/assets/scene-rwenzori.jpg";
@@ -7,7 +7,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/mountains")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda's Mountains — Biikuya Trails Uganda",
+      title: "Uganda Mountains: Rwenzori & Virunga Treks | Biikuya Trails",
       description: "From equatorial glaciers on the Rwenzori to volcano summits in the Virunga range — Uganda's key mountains and multi-day treks.",
       path: "/mountains",
     }),
