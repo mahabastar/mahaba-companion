@@ -18,7 +18,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/uganda-explorer")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Explorer — Interactive Map | Biikuya Trails Uganda",
+      title: "Uganda Interactive Map: Parks & Sights | Biikuya Trails",
       description: "An interactive map of Uganda's national parks and destinations — gorilla trekking, tree-climbing lions, waterfalls and crater lakes, all in one place.",
       path: "/uganda-explorer",
     }),
@@ -102,7 +102,7 @@ const SPOTS: Spot[] = [
     tags: ["Wildlife"],
     blurb: "The highest primate density in Africa, led by over 1,500 wild chimpanzees.",
     img: expChimp,
-    to: "/destinations/kibale-forest",
+    to: "/destinations/chimpanzee-trekking",
     x: 20, y: 44,
   },
   {
@@ -256,7 +256,7 @@ function UgandaExplorer() {
                   to={activeSpot.to}
                   className="absolute bottom-4 left-4 right-4 flex items-center gap-4 rounded-2xl bg-ivory/95 p-3 shadow-luxe backdrop-blur-sm transition-all sm:left-auto sm:right-4 sm:w-80"
                 >
-                  <img src={activeSpot.img} alt={activeSpot.name} className="h-16 w-16 shrink-0 rounded-xl object-cover"
+                  <img src={activeSpot.img} width={64} height={64} alt={activeSpot.name} className="h-16 w-16 shrink-0 rounded-xl object-cover"
           loading="lazy"
         />
                   <div className="min-w-0">
@@ -282,7 +282,7 @@ function UgandaExplorer() {
                     active === s.slug ? "border-forest bg-forest/5" : "border-charcoal/10 hover:border-forest/40"
                   }`}
                 >
-                  <img src={s.img} alt={s.name} className="h-16 w-16 shrink-0 rounded-xl object-cover"
+                  <img src={s.img} width={64} height={64} alt={s.name} className="h-16 w-16 shrink-0 rounded-xl object-cover"
           loading="lazy"
         />
                   <div className="min-w-0 flex-1">
