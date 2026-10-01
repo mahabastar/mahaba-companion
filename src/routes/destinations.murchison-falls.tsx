@@ -43,7 +43,7 @@ export const Route = createFileRoute("/destinations/murchison-falls")({
     buildDestinationHead({
       slug: "murchison-falls",
       name: "Murchison Falls National Park",
-      title: "Murchison Falls National Park, Uganda — Safaris & Nile Cruises | Biikuya Trails Uganda",
+      title: "Murchison Falls National Park Safaris | Biikuya Trails",
       description:
         "Luxury safaris to Murchison Falls National Park — Uganda's largest wilderness, home to the world's most powerful waterfall, big herds and the prehistoric shoebill stork.",
       ogImage: sceneFalls,
@@ -123,3 +123,5 @@ export const Route = createFileRoute("/destinations/murchison-falls")({
     />
   ),
 });
+
+        
