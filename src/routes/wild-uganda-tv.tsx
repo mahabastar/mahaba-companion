@@ -17,7 +17,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/wild-uganda-tv")({
   head: () => ({
     ...buildPageMeta({
-      title: "Wild Uganda TV — Biikuya Trails Uganda",
+      title: "Wild Uganda TV: Safari & Wildlife Videos | Biikuya Trails",
       description: "Destination films, wildlife clips, culture and traveller stories from across Uganda — Biikuya Trails Uganda' video hub.",
       path: "/wild-uganda-tv",
     }),
@@ -182,7 +182,7 @@ function WildUgandaTV() {
                 onClick={() => setSelected(v)}
                 className="group relative block aspect-video overflow-hidden rounded-2xl text-left"
               >
-                <img src={v.img} alt={v.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <img src={v.img} width={800} height={450} alt={v.title} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/20 to-transparent" />
 
                 <div className="absolute right-3 top-3 rounded-full bg-charcoal/70 px-3 py-1 text-[0.6rem] font-semibold uppercase tracking-widest text-gold backdrop-blur-sm">
@@ -221,7 +221,7 @@ function WildUgandaTV() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative aspect-video overflow-hidden rounded-2xl">
-              <img src={selected.img} alt={selected.title} className="h-full w-full object-cover"
+              <img src={selected.img} width={800} height={450} alt={selected.title} className="h-full w-full object-cover"
           loading="lazy"
         />
               <div className="absolute inset-0 bg-charcoal/40" />
@@ -266,3 +266,6 @@ function WildUgandaTV() {
     </div>
   );
 }
+
+  
+   
