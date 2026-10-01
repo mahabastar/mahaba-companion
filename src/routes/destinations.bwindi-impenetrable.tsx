@@ -22,7 +22,7 @@ const FAQS = [
   },
   {
     q: "How much is a gorilla permit and what does it include?",
-    a: "A Uganda gorilla permit costs USD 800 per person and covers one hour with a habituated gorilla family, an armed ranger guide, and trackers. It doesn't include park entry fees, accommodation, or transport.",
+    a: "A Uganda gorilla permit costs USD 800 per person (USD 600 in April, May and November) and covers park entry for the day, one hour with a habituated gorilla family, an armed ranger guide, and trackers. It doesn't include accommodation, transport, or porters.",
   },
   {
     q: "When should I book my gorilla permit?",
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/destinations/bwindi-impenetrable")({
     buildDestinationHead({
       slug: "bwindi-impenetrable",
       name: "Bwindi Impenetrable National Park",
-      title: "Bwindi Impenetrable National Park, Uganda — Gorilla Trekking Guide | Biikuya Trails Uganda",
+      title: "Bwindi Impenetrable National Park Guide | Biikuya Trails",
       description:
         "Home to half the world's mountain gorillas — Bwindi's four trekking sectors, permit costs, and how to plan a trip into Uganda's oldest rainforest.",
       ogImage: gorillaSilverback,
@@ -65,7 +65,7 @@ export const Route = createFileRoute("/destinations/bwindi-impenetrable")({
       heroAlt="A mountain gorilla silverback foraging in Bwindi's undergrowth"
       facts={[
         { label: "Location", value: "South-western Uganda" },
-        { label: "Gorilla permit", value: "USD 800 per person" },
+        { label: "Gorilla permit", value: "USD 800 (USD 600 low season)" },
         { label: "Ideal stay", value: "2 nights" },
         { label: "Highlight", value: "Face-to-face gorilla trekking" },
       ]}
@@ -98,7 +98,7 @@ export const Route = createFileRoute("/destinations/bwindi-impenetrable")({
       ]}
       highlights={[
         { title: "Half the world's mountain gorillas", desc: "The single largest population of mountain gorillas anywhere, across four trekking sectors." },
-        { title: "Gorilla Habituation Experience", desc: "In Rushaga, spend up to 4 hours with a family still being habituated, instead of the standard one hour." },
+        { title: "Gorilla Habituation Experience", desc: "In Rushaga, spend up to 4 hours with a family still being habituated, in a group of no more than four, instead of the standard one hour." },
         { title: "Batwa cultural encounters", desc: "Guided walks with the forest's original inhabitants, displaced when Bwindi became a protected park." },
         { title: "World-class birding", desc: "350 species recorded, including 23 found nowhere else in Uganda." },
         { title: "Ancient, untouched rainforest", desc: "One of the few African forests to have survived the last Ice Age intact." },
@@ -111,6 +111,11 @@ export const Route = createFileRoute("/destinations/bwindi-impenetrable")({
       ]}
       bestTime="June–September and December–February are driest and most popular for trekking, though gorillas can be tracked year-round. The wetter months are quieter and greener, with the trade-off of muddier trails."
       gettingThere="Fly into Entebbe, then either a scheduled light-aircraft transfer (around 1.5 hours) to an airstrip near your chosen sector, or a scenic 8–9 hour drive through the Kigezi highlands, often broken up with a stop at Lake Mburo National Park."
+      guides={[
+        { name: "Bwindi Sectors Compared", to: "/travel-journal/bwindi-sectors-compared", desc: "Buhoma, Ruhija, Rushaga and Nkuringo side by side: terrain, permits, lodges and drive times." },
+        { name: "Gorilla Permit Guide", to: "/gorilla-permit-guide", desc: "Permit prices, low-season savings and how booking works." },
+        { name: "Mgahinga Gorilla National Park", to: "/destinations/mgahinga-gorilla", desc: "Volcanoes, golden monkeys and a quieter gorilla trek." },
+      ]}
       related={[
         { name: "Gorilla Trekking Guide", to: "/destinations/gorilla-trekking", img: heroGorilla },
         { name: "Lake Bunyonyi", to: "/destinations/lake-bunyonyi", img: sceneBunyonyi },
@@ -119,3 +124,8 @@ export const Route = createFileRoute("/destinations/bwindi-impenetrable")({
     />
   ),
 });
+
+  
+     
+  
+
