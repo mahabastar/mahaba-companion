@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+ import { createFileRoute } from "@tanstack/react-router";
 import { DestinationPage } from "@/components/DestinationPage";
 import { buildDestinationHead } from "@/lib/destination-head";
 import expChimp from "@/assets/exp-chimp.jpg";
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/destinations/entebbe")({
     buildDestinationHead({
       slug: "entebbe",
       name: "Entebbe",
-      title: "Entebbe, Uganda — Gateway to Your Safari | Biikuya Trails Uganda",
+      title: "Things to Do in Entebbe: Ngamba & Gardens | Biikuya Trails",
       description:
         "Uganda's lakeside gateway city — Ngamba Island chimpanzee sanctuary, historic Botanical Gardens, and the start and end of nearly every Uganda safari.",
       ogImage: expChimp,
@@ -106,7 +106,7 @@ export const Route = createFileRoute("/destinations/entebbe")({
       bestTime="Entebbe is a year-round destination — its lakeside climate is milder than much of Uganda, and it works equally well at the start or end of a trip in any season."
       gettingThere="Entebbe International Airport is Uganda's main gateway — most visitors arrive here directly. Kampala is roughly 45 minutes to an hour away by road."
       related={[
-        { name: "Chimpanzee Trekking, Kibale", to: "/destinations/kibale-forest", img: expChimp },
+        { name: "Chimpanzee Trekking, Kibale", to: "/destinations/chimpanzee-trekking", img: expChimp },
         { name: "Jinja, Source of the Nile", to: "/destinations/jinja-source-of-the-nile", img: sceneFalls },
         { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking", img: heroGorilla },
       ]}
@@ -114,3 +114,5 @@ export const Route = createFileRoute("/destinations/entebbe")({
     />
   ),
 });
+
+      
