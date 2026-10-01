@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+ import { Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -14,7 +14,7 @@ export function ExperiencePage({ experience }: { experience: Experience }) {
 
       {/* Hero */}
       <section className="relative min-h-[70svh] w-full overflow-hidden bg-charcoal">
-        <img src={experience.heroImg} alt={experience.title} className="absolute inset-0 h-full w-full object-cover"
+        <img src={experience.heroImg} width={1600} height={900} alt={experience.title} className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-charcoal/20" />
         <div className="relative mx-auto flex min-h-[70svh] max-w-[900px] flex-col justify-end px-6 pb-16 pt-40 md:px-10">
@@ -154,7 +154,7 @@ export function ExperiencePage({ experience }: { experience: Experience }) {
                 params={{ slug: e.slug }}
                 className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
               >
-                <img src={e.heroImg} alt={e.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                <img src={e.heroImg} width={800} height={600} alt={e.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/10 to-transparent" />
