@@ -8,7 +8,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/experiences/")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda Safari Experiences — Biikuya Trails Uganda",
+      title: "Uganda Safari Experiences & Trip Styles | Biikuya Trails",
       description: "Uganda safaris built around how you actually want to travel — family, honeymoon, adventure, and how to choose between gorilla and chimp trekking.",
       path: "/experiences",
     }),
@@ -46,6 +46,8 @@ function ExperiencesIndex() {
               >
                 <img
                   src={e.heroImg}
+                  width={800}
+                  height={500}
                   alt={e.title}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
@@ -65,3 +67,4 @@ function ExperiencesIndex() {
     </div>
   );
 }
+
