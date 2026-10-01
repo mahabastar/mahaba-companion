@@ -80,7 +80,7 @@ export const NATIONAL_PARKS: NationalPark[] = [
     blurb:
       "The highest primate density in Africa — over 1,500 wild chimpanzees, plus twelve other primate species in ancient forest.",
     img: expChimp,
-    to: "/destinations/kibale-forest",
+    to: "/destinations/chimpanzee-trekking",
   },
   {
     slug: "semuliki",
@@ -149,3 +149,5 @@ export const NATIONAL_PARKS: NationalPark[] = [
     to: "/destinations/kidepo-valley",
   },
 ];
+
+  
