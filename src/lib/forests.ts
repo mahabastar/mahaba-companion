@@ -25,7 +25,7 @@ export const FORESTS: CategoryItem[] = [
     blurb:
       "Over 1,500 wild chimpanzees and twelve other primate species make Kibale the continent's premier chimpanzee-trekking destination.",
     img: expChimp,
-    to: "/destinations/kibale-forest",
+    to: "/destinations/chimpanzee-trekking",
   },
   {
     slug: "mabira-forest",
