@@ -153,7 +153,8 @@ export const Route = createFileRoute("/regions/$region")({
     });
 
   },
-  notFoundComponent: RegionNotFound,
+  notFoundComponent: () => <RegionNotFound />,
+  errorComponent: ({ error }) => <div className="p-20 text-center">Something went wrong loading this region. {String((error as Error)?.message ?? "")}</div>,
   component: RegionPage,
 });
 
