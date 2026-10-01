@@ -30,6 +30,8 @@ import semulikiHotSprings from "@/assets/semuliki-hot-springs.jpg";
 import ctaSunset from "@/assets/cta-sunset.jpg";
 import karamojongCulture from "@/assets/gallery/karamojong-culture.jpg";
 import { REGION_SEO_TITLES } from "@/lib/seo-titles";
+import { JOURNEYS } from "@/lib/journeys";
+import { EXPERIENCES } from "@/lib/experiences";
 
 type Spot = { name: string; to: string; img: string; blurb: string };
 type Region = {
@@ -132,7 +134,29 @@ const REGIONS: Record<string, Region> = {
   },
 };
 
-export const Route = createFileRoute("/regions/$region")({
+/** Journeys and experiences that include each region, by slug. */
+const REGION_TRIPS: Record<string, { journeys: string[]; experiences: string[] }> = {
+  "western-uganda": {
+    journeys: ["gorilla-escape", "budget-gorilla-safari", "gorilla-and-bunyonyi", "primates-adventure", "wildlife-and-primates", "pearl-of-africa", "ultimate-uganda", "grand-explorer"],
+    experiences: ["gorilla-vs-chimp-trekking", "wildlife-safaris", "honeymoon-safaris", "luxury-safaris", "photography-safaris", "walking-safaris"],
+  },
+  "central-uganda": {
+    journeys: ["pearl-of-africa", "ultimate-uganda", "grand-explorer"],
+    experiences: ["family-safaris", "birding", "fly-in-safaris"],
+  },
+  "eastern-uganda": {
+    journeys: ["grand-explorer"],
+    experiences: ["adventure-safaris", "walking-safaris", "self-drive-tours", "photography-safaris"],
+  },
+  "northern-uganda": {
+    journeys: ["pearl-of-africa", "wildlife-and-primates", "ultimate-uganda", "grand-explorer"],
+    experiences: ["wildlife-safaris", "family-safaris", "photography-safaris", "birding"],
+  },
+  karamoja: {
+    journeys: ["ultimate-uganda", "grand-explorer"],
+    experiences: ["adventure-safaris", "self-drive-tours", "photography-safaris"],
+  },
+};
   loader: ({ params }) => {
     const region = REGIONS[params.region];
     if (!region) throw notFound();
