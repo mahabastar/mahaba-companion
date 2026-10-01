@@ -1,7 +1,7 @@
 import { Link, useRouter } from "@tanstack/react-router";
 
 type RouteErrorBoundaryProps = {
-  error: Error;
+  error: unknown;
   reset: () => void;
   label?: string;
 };
