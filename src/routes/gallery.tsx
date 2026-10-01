@@ -16,7 +16,7 @@ import { trackEvent } from "@/lib/analytics";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     ...buildPageMeta({
-      title: "Photo Gallery — Biikuya Trails Uganda",
+      title: "Uganda Safari Photos: Gorillas & Wildlife | Biikuya Trails",
       description: "Photographs from across Uganda — gorillas, chimpanzees, big game, mountains, lakes, lodges and culture. Every image shot in the field by our own guides.",
       path: "/gallery",
     }),
@@ -138,6 +138,8 @@ function Gallery() {
                   >
                     <img
                       src={p.src}
+                      width={p.width}
+                      height={p.height}
                       alt={p.title}
                       loading="lazy"
                       decoding="async"
@@ -202,3 +204,8 @@ function Gallery() {
     </div>
   );
 }
+
+      
+      
+
+          
