@@ -8,7 +8,7 @@ import { buildPageMeta } from "@/lib/site-config";
 export const Route = createFileRoute("/untold-secrets")({
   head: () => ({
     ...buildPageMeta({
-      title: "Uganda's Untold Secrets — Off-the-Beaten-Path Places",
+      title: "Off the Beaten Path Uganda: Hidden Gems | Biikuya Trails",
       description: "Kidepo Valley, Semuliki, Mount Elgon, the crater lakes and more — the Uganda destinations most itineraries skip entirely, and how to reach them.",
       path: "/untold-secrets",
     }),
