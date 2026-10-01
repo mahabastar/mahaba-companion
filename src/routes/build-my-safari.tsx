@@ -15,7 +15,7 @@ import sceneBunyonyi from "@/assets/scene-bunyonyi.jpg";
 export const Route = createFileRoute("/build-my-safari")({
   head: () => ({
     ...buildPageMeta({
-      title: "Build My Safari — Biikuya Trails Uganda",
+      title: "Build Your Own Uganda Safari Itinerary | Biikuya Trails",
       description: "Answer a few questions and get personalised Uganda safari suggestions — destinations, trip length and travel style, tailored to you.",
       path: "/build-my-safari",
     }),
@@ -289,7 +289,7 @@ function BuildMySafari() {
                         to={d.to}
                         className="group relative aspect-[4/3] overflow-hidden rounded-2xl hover-lift"
                       >
-                        <img src={d.img} alt={d.name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        <img src={d.img} width={800} height={600} alt={d.name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
                         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
