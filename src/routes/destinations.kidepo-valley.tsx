@@ -1,3 +1,4 @@
+
 import { createFileRoute } from "@tanstack/react-router";
 import { DestinationPage } from "@/components/DestinationPage";
 import { buildDestinationHead } from "@/lib/destination-head";
@@ -19,7 +20,7 @@ const FAQS = [
   },
   {
     q: "Is Kidepo safe to visit?",
-    a: "Yes. The Karamoja region's past reputation for cattle-raiding is exactly that — past. The area has been stable and welcoming to visitors for years, with a growing community-based tourism sector around the town of Moroto.",
+    a: "Kidepo and the wider Karamoja region are remote, and the US State Department describes Karamoja as volatile because of crime-related conflict. Visitors normally fly to the park's airstrip and travel with an experienced guide, but please read your own government's advice, check your insurance and see our safety guide before you book.",
   },
   {
     q: "How do I get to Kidepo?",
@@ -40,7 +41,7 @@ export const Route = createFileRoute("/destinations/kidepo-valley")({
     buildDestinationHead({
       slug: "kidepo-valley",
       name: "Kidepo Valley National Park",
-      title: "Kidepo Valley National Park, Uganda — Uganda's Wildest Frontier | Biikuya Trails Uganda",
+      title: "Kidepo Valley National Park Safaris | Biikuya Trails",
       description:
         "Uganda's most remote and dramatic national park — cheetah, ostrich and vast untouched savanna in the far north-east. Fly-in safaris and guided tours from Biikuya Trails Uganda.",
       ogImage: sceneElephants,
@@ -116,3 +117,6 @@ export const Route = createFileRoute("/destinations/kidepo-valley")({
     />
   ),
 });
+
+
+ 
