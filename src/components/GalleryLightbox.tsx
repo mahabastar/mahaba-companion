@@ -110,6 +110,8 @@ export function GalleryLightbox({
           <div className="relative overflow-hidden rounded-2xl bg-charcoal">
             <img
               src={photo.src}
+              width={photo.width}
+              height={photo.height}
               alt={photo.title}
               className="max-h-[70vh] w-full object-contain"
             />
