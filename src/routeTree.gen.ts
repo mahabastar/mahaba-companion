@@ -69,6 +69,7 @@ import { Route as DestinationsJinjaSourceOfTheNileRouteImport } from './routes/d
 import { Route as DestinationsGorillaTrekkingRouteImport } from './routes/destinations.gorilla-trekking'
 import { Route as DestinationsEntebbeRouteImport } from './routes/destinations.entebbe'
 import { Route as DestinationsCraterLakesRouteImport } from './routes/destinations.crater-lakes'
+import { Route as DestinationsChimpanzeeTrekkingRouteImport } from './routes/destinations.chimpanzee-trekking'
 import { Route as DestinationsBwindiImpenetrableRouteImport } from './routes/destinations.bwindi-impenetrable'
 import { Route as AdminContentRouteImport } from './routes/admin.content'
 import { Route as AdminBookingsRouteImport } from './routes/admin.bookings'
@@ -385,6 +386,12 @@ const DestinationsCraterLakesRoute = DestinationsCraterLakesRouteImport.update({
   path: '/destinations/crater-lakes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DestinationsChimpanzeeTrekkingRoute =
+  DestinationsChimpanzeeTrekkingRouteImport.update({
+    id: '/destinations/chimpanzee-trekking',
+    path: '/destinations/chimpanzee-trekking',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DestinationsBwindiImpenetrableRoute =
   DestinationsBwindiImpenetrableRouteImport.update({
     id: '/destinations/bwindi-impenetrable',
@@ -448,6 +455,7 @@ export interface FileRoutesByFullPath {
   '/admin/bookings': typeof AdminBookingsRoute
   '/admin/content': typeof AdminContentRoute
   '/destinations/bwindi-impenetrable': typeof DestinationsBwindiImpenetrableRoute
+  '/destinations/chimpanzee-trekking': typeof DestinationsChimpanzeeTrekkingRoute
   '/destinations/crater-lakes': typeof DestinationsCraterLakesRoute
   '/destinations/entebbe': typeof DestinationsEntebbeRoute
   '/destinations/gorilla-trekking': typeof DestinationsGorillaTrekkingRoute
@@ -512,6 +520,7 @@ export interface FileRoutesByTo {
   '/admin/bookings': typeof AdminBookingsRoute
   '/admin/content': typeof AdminContentRoute
   '/destinations/bwindi-impenetrable': typeof DestinationsBwindiImpenetrableRoute
+  '/destinations/chimpanzee-trekking': typeof DestinationsChimpanzeeTrekkingRoute
   '/destinations/crater-lakes': typeof DestinationsCraterLakesRoute
   '/destinations/entebbe': typeof DestinationsEntebbeRoute
   '/destinations/gorilla-trekking': typeof DestinationsGorillaTrekkingRoute
@@ -579,6 +588,7 @@ export interface FileRoutesById {
   '/admin/bookings': typeof AdminBookingsRoute
   '/admin/content': typeof AdminContentRoute
   '/destinations/bwindi-impenetrable': typeof DestinationsBwindiImpenetrableRoute
+  '/destinations/chimpanzee-trekking': typeof DestinationsChimpanzeeTrekkingRoute
   '/destinations/crater-lakes': typeof DestinationsCraterLakesRoute
   '/destinations/entebbe': typeof DestinationsEntebbeRoute
   '/destinations/gorilla-trekking': typeof DestinationsGorillaTrekkingRoute
@@ -647,6 +657,7 @@ export interface FileRouteTypes {
     | '/admin/bookings'
     | '/admin/content'
     | '/destinations/bwindi-impenetrable'
+    | '/destinations/chimpanzee-trekking'
     | '/destinations/crater-lakes'
     | '/destinations/entebbe'
     | '/destinations/gorilla-trekking'
@@ -711,6 +722,7 @@ export interface FileRouteTypes {
     | '/admin/bookings'
     | '/admin/content'
     | '/destinations/bwindi-impenetrable'
+    | '/destinations/chimpanzee-trekking'
     | '/destinations/crater-lakes'
     | '/destinations/entebbe'
     | '/destinations/gorilla-trekking'
@@ -777,6 +789,7 @@ export interface FileRouteTypes {
     | '/admin/bookings'
     | '/admin/content'
     | '/destinations/bwindi-impenetrable'
+    | '/destinations/chimpanzee-trekking'
     | '/destinations/crater-lakes'
     | '/destinations/entebbe'
     | '/destinations/gorilla-trekking'
@@ -844,6 +857,7 @@ export interface RootRouteChildren {
   AdminBookingsRoute: typeof AdminBookingsRoute
   AdminContentRoute: typeof AdminContentRoute
   DestinationsBwindiImpenetrableRoute: typeof DestinationsBwindiImpenetrableRoute
+  DestinationsChimpanzeeTrekkingRoute: typeof DestinationsChimpanzeeTrekkingRoute
   DestinationsCraterLakesRoute: typeof DestinationsCraterLakesRoute
   DestinationsEntebbeRoute: typeof DestinationsEntebbeRoute
   DestinationsGorillaTrekkingRoute: typeof DestinationsGorillaTrekkingRoute
@@ -1288,6 +1302,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DestinationsCraterLakesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/destinations/chimpanzee-trekking': {
+      id: '/destinations/chimpanzee-trekking'
+      path: '/destinations/chimpanzee-trekking'
+      fullPath: '/destinations/chimpanzee-trekking'
+      preLoaderRoute: typeof DestinationsChimpanzeeTrekkingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/destinations/bwindi-impenetrable': {
       id: '/destinations/bwindi-impenetrable'
       path: '/destinations/bwindi-impenetrable'
@@ -1388,6 +1409,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminBookingsRoute: AdminBookingsRoute,
   AdminContentRoute: AdminContentRoute,
   DestinationsBwindiImpenetrableRoute: DestinationsBwindiImpenetrableRoute,
+  DestinationsChimpanzeeTrekkingRoute: DestinationsChimpanzeeTrekkingRoute,
   DestinationsCraterLakesRoute: DestinationsCraterLakesRoute,
   DestinationsEntebbeRoute: DestinationsEntebbeRoute,
   DestinationsGorillaTrekkingRoute: DestinationsGorillaTrekkingRoute,
