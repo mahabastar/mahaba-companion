@@ -7,7 +7,7 @@ import { CATEGORIES, JOURNAL_POSTS, type Category } from "@/lib/journal-posts";
 import { LeadMagnetCTA } from "@/components/lead-magnet/LeadMagnetCTA";
 import { buildPageMeta } from "@/lib/site-config";
 
-export const Route = createFileRoute("/travel-journal/")({
+export const Route = createFileRoute("/journeys/$slug")({
   head: () => ({
     ...buildPageMeta({
       title: "Uganda Travel Journal: Stories & Tips | Biikuya Trails",

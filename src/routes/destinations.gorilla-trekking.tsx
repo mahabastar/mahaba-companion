@@ -56,7 +56,7 @@ const FAQS = [
   },
 ];
 
-export const Route = createFileRoute("/destinations/chimpanzee-trekking")({
+export const Route = createFileRoute("/destinations/gorilla-trekking")({
   head: () =>
     buildDestinationHead({
       slug: "chimpanzee-trekking",
