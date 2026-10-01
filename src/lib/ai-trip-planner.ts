@@ -1,4 +1,5 @@
-import { JOURNEYS, type Journey } from "@/lib/journeys";
+
+ import { JOURNEYS, type Journey } from "@/lib/journeys";
 import { EXPERIENCES, type Experience } from "@/lib/experiences";
 
 /**
@@ -65,7 +66,7 @@ export function planTrip(input: string): TripPlan {
 
   // Score journeys: keyword overlap with title/tagline/highlights, plus
   // closeness to the requested day count.
-  let bestJourney = JOURNEYS[2]; // Pearl of Africa (7 days) as a sane default
+  let bestJourney = JOURNEYS.find((j) => j.slug === "pearl-of-africa") ?? JOURNEYS[0]; // Pearl of Africa (7 days) as a sane default
   let bestJourneyScore = -Infinity;
   for (const j of JOURNEYS) {
     const journeyText = `${j.title} ${j.tagline} ${j.overview} ${j.highlights.join(" ")}`.toLowerCase();
@@ -98,3 +99,7 @@ export function planTrip(input: string): TripPlan {
     dayHint,
   };
 }
+   
+  
+
+  
