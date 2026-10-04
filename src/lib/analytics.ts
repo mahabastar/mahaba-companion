@@ -1,22 +1,10 @@
  /**
  * Google Analytics 4 integration.
  *
- * Analytics is enabled only when VITE_GA_MEASUREMENT_ID is explicitly
- * configured in the environment.
+ * Uses VITE_GA_MEASUREMENT_ID when set, and falls back to the
+ * production stream below so tracking never silently turns off.
  *
- * Example:
- * VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
- *
- * If the variable is not configured:
- * - no GA4 script should load
- * - no visitor data should be sent
- * - tracking functions safely do nothing
- *
- * IMPORTANT:
- * GA4 may set cookies and collect visitor information. If the site
- * receives visitors from jurisdictions requiring consent, such as the
- * EU/UK, a consent mechanism should be implemented before analytics
- * is loaded.
+ * The gtag script itself is loaded in src/routes/__root.tsx.
  */
 
 declare global {
@@ -26,28 +14,18 @@ declare global {
   }
 }
 
-/**
- * Read the GA4 Measurement ID from the Vite environment.
- *
- * The production Measurement ID should be configured through:
- *
- * VITE_GA_MEASUREMENT_ID=G-CLZE8GT71P
- *
- * Do not hard-code the production Measurement ID here.
- */
-export const GA_MEASUREMENT_ID =
-  (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined)?.trim() || "";
+const FALLBACK_GA_ID = "G-CLZE8GT71P";
 
-/**
- * Whether analytics is configured.
- */
+export const GA_MEASUREMENT_ID =
+  (import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined)?.trim() ||
+  FALLBACK_GA_ID;
+
 export const analyticsEnabled = Boolean(GA_MEASUREMENT_ID);
 
 /**
  * Record a page view for a client-side route change.
- *
- * The application is an SPA, so relying only on GA4's initial
- * automatic page view would miss subsequent client-side navigation.
+ * __root.tsx sets send_page_view: false, so every page view
+ * (including the first load) is sent from here.
  */
 export function trackPageview(path: string): void {
   if (
@@ -61,19 +39,13 @@ export function trackPageview(path: string): void {
   window.gtag("event", "page_view", {
     page_path: path,
     page_location: window.location.href,
-    page_title:
-      typeof document !== "undefined" ? document.title : undefined,
+    page_title: typeof document !== "undefined" ? document.title : undefined,
   });
 }
 
 /**
  * Record a custom GA4 event.
- *
- * Example:
- *
- * trackEvent("whatsapp_click", {
- *   page_path: window.location.pathname,
- * });
+ * Example: trackEvent("whatsapp_click", { page_path: window.location.pathname });
  */
 export function trackEvent(
   name: string,
@@ -89,3 +61,4 @@ export function trackEvent(
 
   window.gtag("event", name, params ?? {});
 }
+
