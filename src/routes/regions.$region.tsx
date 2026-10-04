@@ -151,9 +151,8 @@ export const Route = createFileRoute("/regions/$region")({
       path: `/regions/${params.region}`,
       image: region.hero,
     });
-
   },
-  notFoundComponent: RegionNotFound,
+  notFoundComponent: () => <RegionNotFound />,
   component: RegionPage,
 });
 
@@ -179,7 +178,7 @@ function RegionNotFound() {
 function RegionPage() {
   const { region: slug } = Route.useParams();
   const region = REGIONS[slug];
-  if (!region) return <RegionNotFound />;
+  if (!region) throw notFound();
 
   return (
     <div className="bg-ivory text-charcoal">
@@ -260,49 +259,9 @@ function RegionPage() {
 
       {/* Other regions */}
       <section className="bg-ivory">
-        <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-10 md:py-20">
-          <div className="eyebrow !text-forest">Other regions</div>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {Object.entries(REGIONS)
-              .filter(([key]) => key !== slug)
-              .map(([key, r]) => (
-                <Link
-                  key={key}
-                  to="/regions/$region"
-                  params={{ region: key }}
-                  className="rounded-full border border-charcoal/15 px-5 py-3 text-sm text-charcoal/70 transition-colors hover:border-forest hover:text-forest"
-                >
-                  {r.name}
-                </Link>
-              ))}
-          </div>
-        </div>
-      </section>
+        <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-
+      
+  
 
-      {/* CTA */}
-      <section className="bg-charcoal grain">
-        <div className="mx-auto max-w-[1000px] px-6 py-24 text-center md:px-10 md:py-28">
-          <h2 className="font-display text-4xl text-ivory text-balance md:text-5xl">
-            Build a trip around <em className="italic text-gold">{region.name}</em>.
-          </h2>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              to="/build-my-safari"
-              className="rounded-full bg-forest px-7 py-4 text-sm font-medium text-ivory shadow-md transition-all hover:scale-105 hover:bg-forest-deep"
-            >
-              Plan my {region.name} trip
-            </Link>
-            <Link
-              to="/contact"
-              className="rounded-full border border-ivory/40 px-7 py-4 text-sm font-medium text-ivory transition-colors hover:border-gold hover:text-gold"
-            >
-              Ask a local guide
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <SiteFooter />
-    </div>
-  );
-}
+      
+      
