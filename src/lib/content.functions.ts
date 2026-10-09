@@ -156,3 +156,39 @@ export const adminDeleteContent = createServerFn({ method: "POST" })
     if (error) throw new Error(error.message);
     return { ok: true };
   });
+
+/* ---------------------- single-item reads (live site) ---------------------- */
+
+const slugInput = (i: { slug: string }) => z.object({ slug: z.string().min(1).max(200) }).parse(i);
+
+async function bySlug(table: ContentTable, slug: string) {
+  const { data, error } = await publicClient()
+    .from(table)
+    .select("*")
+    .eq("published", true)
+    .eq("slug", slug)
+    .maybeSingle();
+  if (error) throw new Error(error.message);
+  return data as Row | null;
+}
+
+export const getJourneyLive = createServerFn({ method: "GET" })
+  .inputValidator(slugInput)
+  .handler(async ({ data }) => {
+    const r = await bySlug("journeys", data.slug);
+    return r ? mapJourney(r) : null;
+  });
+
+export const getExperienceLive = createServerFn({ method: "GET" })
+  .inputValidator(slugInput)
+  .handler(async ({ data }) => {
+    const r = await bySlug("experiences", data.slug);
+    return r ? mapExperience(r) : null;
+  });
+
+export const getJournalPostLive = createServerFn({ method: "GET" })
+  .inputValidator(slugInput)
+  .handler(async ({ data }) => {
+    const r = await bySlug("journal_posts", data.slug);
+    return r ? mapJournalPost(r) : null;
+  });

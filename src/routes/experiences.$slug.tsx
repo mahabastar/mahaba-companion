@@ -3,12 +3,12 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 
 import { ExperiencePage } from "@/components/ExperiencePage";
 import { RouteErrorBoundary, RouteNotFoundBoundary } from "@/components/RouteBoundary";
-import { getExperience } from "@/lib/experiences";
+import { getExperienceLive } from "@/lib/content.functions";
 import { EXPERIENCE_SEO_TITLES } from "@/lib/seo-titles";
 
 export const Route = createFileRoute("/experiences/$slug")({
-  loader: ({ params }) => {
-    const experience = getExperience(params.slug);
+  loader: async ({ params }) => {
+    const experience = await getExperienceLive({ data: { slug: params.slug } });
     if (!experience) throw notFound();
     return experience;
   },

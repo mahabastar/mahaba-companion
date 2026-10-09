@@ -4,13 +4,13 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { RouteErrorBoundary, RouteNotFoundBoundary } from "@/components/RouteBoundary";
-import { JOURNAL_POSTS, getJournalPost } from "@/lib/journal-posts";
+import { getJournalPostLive, listJournalPosts } from "@/lib/content.functions";
 
 export const Route = createFileRoute("/travel-journal/$slug")({
-  loader: ({ params }) => {
-    const post = getJournalPost(params.slug);
+  loader: async ({ params }) => {
+    const [post, all] = await Promise.all([getJournalPostLive({ data: { slug: params.slug } }), listJournalPosts()]);
     if (!post) throw notFound();
-    return post;
+    return { ...post, all };
   },
   head: ({ params, loaderData }) => {
     const url = `${SITE_CONFIG.url}/travel-journal/${params.slug}`;
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/travel-journal/$slug")({
 });
 
 function JournalArticle() {
-  const post = Route.useLoaderData();
+  const { all: JOURNAL_POSTS, ...post } = Route.useLoaderData();
 
   const related = JOURNAL_POSTS.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 3);
   const relatedFallback = related.length > 0 ? related : JOURNAL_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);

@@ -3,12 +3,12 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 
 import { JourneyPage } from "@/components/JourneyPage";
 import { RouteErrorBoundary, RouteNotFoundBoundary } from "@/components/RouteBoundary";
-import { getJourney } from "@/lib/journeys";
+import { getJourneyLive } from "@/lib/content.functions";
 import { JOURNEY_SEO_TITLES } from "@/lib/seo-titles";
 
 export const Route = createFileRoute("/journeys/$slug")({
-  loader: ({ params }) => {
-    const journey = getJourney(params.slug);
+  loader: async ({ params }) => {
+    const journey = await getJourneyLive({ data: { slug: params.slug } });
     if (!journey) throw notFound();
     return journey;
   },
