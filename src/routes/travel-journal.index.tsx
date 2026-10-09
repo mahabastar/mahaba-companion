@@ -3,7 +3,8 @@ import { useMemo, useState } from "react";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import { CATEGORIES, JOURNAL_POSTS, type Category } from "@/lib/journal-posts";
+import { CATEGORIES, type Category } from "@/lib/journal-posts";
+import { listJournalPosts } from "@/lib/content.functions";
 import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/travel-journal/")({
@@ -14,15 +15,17 @@ export const Route = createFileRoute("/travel-journal/")({
       path: "/travel-journal",
     }),
   }),
+  loader: () => listJournalPosts(),
   component: TravelJournal,
 });
 
 function TravelJournal() {
+  const JOURNAL_POSTS = Route.useLoaderData();
   const [category, setCategory] = useState<Category | "All">("All");
 
   const posts = useMemo(
     () => (category === "All" ? JOURNAL_POSTS : JOURNAL_POSTS.filter((p) => p.category === category)),
-    [category],
+    [category, JOURNAL_POSTS],
   );
 
   const [featured, ...rest] = posts;

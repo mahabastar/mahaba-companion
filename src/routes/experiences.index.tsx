@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
-import { EXPERIENCES } from "@/lib/experiences";
+import { listExperiences } from "@/lib/content.functions";
 import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/experiences/")({
@@ -13,10 +13,12 @@ export const Route = createFileRoute("/experiences/")({
       path: "/experiences",
     }),
   }),
+  loader: () => listExperiences(),
   component: ExperiencesIndex,
 });
 
 function ExperiencesIndex() {
+  const EXPERIENCES = Route.useLoaderData();
   return (
     <div className="bg-ivory text-charcoal">
       <SiteNav />
