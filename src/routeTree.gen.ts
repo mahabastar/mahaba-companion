@@ -20,6 +20,7 @@ import { Route as CulturalHeritageRouteImport } from './routes/cultural-heritage
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as FindYourTripRouteImport } from './routes/find-your-trip'
 import { Route as FoodGuideRouteImport } from './routes/food-guide'
 import { Route as ForestsRouteImport } from './routes/forests'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -128,6 +129,11 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FindYourTripRoute = FindYourTripRouteImport.update({
+  id: '/find-your-trip',
+  path: '/find-your-trip',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FoodGuideRoute = FoodGuideRouteImport.update({
@@ -426,6 +432,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/experiences': typeof ExperiencesRouteWithChildren
   '/faqs': typeof FaqsRoute
+  '/find-your-trip': typeof FindYourTripRoute
   '/food-guide': typeof FoodGuideRoute
   '/forests': typeof ForestsRoute
   '/gallery': typeof GalleryRoute
@@ -492,6 +499,7 @@ export interface FileRoutesByTo {
   '/cultural-heritage': typeof CulturalHeritageRoute
   '/dashboard': typeof DashboardRoute
   '/faqs': typeof FaqsRoute
+  '/find-your-trip': typeof FindYourTripRoute
   '/food-guide': typeof FoodGuideRoute
   '/forests': typeof ForestsRoute
   '/gallery': typeof GalleryRoute
@@ -559,6 +567,7 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/experiences': typeof ExperiencesRouteWithChildren
   '/faqs': typeof FaqsRoute
+  '/find-your-trip': typeof FindYourTripRoute
   '/food-guide': typeof FoodGuideRoute
   '/forests': typeof ForestsRoute
   '/gallery': typeof GalleryRoute
@@ -628,6 +637,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/experiences'
     | '/faqs'
+    | '/find-your-trip'
     | '/food-guide'
     | '/forests'
     | '/gallery'
@@ -694,6 +704,7 @@ export interface FileRouteTypes {
     | '/cultural-heritage'
     | '/dashboard'
     | '/faqs'
+    | '/find-your-trip'
     | '/food-guide'
     | '/forests'
     | '/gallery'
@@ -760,6 +771,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/experiences'
     | '/faqs'
+    | '/find-your-trip'
     | '/food-guide'
     | '/forests'
     | '/gallery'
@@ -828,6 +840,7 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   ExperiencesRoute: typeof ExperiencesRouteWithChildren
   FaqsRoute: typeof FaqsRoute
+  FindYourTripRoute: typeof FindYourTripRoute
   FoodGuideRoute: typeof FoodGuideRoute
   ForestsRoute: typeof ForestsRoute
   GalleryRoute: typeof GalleryRoute
@@ -957,6 +970,13 @@ declare module '@tanstack/react-router' {
       path: '/faqs'
       fullPath: '/faqs'
       preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/find-your-trip': {
+      id: '/find-your-trip'
+      path: '/find-your-trip'
+      fullPath: '/find-your-trip'
+      preLoaderRoute: typeof FindYourTripRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/food-guide': {
@@ -1380,6 +1400,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   ExperiencesRoute: ExperiencesRouteWithChildren,
   FaqsRoute: FaqsRoute,
+  FindYourTripRoute: FindYourTripRoute,
   FoodGuideRoute: FoodGuideRoute,
   ForestsRoute: ForestsRoute,
   GalleryRoute: GalleryRoute,

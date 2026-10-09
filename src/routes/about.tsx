@@ -8,7 +8,7 @@ import sceneCulture from "@/assets/scene-culture.jpg";
 import heroGorilla from "@/assets/hero-gorilla.jpg";
 import expLodge from "@/assets/exp-lodge.jpg";
 import founderXavier from "@/assets/founders/xavier-asaaba.jpg";
-import founderHerbert from "@/assets/founders/herbert-muzoora.png";
+import founderHerbert from "@/assets/founders/herbert-muzoora.jpg";
 import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/about")({
