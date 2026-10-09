@@ -153,7 +153,7 @@ export const Route = createFileRoute("/regions/$region")({
     });
 
   },
-  notFoundComponent: RegionNotFound,
+  notFoundComponent: () => <RegionNotFound />,
   component: RegionPage,
 });
 
