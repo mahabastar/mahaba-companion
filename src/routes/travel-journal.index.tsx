@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CATEGORIES, type Category } from "@/lib/journal-posts";
-import { listJournalPosts } from "@/lib/content.functions";
+import { JOURNAL_POSTS } from "@/lib/journal-posts";
 import { buildPageMeta } from "@/lib/site-config";
 
 export const Route = createFileRoute("/travel-journal/")({
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/travel-journal/")({
       path: "/travel-journal",
     }),
   }),
-  loader: () => listJournalPosts(),
+  const JOURNAL_POSTS = Route.useLoaderData();
   component: TravelJournal,
 });
 
