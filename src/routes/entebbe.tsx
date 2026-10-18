@@ -10,8 +10,7 @@ import g_entebbe_2 from "@/assets/gallery/entebbe-2.jpg";
 import g_entebbe_moments_2 from "@/assets/gallery/entebbe-moments-2.jpg";
 import g_ngamba_chimps_2 from "@/assets/gallery/ngamba-chimps-2.jpg";
 import g_entebbe_3 from "@/assets/gallery/entebbe-3.jpg";
-import entebbeHero from "@/assets/entebbe-hero.jpg";
-
+import entebbeHero from "@/assets/gallery/entebbe-1.jpg";
 const FAQS = [
   {
     q: "Is Entebbe worth extra time, or just a stopover?",
