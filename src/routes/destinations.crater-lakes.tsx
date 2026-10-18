@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DestinationPage } from "@/components/DestinationPage";
 import { buildDestinationHead } from "@/lib/destination-head";
-import expCoffee from "@/assets/exp-coffee.jpg";
 import expChimp from "@/assets/exp-chimp.jpg";
 import sceneLion from "@/assets/scene-lion.jpg";
 import g_crater_lakes_1 from "@/assets/gallery/crater-lakes-1.jpg";
 import g_crater_lakes_2 from "@/assets/gallery/crater-lakes-2.jpg";
 import g_where_nature_reigns from "@/assets/gallery/where-nature-reigns.jpg";
 import g_lodge_kyaninga from "@/assets/gallery/lodge-kyaninga.jpg";
+import craterLakesHero from "@/assets/crater-lakes-hero.jpg";
 
 const FAQS = [
   {
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/destinations/crater-lakes")({
       title: "Fort Portal Crater Lakes: Guide & Lodges | Biikuya Trails",
       description:
         "The Ndali-Kasenda crater field near Fort Portal — around 50 volcanic lakes set among tea and coffee gardens, best paired with a Kibale chimp trek.",
-      ogImage: expCoffee,
+      ogImage: craterLakesHero,
       region: "Western Uganda",
       keywords: [
         "Uganda crater lakes",
@@ -54,8 +54,8 @@ export const Route = createFileRoute("/destinations/crater-lakes")({
       name="The Crater Lakes"
       tagline={<>Around fifty lakes, <em className="italic text-gold">one volcanic field</em>.</>}
       intro="Scattered across the rolling tea and coffee country around Fort Portal, roughly fifty volcanic explosion craters — some barely a few hundred metres wide, others over a kilometre — sit among Uganda's most photogenic farmland, minutes from Kibale National Park."
-      heroImage={expCoffee}
-      heroAlt="Volcanic crater lake surrounded by tea and coffee gardens near Fort Portal"
+      heroImage={craterLakesHero}
+      heroAlt="Calm crater lake mirroring a forested hill near Fort Portal"
       facts={[
         { label: "Location", value: "Fort Portal, western Uganda" },
         { label: "Crater count", value: "~50 in the Ndali-Kasenda field" },
