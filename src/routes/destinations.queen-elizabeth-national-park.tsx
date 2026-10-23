@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { DestinationPage } from "@/components/DestinationPage";
 import { buildDestinationHead } from "@/lib/destination-head";
-import sceneElephants from "@/assets/scene-elephants.jpg";
+import hippoScene from "@/assets/hippos-scene.jpeg";
 import sceneLion from "@/assets/scene-lion.jpg";
 import heroGorilla from "@/assets/hero-gorilla.jpg";
 import sceneBunyonyi from "@/assets/scene-bunyonyi.jpg";
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/destinations/queen-elizabeth-national-par
       title: "Queen Elizabeth National Park Safaris | Biikuya Trails",
       description:
         "Cruise the Kazinga Channel past thousands of hippos, track chimps in Kyambura Gorge and game-drive the Kasenyi Plains. Guided tours from Biikuya Trails Uganda.",
-      ogImage: sceneElephants,
+      ogImage: hippoScene,
       region: "South-western Uganda",
       keywords: [
         "Queen Elizabeth National Park",
@@ -64,8 +64,8 @@ export const Route = createFileRoute("/destinations/queen-elizabeth-national-par
       name="Queen Elizabeth NP"
       tagline={<>Where the <em className="italic text-gold">hippos outnumber the visitors</em>.</>}
       intro="Uganda's most biodiverse park, split by a 40-kilometre channel connecting two lakes and holding one of Africa's densest concentrations of large mammals. Savanna game drives, a chimpanzee-filled gorge, and a boat cruise regularly rated the best single wildlife experience in the country."
-      heroImage={sceneElephants}
-      heroAlt="Savanna wildlife in Queen Elizabeth National Park"
+      heroImage={hippoScene}
+      heroAlt="Herd of hippos on the Kazinga Channel bank, Queen Elizabeth National Park"
       facts={[
         { label: "Location", value: "South-western Uganda" },
         { label: "Boat cruise", value: "~2 hours, USD 30" },
