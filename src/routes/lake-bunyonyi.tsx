@@ -11,7 +11,7 @@ import g_bunyonyi_canoe from "@/assets/gallery/bunyonyi-canoe.jpg";
 import g_bunyonyi_3 from "@/assets/gallery/bunyonyi-3.jpg";
 import g_bunyonyi_4 from "@/assets/gallery/bunyonyi-4.jpg";
 import g_bunyonyi_5 from "@/assets/gallery/bunyonyi-5.jpg";
-import bunyonyiHero from "@/assets/bunyonyi-hero.jpg";
+import bunyonyiHero from "@/assets/scene-bunyonyi.jpg";
 
 const FAQS = [
   {
@@ -108,7 +108,7 @@ export const Route = createFileRoute("/destinations/lake-bunyonyi")({
         { day: "Day 04", title: "Return to Kampala or Kigali", desc: "Drive north to Kampala or connect through the border to Kigali airport — just 3 hours away." },
       ]}
       bestTime="June to September and December to February bring dry, clear skies and calm water — ideal for canoeing and photography. Green-season months are lush, misty and beautifully quiet."
-      gettingThere="A 2-hour drive from Bwindi Impenetrable Forest, or 8 hours from Kampala via Mbarara. The closest international airport is often Kigali (Rwanda), just 3 hours away by road."
+      gettingThere="A 2-hour drive from Bwindi Impenetrable Forest, or 8 hours from Kampala via Mbarara. The closest international airport is often Kigali (Rwanda), just 3 hours away by road. The exact journey depends on your route and border formalities."
       related={[
         { name: "Gorilla Trekking", to: "/destinations/gorilla-trekking", img: heroGorilla },
         { name: "Tree-Climbing Lions", to: "/destinations/tree-climbing-lions", img: sceneLion },
@@ -119,7 +119,3 @@ export const Route = createFileRoute("/destinations/lake-bunyonyi")({
     />
   ),
 });
-
-      
-        
-          
