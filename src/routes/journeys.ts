@@ -25,6 +25,9 @@ export type Journey = {
   highlights: string[];
   itinerary: JourneyDay[];
   destinations: { name: string; to: string }[];
+  metaTitle?: string;
+  metaDescription?: string;
+  faqs?: { q: string; a: string }[];
 };
 
 export const JOURNEYS: Journey[] = [
@@ -144,6 +147,27 @@ export const JOURNEYS: Journey[] = [
     tagline: "Rhinos on foot, then lions, leopards, elephants and buffalo.",
     copy: "Rhinos on foot, then lions, leopards, elephants and buffalo.",
     img: sceneElephants,
+    metaTitle: "7-Day Uganda Big Five Safari from USD 2,600 | Biikuya Trails",
+    metaDescription:
+      "7-day Uganda Big Five safari: track rhinos on foot at Ziwa, then lions, elephants and buffalo at Murchison and Queen Elizabeth. From USD 2,600 pp.",
+    faqs: [
+      {
+        q: "Can you really see the Big Five in Uganda in 7 days?",
+        a: "Most of them, yes. Rhino tracking on foot at Ziwa is reliable, elephants and buffalo are dependable at Murchison Falls and Queen Elizabeth, and lions are good bets on the Kasenyi plains and in Ishasha. Leopard is the one we never promise. Kidepo Valley, an optional flight-in extension, now holds all five species.",
+      },
+      {
+        q: "Is the rhino at Ziwa the same as seeing wild rhino?",
+        a: "Ziwa is a protected sanctuary, so the rhinos live inside its boundary rather than in an open national park. You track them on foot with a ranger and get close, which is why it is the most reliable rhino encounter in Uganda.",
+      },
+      {
+        q: "Are gorilla permits included in the Big Five Safari?",
+        a: "No. The route ends in Ishasha, the natural gateway to Bwindi, so you can add a gorilla trek at the end. We confirm permit availability and costs when we plan your dates.",
+      },
+      {
+        q: "When is the best time to do a Big Five safari in Uganda?",
+        a: "The drier months, roughly December to February and June to September, usually give the clearest game viewing. Ask us about your dates and we will tell you what to expect.",
+      },
+    ],
     overview:
       "A week built around Uganda’s Big Five: rhino tracking on foot at Ziwa, then elephants, buffalo and lions at Murchison Falls and Queen Elizabeth, with a night-drive chance at leopard and tree-climbing lions in Ishasha. Prices start around USD 2,600 per person sharing for two travellers in mid-range lodges with a private 4x4 and driver-guide, and we confirm exact costs and inclusions when we plan your dates. Gorilla permits are not included, but the route ends in Ishasha, the natural gateway to Bwindi, if you would like to add a trek.",
     highlights: [
@@ -152,6 +176,7 @@ export const JOURNEYS: Journey[] = [
       "Queen Elizabeth plains, a Kazinga Channel cruise and Ishasha’s tree-climbing lions",
       "Honest Big Five odds: leopard is the one we never promise",
       "From about USD 2,600 per person sharing, mid-range, private 4x4",
+      "Optional flight-in extension to Kidepo Valley, now home to all five species",
     ],
     destinations: [
       { name: "Uganda Big Five Safari guide", to: "/destinations/uganda-big-five-safari" },
@@ -169,6 +194,7 @@ export const JOURNEYS: Journey[] = [
       { day: 5, title: "Kazinga Channel cruise", copy: "A morning game drive and an afternoon boat cruise along the Kazinga Channel, where elephants, buffalo and hippos gather at the water’s edge. We will ask about night drives for leopard where permitted." },
       { day: 6, title: "Ishasha tree-climbing lions", copy: "Drive south to the Ishasha sector to look for lions resting in the fig trees, then overnight near the sector.", destination: { name: "Tree-Climbing Lions, Ishasha", to: "/destinations/tree-climbing-lions" } },
       { day: 7, title: "Return to Entebbe, or continue to Bwindi", copy: "A long drive back to Entebbe or Kampala, so plan an evening flight or an extra night. Or continue south from Ishasha to Bwindi for a gorilla trek." },
+      { day: "8–9", title: "Optional extension: Kidepo Valley", copy: "For a second chance at the full Big Five, fly from Entebbe to Kidepo's Apoka airstrip for two days of game drives across the Narus Valley. Rhino and leopard take patience here, but lions, elephants and buffalo are dependable and the park is almost empty of other vehicles.", destination: { name: "Kidepo Valley", to: "/destinations/kidepo-valley" } },
     ],
   },
   {
@@ -264,7 +290,3 @@ export const JOURNEYS: Journey[] = [
 export function getJourney(slug: string): Journey | undefined {
   return JOURNEYS.find((j) => j.slug === slug);
 }
-
-  
-    
-    
