@@ -1,4 +1,3 @@
-
 import { createFileRoute } from "@tanstack/react-router";
 import { DestinationPage } from "@/components/DestinationPage";
 import { buildDestinationHead } from "@/lib/destination-head";
@@ -16,7 +15,15 @@ import g_kidepo_moments_13 from "@/assets/gallery/kidepo-moments-13.jpg";
 const FAQS = [
   {
     q: "What makes Kidepo different from Uganda's other parks?",
-    a: "Kidepo is the only park in Uganda with wild ostriches, and one of only two with cheetah. Its remoteness — tucked into the far north-east, bordering South Sudan and Kenya — means a fraction of the visitors of Murchison or Queen Elizabeth, on landscapes many guides consider Africa's most dramatic.",
+    a: "Kidepo is the only park in Uganda with wild ostriches, and one of the few places in the country with cheetah. It now also holds all five Big Five species. Its remoteness — tucked into the far north-east, bordering South Sudan and Kenya — means a fraction of the visitors of Murchison or Queen Elizabeth, on landscapes many guides consider Africa's most dramatic.",
+  },
+  {
+    q: "Can you see the Big Five in Kidepo?",
+    a: "Yes, all five species now live in the park. Lions, elephants and buffalo are the most dependable sightings. Rhino and leopard take time and a good guide, so treat them as a bonus rather than a promise. We pair Kidepo with Ziwa Rhino Sanctuary, where tracking rhinos on foot is reliable, and our 7-day Big Five Safari can be extended into Kidepo.",
+  },
+  {
+    q: "Are there rhinos in Kidepo Valley?",
+    a: "Rhinos have returned to Kidepo, which means the park now holds all five Big Five species. Sightings are not guaranteed, so for a dependable rhino encounter we combine Kidepo with Ziwa Rhino Sanctuary, where you track rhinos on foot with a ranger.",
   },
   {
     q: "Is Kidepo safe to visit?",
@@ -43,7 +50,7 @@ export const Route = createFileRoute("/destinations/kidepo-valley")({
       name: "Kidepo Valley National Park",
       title: "Kidepo Valley National Park Safaris | Biikuya Trails",
       description:
-        "Uganda's most remote and dramatic national park — cheetah, ostrich and vast untouched savanna in the far north-east. Fly-in safaris and guided tours from Biikuya Trails Uganda.",
+        "Uganda's most remote and dramatic national park — cheetah, ostrich, all five Big Five species and vast untouched savanna. Fly-in safaris from Biikuya Trails Uganda.",
       ogImage: sceneElephants,
       region: "North-eastern Uganda",
       keywords: [
@@ -52,6 +59,8 @@ export const Route = createFileRoute("/destinations/kidepo-valley")({
         "Karamoja Uganda",
         "remote Uganda safari",
         "Narus Valley",
+        "Uganda Big Five safari",
+        "Kidepo rhinos",
         "Biikuya Trails Uganda",
       ],
       faqs: FAQS,
@@ -62,7 +71,7 @@ export const Route = createFileRoute("/destinations/kidepo-valley")({
       eyebrow="Kidepo Valley National Park"
       name="Kidepo Valley"
       tagline={<>Uganda's <em className="italic text-gold">last true wilderness</em>.</>}
-      intro="Tucked into Uganda's remote north-eastern corner, bordering South Sudan and Kenya, Kidepo is everything Uganda's better-known parks aren't: vast, empty, and almost entirely undiscovered. It's also the only place in the country to see wild ostriches, and one of only two with cheetah."
+      intro="Tucked into Uganda's remote north-eastern corner, bordering South Sudan and Kenya, Kidepo is everything Uganda's better-known parks aren't: vast, empty, and almost entirely undiscovered. It's the only place in the country to see wild ostriches, a rare home for cheetah, and with rhinos back, a park that now holds all five Big Five species."
       heroImage={sceneElephants}
       heroAlt="Savanna wildlife in Uganda's remote north-east"
       facts={[
@@ -81,6 +90,10 @@ export const Route = createFileRoute("/destinations/kidepo-valley")({
           body: "Kidepo is the only Ugandan park with wild ostriches, and shares with just one other park a resident cheetah population. Buffalo herds run into the thousands, elephant numbers have rebounded from around 200 in the 1990s to closer to 1,000 today, and Rothschild's giraffe — down to just three individuals decades ago — now number in the dozens here.",
         },
         {
+          title: "Kidepo and the Big Five",
+          body: "With rhinos back in the park, Kidepo now holds all five of the Big Five: lion, leopard, elephant, buffalo and rhino. Lions, elephants and buffalo are the dependable sightings. Rhino and leopard take patience and a good guide, so we treat them as a bonus rather than a promise. For a reliable rhino we pair Kidepo with Ziwa Rhino Sanctuary, where you track rhinos on foot, and our 7-day Big Five Safari can be extended into Kidepo.",
+        },
+        {
           title: "Remote by design, not by accident",
           body: "Getting to Kidepo has always meant a real commitment — a long drive or a scheduled flight — and that's exactly why it stays this quiet. Days here often mean not seeing another vehicle. For travellers who've done the classic circuit and want somewhere genuinely undiscovered, this is it.",
         },
@@ -96,7 +109,7 @@ export const Route = createFileRoute("/destinations/kidepo-valley")({
       ]}
       highlights={[
         { title: "Uganda's only wild ostriches", desc: "Found nowhere else in the country's protected areas." },
-        { title: "Rare cheetah sightings", desc: "One of just two parks in Uganda with a resident cheetah population." },
+        { title: "Cheetah and the Big Five", desc: "A resident cheetah population, plus lion, leopard, elephant, buffalo and rhino in one park." },
         { title: "Total isolation", desc: "Among Africa's least-visited major parks — genuine, uncrowded wilderness." },
         { title: "Narus Valley game drives", desc: "Lions, buffalo herds and elephants concentrate here through the dry season." },
         { title: "Recovering giraffe population", desc: "Rothschild's giraffe numbers have rebounded from near-extinction here." },
@@ -112,11 +125,10 @@ export const Route = createFileRoute("/destinations/kidepo-valley")({
       related={[
         { name: "Murchison Falls", to: "/destinations/murchison-falls", img: sceneFalls },
         { name: "Gorilla Trekking, Bwindi", to: "/destinations/gorilla-trekking", img: heroGorilla },
+        { name: "Uganda Big Five Safari", to: "/destinations/uganda-big-five-safari", img: sceneElephants },
       ]}
       faqs={FAQS}
     />
   ),
 });
-
-
- 
+      
