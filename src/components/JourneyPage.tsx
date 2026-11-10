@@ -1,14 +1,22 @@
- 
-  import { LeadMagnetCTA } from "@/components/lead-magnet/LeadMagnetCTA";
+ import { LeadMagnetCTA } from "@/components/lead-magnet/LeadMagnetCTA";
 import { Link } from "@tanstack/react-router";
 
 import { SiteNav } from "@/components/SiteNav";
 import { SiteFooter } from "@/components/SiteFooter";
 import { BookingForm } from "@/components/BookingForm";
-import { JOURNEYS, type Journey } from "@/lib/journeys";
+import { JOURNEYS, getJourney, type Journey } from "@/lib/journeys";
+
+// Indicative "from" prices shown as a badge in the hero. Add a slug here to show one.
+const PRICE_FROM: Record<string, string> = {
+  "big-five-safari": "From about USD 2,600 per person sharing",
+};
 
 export function JourneyPage({ journey }: { journey: Journey }) {
   const otherJourneys = JOURNEYS.filter((j) => j.slug !== journey.slug).slice(0, 3);
+  // FAQs come from the loaded journey, or from the bundled data when the journey
+  // is served from a live database row that doesn't have them yet.
+  const faqs = journey.faqs ?? getJourney(journey.slug)?.faqs;
+  const priceFrom = PRICE_FROM[journey.slug];
 
   return (
     <div className="bg-ivory text-charcoal">
@@ -26,6 +34,11 @@ export function JourneyPage({ journey }: { journey: Journey }) {
           <div className="eyebrow !text-gold">{journey.days}-Day Journey</div>
           <h1 className="mt-4 font-display text-[clamp(2.2rem,6vw,4.5rem)] text-ivory text-balance">{journey.title}</h1>
           <p className="mt-4 max-w-xl text-lg text-ivory/75">{journey.tagline}</p>
+          {priceFrom && (
+            <div className="mt-6 inline-flex self-start rounded-full border border-gold/60 bg-charcoal/40 px-4 py-2 text-xs font-medium uppercase tracking-widest text-gold backdrop-blur-sm">
+              {priceFrom}
+            </div>
+          )}
         </div>
       </section>
 
@@ -74,108 +87,4 @@ export function JourneyPage({ journey }: { journey: Journey }) {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Destinations on this journey */}
-      <section className="bg-ivory">
-        <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-28">
-          <div className="eyebrow !text-forest">Destinations on this journey</div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {journey.destinations.map((d) => (
-              <Link
-                key={d.to}
-                to={d.to}
-                className="inline-flex items-center gap-2 rounded-full border border-charcoal/15 px-5 py-2.5 text-sm font-medium text-charcoal transition-colors hover:border-forest hover:text-forest"
-              >
-                {d.name} <span aria-hidden>→</span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <Link
-              to="/safari-budget-calculator"
-              className="rounded-2xl border border-charcoal/10 bg-white p-6 hover-lift"
-            >
-              <div className="eyebrow !text-gold">What it costs</div>
-              <div className="mt-2 font-display text-xl text-charcoal">Estimate this trip</div>
-              <p className="mt-2 text-sm text-charcoal/60">Adjust travel style and group size to see a realistic budget.</p>
-            </Link>
-            <Link
-              to="/seasonal-safari-calendar"
-              className="rounded-2xl border border-charcoal/10 bg-white p-6 hover-lift"
-            >
-              <div className="eyebrow !text-gold">When to go</div>
-              <div className="mt-2 font-display text-xl text-charcoal">Check the season</div>
-              <p className="mt-2 text-sm text-charcoal/60">See what's best month by month before you lock in dates.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Other journeys */}
-      <section className="bg-forest-deep grain text-ivory">
-        <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-28">
-          <div className="eyebrow !text-gold">Other journeys</div>
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {otherJourneys.map((j) => (
-              <Link
-                key={j.slug}
-                to="/journeys/$slug"
-                params={{ slug: j.slug }}
-                className="group relative block aspect-[4/3] overflow-hidden rounded-2xl"
-              >
-                <img src={j.img} width={800} height={600} alt={j.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
-        />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/10 to-transparent" />
-                <div className="absolute right-3 top-3 rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-widest text-charcoal">
-                  {j.days} Days
-                </div>
-                <div className="absolute inset-x-4 bottom-4 font-display text-lg text-ivory">{j.title}</div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Free Uganda Travel Guide */}
-      <section className="bg-mist">
-        <div className="mx-auto max-w-[900px] px-6 py-16 md:px-10 md:py-20">
-          <LeadMagnetCTA placement={`journey-${journey.slug}`} />
-        </div>
-      </section>
-
-      {/* CTA + Booking form */}
-      <section className="bg-charcoal grain">
-        <div className="mx-auto max-w-[1000px] px-6 py-24 text-center md:px-10 md:py-32">
-          <div className="eyebrow !text-gold">Ready to make it yours</div>
-          <h2 className="mt-6 font-display text-4xl text-ivory text-balance md:text-6xl">
-            Let's shape <em className="italic text-gold">this journey around you.</em>
-          </h2>
-          <div className="mt-10">
-            <Link
-              to="/build-my-safari"
-              className="inline-flex rounded-full bg-forest px-7 py-4 text-sm font-medium text-ivory shadow-md transition-all hover:scale-105 hover:bg-forest-deep"
-            >
-              Make this {journey.days}-day journey mine
-            </Link>
-          </div>
-        </div>
-
-        <div className="mx-auto max-w-[820px] px-6 pb-24 md:px-10 md:pb-32">
-          <BookingForm
-            tripName={`${journey.title} (${journey.days}-day)`}
-            sourcePath={`/journeys/${journey.slug}`}
-            title="Book this journey"
-            intro={`Send your travel details for the ${journey.title} and a founder will reply, usually within a day.`}
-          />
-        </div>
-      </section>
-
-      <SiteFooter />
-    </div>
-  );
-}
-            
-        
+                    
